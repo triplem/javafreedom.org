@@ -1,0 +1,9 @@
+= dotfiles are online
+triplem
+2024-12-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Common
+
+I just published my personal dotfiles to https://github.com/triplem/dotfiles[github]. Of special interest for you could be the Doom Emacs configuration, found https://github.com/triplem/dotfiles/tree/main/dot_doom.d[here]. All personal settings are now externalised using the already existing chezmoi template functionalities and this
+information is therefor not to be found in this specific repository.

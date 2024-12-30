@@ -1,0 +1,9 @@
+= Blog sources now online
+triplem
+2024-12-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Common
+
+I just published my personal blog sources (right now mostly asciidoc) to https://github.com/triplem/javafreedom.org[github]. The content is, right now, in asciidoc and *baked* into HTML using https://jbake.org/[jbake]. I am not promising anything, but this process and the content format could change in the near future. I do plan to used https://gohugo.io/(hugo). The process for the
+publication is now using github actions, so that any push to the repository publishes a new version of the blog fully automatically.

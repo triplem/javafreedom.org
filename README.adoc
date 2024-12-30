@@ -1,8 +1,8 @@
-/opt/jbake/bin/jbake -b
-sudo podman build -f Dockerfile .
-sudo podman run -it --mount type=bind,src=/home/triplem/Downloads/jbake_blog/output,target=/tmp/lunr be11f471fcc
+= Blog
 
 The first and initial version of this blog was exported from a wordpres instance and then published to the uberspace.de hoster via jbake on the 25th Feb 2022.
+
+== Deployment
 
 To enable automatic publishing to uberspace, I generated a new ssh-key and copied the public key to my shared hoster. The private key is then used on github, to be able
 to use the github actions for the deployment. The key should be without a passphrase ;-)

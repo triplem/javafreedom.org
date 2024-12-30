@@ -1,0 +1,8 @@
+= XOrg.conf Lenovo W500
+triplem
+2009-08-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+For Arch, I needed an xorg.conf, which basically runs on my W500. The W500 has some specialties, in that it has two discinct graphic cards, one Intel and one AMD. I have found an XOrg on http://my.stargazer.at[Stargazers Blog]. Please find the Xorg.conf directly http://my.stargazer.at/wp-content/uploads/2009/03/xorg.conf[here]. Thanks Stargazer.

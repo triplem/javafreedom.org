@@ -1,0 +1,8 @@
+= First ReleaseCandidate of ArchServer available...
+triplem
+2010-09-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Finally, we have made it and published our first Release Candidate. This one is just for testing purposes. Read the full news http://www.archserver.org/index.php?mact=News,cntnt01,detail,0&cntnt01articleid=44&cntnt01origid=15&cntnt01returnid=22[here]. Please download an ISO and help us testing this newest Release. Any Feedback is welcome 😉

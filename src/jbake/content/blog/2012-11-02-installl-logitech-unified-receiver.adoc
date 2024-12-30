@@ -1,0 +1,14 @@
+= Installl Logitech Unified Receiver
+triplem
+2012-11-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I just bought some new Input devices (the same I already use at work with Win7), a Performance MX Mouse and a K350 Keyboard from Logitech. Both devices use the Unified Receiver from Logitech. I used the Unified Receiver of the Keyboard initially and after starting the Laptop with the Receiver connected and the Keyboard and the Mouse turned on I did not get a connection from the mouse.
+
+After fiddling around I stumbled across the following article, which described exactly what I had to do. Thanks to the Archlinux community another device is ready to be used 😉
+
+https://wiki.archlinux.org/index.php/Logitech\_Unifying\_Receiver
+
+But there is more to come, because I want to use all the nice little buttons on the mouse and on the Keyboard as well, so lets see how this is going to work out 😉

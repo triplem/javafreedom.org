@@ -1,0 +1,14 @@
+= Discogstagger
+triplem
+2013-08-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Musik
+
+If you have read my blog lately, you know already, that I am in the process of ripping all my CDs into flacs. I am using https://code.google.com/p/rubyripper/[RubyRipper] (since I am on a ArchLinux Box) to rip the CDs. Since the quality of FreeDB (used by RubyRipper) is not really good, when it comes to certain (in my case most) of the CDs. Therefor I am using Discogs to get the correct Metadata. In the beginning, I used http://puddletag.sourceforge.net/[Puddletag] to Tag all the Tracks. Later I discovered a nice tool, called https://github.com/jesseward/discogstagger[Discogstagger], which is able to tag a whole album by using the releaseId from http://www.discogs.com[Discogs]. Unfortunately, this tool did not provide all the needed functionality (e.g. multi disc albums were not supported). Jessewards (the owner of Discogstagger) was quite interested in my changes and accepted all of my pull requests (and I am not really a Python Expert). Since the whole application grew out of itself quite fast, I decided to fork discogstagger and provide a new version of it. I am still in the process of extending discogstagger and right now this version is not working at all (unfortunately), but all tests I have written (and I wrote quite some unit tests for it) are running 😉 
+
+If you are interested in helping out just take a look on the http://www.github.com/triplem/discogstagger/tree/version2[version2 Branch of discogstagger]. I am more then happy to accept pull requests, but keep in mind, that I would like to increase the code coverage with every single commit 😉
+
+Every type of pull request is very welcome, if it is just a bug fix, an extenstion to the current functionality or "just" documentation.
+
+Greetz

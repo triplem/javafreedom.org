@@ -1,0 +1,10 @@
+= More on B-Ubuntu
+triplem
+2007-01-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java, Build Management
+
+Today, I decided to restructure the Trac / SVN Environment on my test-server, to support multiple projects in the same SVN-Repository as well as multiple projects with only one CGI/FastCGI/ModPython call to trac. There is a description for the latter in the http://trac.edgewall.org/wiki/TracCgi[Trac-Wiki], so this was easy. The same is also possible for http://trac.edgewall.org/wiki/TracFastCgi[FastCGI] as well as http://trac.edgewall.org/wiki/TracModPython[ModPython]. +
+Now I have to think about a multiple project support in my SVN-Repository. +
+I will report back, as soon as I have a solution to this 🙂

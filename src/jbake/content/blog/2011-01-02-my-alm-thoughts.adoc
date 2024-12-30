@@ -1,0 +1,16 @@
+= My ALM thoughts
+triplem
+2011-01-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Yesterday we released a new ALM Stack based on http://www.archserver.org[ArchServer], which replaces the beforehand already known "http://freshmeat.net/projects/archlinux-development-stack[Arch Linux Development Stack]". I guess the name change was needed due to the fact that the underlying architecture changed from Arch Linux to ArchServer and furthermore the ALM in the name shows more appropriate what the purpose of this stack really is.
+
+The goal of this software stack is really, to release a full working stack of tools needed for a Application Lifecycle Management. The selection we chose (http://maven.apache.org[Maven], http://hudson-ci.org[Hudson], link:nexus.sonatype.com[Nexus], http://www.sonarsource.org/[Sonar] and http://www.redmine.org[Redmine]) is pretty much a best-of-breed solution. One of the main ALM-Software components (IDE) is still missing though. Since this is not a server-side component, it would be really hard to provide this as well. But I guess we should provide an instance of http://www.eclipse.org[Eclipse] with all needed Plugins pre-installed (http://www.eclipse.org/mylyn/[Mylyn] with http://sourceforge.net/projects/redmin-mylyncon/[Redmine Plugin], http://www.eclipse.org/egit/[Git], http://m2eclipse.sonatype.org/[m2eclipse] and probably more…). The same could be done for http://www.jetbrains.com/idea/[IntelliJ Idea], which I do like a lot as well, lately.
+
+Something, which should be implemented as well, is most probably http://www.reviewboard.org/[ReviewBoard] or http://code.google.com/p/gerrit/[Gerrit] for Reviewing code changes. This is IMHO not needed in all cases of software development, but in some (eg. the Android development and/or the KDE developers).
+
+A real nice thing would be to provide a kind of "Installation procedure" to install all components in one step with some personalizations as well (e.g. Hostname of the ALM Stack host). Furthermore some real documentation is needed, so that the "customer" will find the answers to all their questions. 
+
+If you would like to participate, do not hesitate to write an email to me 😉

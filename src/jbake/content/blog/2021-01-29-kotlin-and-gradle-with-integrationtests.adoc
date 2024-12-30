@@ -1,0 +1,37 @@
+= kotlin and gradle with integrationTests
+triplem
+2021-01-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+In a small private project of mine, I am using kotlin. Since this project does apped on a database (cassandra in this specific case) and furthermore I want to keep several classes "internal" (private to the corresponding module) I am in need to see those "internal" classes in my integration-tests. +
+This sound like an easy task, doesn't it? Well basically I needed to google quite some to find a solution for this one. Problem is, that kotlin does not recognize those "internal" classes out-of-the-box in additional sourcesets. Classes marked as "internal" are only to be seen inside the same "module". A "module" is https://kotlinlang.org/docs/reference/visibility-modifiers.html#modules[defined] as:
+
+* an IntelliJ IDEA module
+* a Maven project
+* a Gradle source set (with the exception that the test source set can access the internal declarations of main)
+* a set of files compiled with one invocation of the <kotlinc> Ant task</kotlinc>
+
+So, basically I do define a new gradle sourceset inside my "module" which makes the integrationTest then a different kotlin module.
+
+== The Reason
+
+On compilation of a kotlin module, the compiler generates a file named *module-name*.kotlin_module inside the META-INF-folder of this module (you can usually find this in the build/classes folder of your project). +
+So, what happens here? +
+Well, basically kotlin uses name-mangeling to disallow access to classes and methods marked with the "internal"-modifier. This is roughly and shortly described in a blog-post https://blog.jetbrains.com/kotlin/2015/09/call-for-feedback-upcoming-changes-in-kotlin/[here] (search for *Internal visibility and mangling*).
+
+== The solution
+
+Since this mangling uses the module-name (which is usually the name of the module inside IntelliJ exclusive the suffix .main) I thought it a good idea to provide the same module name to my integrationTests-Compilation-step. Unfortunately this was to no avail. +
+I found out about another Parameter in the kotlin compiler called "friend-paths". I tried to set this one in gradle as well (you need to use the -X in front of this parameter), but this also didn't work out quite as wanted. +
+What really worked in the end, was to "associate" the compilation-unit in gradle with the main-compilation-unit. 
+
+----
+kotlin.target.compilations.getByName("test") {
+associateWith(target.compilations.getByName("main"))
+}
+----
+
+There are already quite some issues in YouTrack (Issue Tracker of Jetbrains used for kotlin and its libraries), but you still need to look for the right keywords to be able to find this solution. Hope that this will help other people find the solution. +
+For detailed Issues see https://youtrack.jetbrains.com/issue/KT-34901[this] as an example.

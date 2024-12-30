@@ -1,0 +1,12 @@
+= JAR Hell - Version 3.0
+triplem
+2005-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Well, I should have thought about this a little more, while writing the two blogs before. Therefor, for a clear understanding of the problem I am facing, some more comments on this.
+
+All the problems concerning external jars and the repository of the jar-files are a non-issue with us. We use a pretty similar approach like the Apache Depot project did 🙂 Also, because we are using Java Web Start, and we do not like to version the artifacts of each component differently, I have introduced a Version.class to each component, which is used in each artifact of each component. This version class makes sure, that the JWS does not throw a NullPointerException, if the artifacts before and after the version change are the same, means, if the change occurs only in one artifact of the version, then JWS would normally throw a NPE, if another artifact of the same componten has a newer version but did not change. This version class is generated from a properties-file, where the version information is put in by me after a version change.
+
+So, basically the problem with the JARs and the different versions of them comes from multiple versions of multiple components which can use each other. We need a tool which helps basically to manage the classpathes of these components in a central but easy to use way. Hope this helps for a clearer understanding of the problem.

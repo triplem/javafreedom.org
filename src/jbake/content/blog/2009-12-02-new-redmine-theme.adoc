@@ -1,0 +1,10 @@
+= New Redmine Theme
+triplem
+2009-12-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+On the http://openpario.net/projects/archlinuxdevstack[ArchLinux DevStack] Projectpage you can find now a new Redmine Theme. I have posted this on the Redmine page as well. This Theme (ArchLinux Redmine Theme) is based on the Design found on the ArchLinux Pages. 
+
+Have fun using this theme. Please Report any feedback and suggestions on the Projectpage or on the http://www.redmine.org[Redmine] page.

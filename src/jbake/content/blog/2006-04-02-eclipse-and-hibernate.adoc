@@ -1,0 +1,8 @@
+= Eclipse and Hibernate
+triplem
+2006-04-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+I am currently trying to implement an application for the synchronization of some values from the Palm Pilot with the Desktop. Right now I try to do this using the Eclipse RCP Environment as well as Hibernate and HSQL. I have already installed the Hibernate Plugin for Eclipse (3.1) from there Homepage. To get this working in a RCP App you have to modify some files, so that the classpath is correct and you don't get a "hibernate.cfg.xml not found" exception: http://www.hibernate.org/311.html[Hibernate Classpath]. This will work, but the last part (the stuff with the loading of a class) is not really needed. Although I have had some trouble, in loading HSQLDB. I added this to the manifest file of hibernate-Plugin. Now it works. Probably I will not use this plugin for the final release, I would like to use hibernate as well as hsql on its own, without too much dependencies.

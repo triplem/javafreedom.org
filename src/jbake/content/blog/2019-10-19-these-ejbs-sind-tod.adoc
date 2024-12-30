@@ -1,0 +1,58 @@
+= THESE: EJBs sind Tod/JEE ist Tod...
+triplem
+2019-10-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Meine recht provokant formulierte These, das EJBs tot sind, habe ich basierend auf einem wohlbegründeten Bauchgefühl meiner bescheidenen Erfahrung vor einiger Zeit getätigt. Nun hat mich eine vertiefende Betrachtung und eine durch Fakten belegte Begründung interessiert. Diese könnt Ihr hier lesen.
+
+Schaut man sich die beiden Spezifikationen EJB und CDI an, so wird man feststellen, das diese beiden Technologien recht ähnlich aufgebaut sind. In einigen Artikeln wird gar davon gesprochen, das EBJ &gt;= CDI ist [https://stackoverflow.com/questions/13487987/where-to-use-ejb-3-1-and-cdi?answertab=active#tab-top[Freely Mix EJB and CDI]]. So erscheint also eine Betrachtung der beiden Spezfikationen gegeneinander kaum sinnvoll. Ich versuche mich dennoch, um im Fazit dann auf den Grund dafür einzugehen.
+
+Einen Quellennachweis habe ich versucht, an die einzelnen Punkte anzuhängen, erhebt jedoch keinen Anspruch auf Vollständigkeit. Auch hier gilt, das sich jeder eine eigene Meinung bilden sollte. Über Feedback würde ich mich sehr freuen.
+
+== EJB
+
+EJBs werden seit 1997 spezifiziert und spätestens durch die Adoption von SUN 1999 auch genutzt [https://en.wikipedia.org/wiki/Enterprise_JavaBeans[Wikipedia EJBs]]. Mit den Versionen 1.0/1.1 und 2.0 wurde eine sehr strikte und Code-Intensive Umsetzung der Spezifikation angeboten. So war es z.B. zwingend erforderlich, das man Interfaces implementiert. Insbesondere in den Versionen 1.0/1.1 mussten auch lokale Beans immer über Corba aufgerufen werden, auch wenn man ein Distributed Computing nicht verwendete. Dies führte zu einem hohen Performance impact [https://en.wikipedia.org/wiki/Enterprise_JavaBeans#History[Wikipedia EJBs History]]. Dies änderte sich dann mit Version 2.0.
+
+In der Version 3.0 der EJB-Spezifikation (2004) wandte man sich in Teilen von den bisherigen Konzepten ab, und übernahm Konzepte aus dem bereits damals schon aufkommenden und als leichtgewichtiger empfundenen Spring Framework. So wurde hier verstärkt auf Annotationen und nicht mehr auf die Implementierung von Interfaces gesetzt.[https://en.wikipedia.org/wiki/Enterprise_JavaBeans#History[Wikipedia EJBs History]].
+
+Eine Versions-Historie bis zur Version 3.2 (2013) kann man unter [https://en.wikipedia.org/wiki/Enterprise_JavaBeans#Version_history[Wikipedia EJBs Versions Historie]] einsehen.
+
+== CDI - Contexts and Dependency Intjection
+
+Bereits mit der EJB Spezfikation 3.1 und dem JEE Stack 6 (2009) wurde CDI [https://de.wikipedia.org/wiki/Contexts_and_Dependency_Injection[Wikipedia CDI]] eingeführt. Dieses Konzept entstammt in weiten Teilen dem Spring Framework und beruht auf dessen und Google Guice&#8216; Konzepten.
+
+Im folgenden möchte ich auf einige Punkte in der JEE Spezifikation eingehen, die meist mit EJBs umgesetzt werden.
+
+== Remoting
+
+Im Bereich des Remoting (sprich, die Method Invocation innerhalb einer anderen VM bzw. sogar über Hardware-Genzen hinweg ist ein Einsatzbereich der EJBs (@Remote). Dieses Paradigma wird in einigen Applikationen für die Kommunikation zwischen verschiedenen Applikatiionen genutzt. Dieses Programmier-Paradigma ist längst durch andere Paradigmen mit loser Kopplung (zB. REST [http://www.adam-bien.com/roller/abien/entry/are_local_and_remote_ejb[Adam Bien - Local and Remote EJB]]) abgelöst worden.
+
+Für die Asynchrone Kommunikation werden vielfach die Message Driven Beans (MDB) und JMS eingesetzt. Dies wird voraussichtlich mit der JEE 9.0 Spezifikation auch in CDI abgebildet, so dass eine Verwendung von MDBs in Zukunft nicht mehr notwendig erscheint [https://www.eclipse.org/community/eclipse_newsletter/2018/november/birdseyejavaee8.php[Eclipse JEE8 - Absatz CDI 2]]. Derzeit erscheinen diese jedoch immer noch eine einfache Möglichkeit um asynchron Messages zwischen Systemen auszutauschen.
+
+== Security
+
+Im Bereich der Security haben EJBs auch eine Stärke, die mit CDI1.1/1.2 leider noch nicht komplett aufgehoben wurde. Dennoch ist es bereits in dieser Version möglich, die von EJB bekannten Sicherheitskonzepte einfach "nachzubauen"[https://jaxenter.de/wofuer-braucht-man-java-ee-7-eigentlich-noch-ejbs-13386#security[Wofür braucht man JEE eigentlich noch - Absatz Security]].
+
+== Transaktionshandling
+
+Mit CDI1.1 wurde das Transaktionshandling mit dem Handling von EJBs weitgehend angeglichen. Bei der Behandlung von Exceptions ist CDI sogar besser als das bisherige EJB Konzept. Eine Ausnahme bildet der Einsatz von sogenannten Extended Transactions, die die Objekte nach dem Ende einer Transaktion nicht von der DB detachen und so einen einfacheren Flow der Daten ermöglichen [https://jaxenter.de/wofuer-braucht-man-java-ee-7-eigentlich-noch-ejbs-13386[Wofür braucht man JEE eigentlich noch - Absatz Transaktionsbehandlung und JPA]].
+
+Hier hat sich bereits jetzt in Projekten "eingebürgert", das Objekte gemerged werden, was eine Extended Transaction nicht mehr notwendig macht. Dies geschieht häufig in einer zentralen DAO Klasse.
+
+== Scheduling
+
+Mit JEE8 wurde leider nicht, wie ursprünglich geplant, die @Schedule-Annotation in CDI implementiert. Dies ist auch weiterhin nur über ein Singleton-EJB möglich. Bei Bedarf kann diese Zeitsteuerung aber über entsprechende Zusatzbibliotheken auch in CDI nachgerüstet werden [https://www.mirkosertic.de/blog/2016/01/how-to-schedule-jobs-in-a-java-cdi-environment/[Schedule Jobs in CDI]].
+
+== Startup
+
+Häufig sollen beim Startup eines Containers einige Funktionen ausgeführt werden, zB. um spezifische Konfigurationsdaten zu lesen. Auch dies wurde mit CDI 2.0 noch nicht umgesetzt. Auch dies kann bereits in CDI 1.1 recht einfach nachgebildet werden [https://rmannibucau.wordpress.com/2015/03/10/cdi-and-startup/[CDI and Startup]].
+
+== FAZIT
+
+Da immer noch ein paar (wenige) Features in der EJB Spec nicht in CDI abgebildet sind, ist es derzeit nicht möglich, die EJBs bereits aus den Projekten zu entfernen. Dies ist auch nicht notwendig, da die beiden Spezifikationen sehr gut miteinander kooperieren. Dennoch empfiehlt es sich, bei einer Implementierung eines Projektes darauf zu achten, das die EJBs in Zukunft durch CDI abgelöst werden (könnten). Um dann zusätzliche Aufwand zu vermeiden (wie zB. bei den in JEE8 deprecateden @ManagedBean und den daran hängenden Scopes) sollte somit vorwiegend CDI eingesetzt werden.
+
+Die Fokussierung auf Microservices und schnell startende bzw. Self-Contained Container [https://docs.thorntail.io/[Thorntail]] und die damit zusammenhängenden Mirco-Profiles [https://microprofile.io/[Microprofile]] ergibt sich, zumindest aus meiner Perspektive, ein klarer Trend in Richtung einer EJB-losen Welt.
+
+Für die Zukunft gerüstet sein, heißt hier also ganz klar, auf EJBs möglichst verzichten [https://www.eclipse.org/community/eclipse_newsletter/2018/november/birdseyejavaee8.php["birdseye JEE8 - Absatz CDI 2, letzter Abschnitt"]].

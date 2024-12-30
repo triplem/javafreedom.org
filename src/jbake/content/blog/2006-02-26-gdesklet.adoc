@@ -1,0 +1,8 @@
+= gDesklet
+triplem
+2006-02-26
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today I have written my first gDesklet. This one shows some basic weather information of the city you live in, in an FTB-desklet. There is a script (FTB), which is used here, so that this new desklet is integrateable into the FTB environment. You can see screenshots and more at the http://gdesklets.gnomedesktop.org/categories.php?func=gd_show_app&gd_app_id=297[gDesklets] site. Please feel free to download and rate this real nice desklet

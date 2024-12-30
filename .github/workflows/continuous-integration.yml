@@ -1,0 +1,53 @@
+name: CI Build
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build and deploy
+        run: ./gradlew bake
+
+      - name: compress all generated files
+        run: |
+          cd build/jbake
+          tar -cf ../html.tar.gz *
+
+      - name: copy to remote server
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ./build/html.tar.gz
+          host: ${{ secrets.SSH_HOST }}
+          remote: ${{ secrets.SSH_DIR }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+
+      - name: extract (publish) on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            rm www.javafreedom.org/* -rf
+            tar xvf html.tar.gz --directory www.javafreedom.org
+            mv html.tar.gz html.tar.gz.$(date +%Y%m%d_%H%M%S)

@@ -1,0 +1,14 @@
+= Sell out the ASF…????
+triplem
+2007-02-24
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Communities
+
+Currently I am looking a little into the Java EE 5 Stuff from SUN. During the researches I discovered a new company on the horizon http://www.simulalabs.com/[Simula Labs]. This company seems to be basically build up on the work done in the open source area of the Apache Software Foundation.
+
+I am not sure, if this is right. Is this company just getting products out of the ASF and market these products or is it also investing time and money into the ASF? I hope it is the latter.
+
+Anyway, I believe that Open Source is not really anymore an area, where some geeks just write up some nice code. Now it seems that it is all about earning money and about getting attention. The main example of this is probably SUN, which releases their application Server as Glassfish in an Open Source manner, IBM with Eclipse pretty much the same, and even Red Hat (with JBoss) is an example for this.
+
+So where does this take us? I hope, that the communities are not going to be splitted due to the mentioned facts. Let's wait and see…

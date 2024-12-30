@@ -1,0 +1,8 @@
+= XMLFavorites
+triplem
+2006-01-28
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Today I got a message from sourceforge.net, that one of my projects will be closed. It is XMLFavorites, which is really one of my first projects. It converts the bookmarks of Internet Explorer into an HTML-page, which is readable by any browser. So if you are interested in this project, please join it or write me an email, then I can leave it open to the public. Otherwise it will get deleted, because I am not interested in it anymore, since I am not an IE user any more

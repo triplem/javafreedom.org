@@ -1,0 +1,8 @@
+= Another Day, ...
+triplem
+2004-03-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Today the biggest computer fair in the world CeBIT in Hannover, Germany started. Does anybody know what CeBIT meant? It is really a shortcut for "Centrum für Büro und Informationstechnik". Ah, Apache will be there on Saturday and Sunday as well. So if you would like to meet some of the Apache Developers and Community-Members, come to the OpenBooth of the LinuxPark (Hall 6, B52/C52). Another thing happend today/yesterday is that Struts is now a top level project at apache. Congrats from me 🙂

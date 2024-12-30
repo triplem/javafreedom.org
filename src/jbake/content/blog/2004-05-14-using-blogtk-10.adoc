@@ -1,0 +1,8 @@
+= Using BloGTK 1.0
+triplem
+2004-05-14
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+This is my first post using BloGTK and the MetaBlogingAPI. I hope, that this will work 🙂

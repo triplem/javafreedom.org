@@ -1,0 +1,8 @@
+= Hack the LaFonera II
+triplem
+2007-01-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Communities, WLan, Linux
+
+If you have a new Firmware on your LaFonera (e.g. 0.7.1r1) you should use the description found on http://futejia.blogspot.com/2006/12/my-way-to-hack-lafonera.html[this] page. It uses another field then found in the https://www2.blogger.com/comment.g?blogID=3549947902298705622&postID=399239152421911727[BingoBommel] hack, and therefor it will work even with this firmware version. You will get some strange errors telling you, that no fieldvalue for the Channel and Method (B/G) was given. Just use the other hack, and you will get lucky as well.

@@ -1,0 +1,56 @@
+= Installing Maemo on Ubuntu
+triplem
+2008-03-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Hello,
+
+currently I am interested in the http://maemo.org[Maemo] Development Environment for the Nokia N800 devices. Since I am using an Ubuntu distribution, I though it is quite easy to install.
+
+As a first step, download the needed scripts from the Maemo.org (http://repository.maemo.org/stable/chinook/) site (download the -scratchbox-* and the -sdk-* files). Then take a close look into the Install.txt in the same directory. The Installation went pretty smoothly until I wanted to start scratchbox. There I got the error: 
+
+----
+ERROR: '/opt/scratchbox/sbin/chroot-uid' is not suid ROOT
+
+----
+
+which can easily resolved through 
+
+----
+$sudo chmod u+s /opt/scratchbox/sbin/chroot-uid<br />
+
+----
+
+After this I ran into another problem with 
+
+----
+Inconsistency detected by ld.so: rtld.c: 1192: dl_main: Assertion `(void *) ph->p_vaddr == _rtld_local._dl_sysinfo_dsoâ€™ failed!<br />
+
+----
+
+I browsed the internet and stumbled across the following solution (found http://www.progbox.co.uk/wordpress/?p=453[here]:
+
+----
+su
+echo 0 > /proc/sys/vm/vdso_enabled
+exit
+
+----
+
+Since I am running Ubuntu, I cannot change to a super-user and have to use sudo instead. Therefor the command must be used in the following way: 
+
+----
+sudo echo 0 | sudo tee -a /proc/sys/vm/vdso_enabled
+
+----
+
+Furthermore, I stumbled across the error, that Scratchbox devkit perl was not found. Just make an 
+
+----
+sudo apt-get remove scratchbox-devkit-perl
+sudo apt-get install scratchbox-devkit-perl
+----
+
+Now the whole sdk-Install should run through.

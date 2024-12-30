@@ -1,0 +1,10 @@
+= ArchServer RC3 release
+triplem
+2011-02-23
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Hello,
+
+on Monday this week (the 21 Feb. 2011) we released the latest ArchServer Release Candidate 3. Hope that this one will be donwloaded as much as RC2 and we are receiving some more interest in the project. You can find a detailed list of all the news and fixes in this release on the http://www.archserver.org/index.php?mact=News,cntnt01,detail,0&cntnt01articleid=46&cntnt01origid=15&cntnt01returnid=22[News] page on the http://www.archserver.org[ArchServer] Homepage.

@@ -1,0 +1,102 @@
+= Sympa Mailinglist Server on CentOS 6.4 using PostgreSQL
+triplem
+2013-03-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+To install Sympa on a CentOS 6.4 machine is not as easy as one would expect. I found http://permalink.gmane.org/gmane.mail.sympa.user/1255[this] entry in one of the mailing lists, and I have to admit, it works like a charm 😉
+
+So, here once again, for reference:
+
+----
+cd /etc/yum.repos.d
+wget http://sympa-ja.org/download/rhel/6/sympa-ja.org.rhel6.repo
+cd /var/tmp
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -i epel-release-6-8.noarch.rpm
+yum install sympa-httpd
+Review /usr/share/doc/sympa-6.1.17/README.RPM-install
+
+----
+
+After this, I needed to install a RDBMS, and since I do prefer http://www.postgresql.org/[PostgreSQL] I installed it (using the tutorial from http://www.if-not-true-then-false.com/2010/howto-install-postgresql-8-4-database-server-on-centos-fedora-red-hat/[here]) via:
+
+----
+yum install postgresql postgresql-server postgresql-contrib postgresql-devel 
+# Initialize database directory
+service postgresql init
+# Start service
+service postgresql start
+# create sympa db
+su postgres
+>createdb sympa
+>psql sympa
+>>CREATE ROLE sympa WITH SUPERUSER LOGIN PASSWORD 'sympa';
+>>\q
+>exit
+
+----
+
+Furthermore, I adopted the file pg_hba.conf:
+
+----
+#host all all 127.0.0.1/32 ident
+host all all 127.0.0.1/32 md5
+#host all all ::1/128 ident
+host all all ::1/128 md5
+
+----
+
+To check, if the connection is working, try: 
+
+----
+psql -h localhost -U sympa sympa
+
+----
+
+Also the perl package DBI:Pg is needed for the connection of sympa to postgres.
+
+----
+yum install perl-DBD-Pg
+
+----
+
+After all these preparations, we are going to install sympa.
+
+----
+sympa_wizard.pl
+
+----
+
+Note, that it is possible to change the made settings in the /etc/sympa/sympa.conf file. Since we are using PostgreSQL we do have to adopt the setting db_port in this file to 5432.
+
+To create the DB correctly (basically, the DB is already created above), I had to comment out the database creation in the file /usr/share/sympa/bin/create_db.Pg:
+
+----
+--CREATE DATABASE sympa;
+
+----
+
+Unfortunately the script `sympa.pl --create_db` was not working correctly for Postgresql, and therefor I tried to run the DB creation script manually:
+
+----
+psql -h localhost -U sympa sympa
+>\i /usr/share/sympa/bin/create_db.Pg
+>\q
+
+----
+
+After this, everything seemed to be alright 😉 And another thing, CentOS seems to be pretty restrictive, so please stop iptables or adopt the settings, otherwise it is not possible to connect to the server from the outside.
+
+Not everything is alright here, I needed to change some of the premissions of the fcgi-Scripts in /usr/libexec/sympa as well as the description for the file /etc/sympa/sympa.conf. Furthermore centOs is making heavy use of SELinux, therefor some additional settings need to get applied:
+
+----
+setsebool -P httpd_can_sendmail 1
+----
+
+Since I am using this only in a virtual box, I disabled SELinux completely, therefor the above statement is not necessary at all anymore.
+
+After all this, sympa is still running in maintenance mode, because of several permission restrictions of sympa (which are fine for productions environments, but for a development environment these are just nasty). Therefor I followed http://www.sympa.org/manual/web-interface[this] guide (specifically: run apache as the user sympa).
+
+Btw, if you wander, why the heck CentOS is now on my list of OSes, this is mainly to work with the same environment like my hoster and on ArchLinux I did have a lot of trouble to install Sympa as well ;-( I am working with Sympa now in a VBox, so that it does not disturb my normal system usage.

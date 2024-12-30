@@ -1,0 +1,9 @@
+= DevOpsKube: Make Jenkins build Docker Images
+triplem
+2016-11-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+We did add the possibility to build Docker Images using Jenkins in our latest update of the https://github.com/devopskube/devopskube/tree/master/charts/jenkins[Jenkins Chart]. You can use a Jenkinsfile to configure the Image-Build-Job (see https://github.com/devopskube/docker-mysql[Docker Mysql]). This script shows pretty easy, on how to build the docker image like it is done on the Docker-Hub Automatic Build. Basically this script checks out the Git-Repository, builds the Image and checks if the latest commit is a tag, and if so, tags the image accordingly. In each case the Image is then published on Docker Hub using the tag "latest". +
+To make the tagging working, we do use the python script https://pypi.python.org/pypi/bumpversion[BumpVersion]. To see how this works, you can take a look into the Makefile of this project.

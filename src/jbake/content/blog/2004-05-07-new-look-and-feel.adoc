@@ -1,0 +1,10 @@
+= New Look and Feel
+triplem
+2004-05-07
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Okay, I just created this new look and feel for my blog. what do you think? it is still based in major parts on the standard from http://sotto.org/[Roswell Sotto], but also some slight _improvements_ are done. basically now you can see the description of the blog, which is normally not the case in Sottos theme. Anyway, I am a programmer and not a HTML and CSS specialist, but I hope that I did a great job. so, if you have any comments on this, go ahead and tell me 🙂
+
+This entry was obviously for my old blog and is not valid anymore.

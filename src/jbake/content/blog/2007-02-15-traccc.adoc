@@ -1,0 +1,11 @@
+= TracCC
+triplem
+2007-02-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+
+I have now updated the TracCC plugin to Trac 0.11dev. You can download the egg-file link:/projects/traccc/TracCC-0.2.1-py2.4.egg[here].
+
+I have already put the corresponding patches into the ticket system of the original trac project at https://oss.werkbold.de/trac-cc/[oss.werkbold.de], take a look at ticket https://oss.werkbold.de/trac-cc/ticket/25[#25].

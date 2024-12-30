@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>reconstructor.core.image.Image</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="reconstructor-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="reconstructor-module.html">Package&nbsp;reconstructor</a> ::
+        <a href="reconstructor.core-module.html">Package&nbsp;core</a> ::
+        <a href="reconstructor.core.image-module.html">Module&nbsp;image</a> ::
+        Class&nbsp;Image
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/reconstructor.core.image.Image-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="reconstructor.core.image.Image-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class Image</h2>
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="reconstructor.core.image_filesystems.Debian-class.html"><code>Debian</code></a>,
+    <a href="reconstructor.core.image_filesystems.InitRd-class.html"><code>InitRd</code></a>,
+    <a href="reconstructor.core.image_filesystems.Remaster-class.html"><code>Remaster</code></a>,
+    <a href="reconstructor.core.image_filesystems.SquashFs-class.html"><code>SquashFs</code></a></dd></dl>
+
+<hr/>
+
+Deals with extracting or building different types of disk images.
+<hr/>
+
+<p><b>Status:</b> Specification
+</p>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>root</span>)</span></code>
+<br />
+Initialize the Object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#build_from_directory" class="summary-sig-name"><code>build_from_directory</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+builds the target image from the target directory.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#extract_from_image" class="summary-sig-name"><code>extract_from_image</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Extracts the image from the target image to the target directory.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#root" class="summary-sig-name"><code>root</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the root of this Image</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#set_target_directory" class="summary-sig-name"><code>set_target_directory</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>targetDirectory</span>)</span></code>
+<br />
+Sets the target directory, where the image is extracted to or the 
+image is build from.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#set_target_image" class="summary-sig-name"><code>set_target_image</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>targetImage</span>)</span></code>
+<br />
+Sets the target image.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#target_directory" class="summary-sig-name"><code>target_directory</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the target directory, where the image is extracted to or the 
+image is build from.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.core.image.Image-class.html#target_image" class="summary-sig-name"><code>target_image</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the target image.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>root</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  Initialize the Object.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>root</b></code> -
+         the root of this image
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="build_from_directory"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">build_from_directory</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  builds the target image from the target directory.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="extract_from_image"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">extract_from_image</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Extracts the image from the target image to the target 
+  directory.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="root"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">root</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the root of this Image
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        Root of this image
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="set_target_directory"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">set_target_directory</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>targetDirectory</span>)</span>
+  </h3>
+  Sets the target directory, where the image is extracted to or the 
+  image is build from.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>targetDirectory</b></code> -
+         The target directory.
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="set_target_image"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">set_target_image</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>targetImage</span>)</span>
+  </h3>
+  Sets the target image.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>targetImage</b></code> -
+         the image file to create the image in.
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="target_directory"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">target_directory</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the target directory, where the image is extracted to or the 
+  image is build from.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        The directory where the image is extracted to.
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="target_image"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">target_image</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the target image.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        target image
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="reconstructor-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Sun Jan 28 22:51:50 2007</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

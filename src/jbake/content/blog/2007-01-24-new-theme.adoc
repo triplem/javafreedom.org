@@ -1,0 +1,10 @@
+= New Theme
+triplem
+2007-01-24
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+I just put up this bright new theme. If you like it, you can even link:/projects/wordpress_theme/vertigo.zip[download] it. This theme is based on the works of http://www.briangardner.com/themes/[Brian Gardner] and his theme http://www.briangardner.com/themes/vertigo-squared-wordpress-theme.htm[Vertigo Squared].
+
+If you don't like this theme, or you have any suggestions, please write me an email, or stay silent 🙂

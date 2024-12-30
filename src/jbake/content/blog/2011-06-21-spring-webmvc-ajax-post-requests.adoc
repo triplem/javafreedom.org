@@ -1,0 +1,31 @@
+= Spring WebMVC Ajax Post-Requests
+triplem
+2011-06-21
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Today I tried to improve the performance of our newest webapp. We are using a DOJO Tree for displaying the structure of a document on the left side. This tree can be quite big and the loading of this tree takes quite some time. Therefor I decided to use AJAX to load only fragments of the page if possible. 
+
+This went quite well for most of the pages, because for the GET Requests, you can easily use something like 
+
+----
+var xhrArgs = {
+         url: url,
+         content: { "fragments": "body" },
+         headers: {"Accept": "text/html;type=ajax"},
+         handleAs: "text",
+         preventCache: false,
+         sync: true,
+         handle: function(response, ioargs) {
+             //alert(response);
+         },
+         load: Spring.remoting.handleResponse,
+         error: Spring.remoting.handleError
+     }
+
+     //Call the asynchronous xhrGet
+     var foo = dojo.xhrGet(xhrArgs);
+----
+
+Unfortunately this is not as easy for Post-Requests. Therefor you can easily use (I found it after quite some googleing) http://static.springsource.org/spring-webflow/docs/2.0.x/reference/html/ch11s04.html[this one]. Please take a close look onto the end of the page and you will see an example showing exactly this one. You have to use the formId parameter, otherwise it will not work as well.

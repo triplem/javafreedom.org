@@ -1,0 +1,8 @@
+= And once again - Sony PCG-GRX616MP and ALSA and debian sarge/sid
+triplem
+2005-01-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux and Laptop
+
+Hmm, I have had to reinstall my debian system (okay, okay I've to admit, that i installed M$ eXtreme Painful) back onto the laptop. I used the new debian installer, which worked quite nicely. Afterwards I directly compiled my own 2.6.9 Kernel and the laptop worked - almost 🙁 The sound was not working. Then I discovered, that there is a script (/usr/share/alsa-base/snddevices) which pretty much does the job. Well, an automatic way would be nice, though! Well, other than that, debian runs pretty smooth and out-of-the box, so to say. I kind of love it 🙂 Greetz

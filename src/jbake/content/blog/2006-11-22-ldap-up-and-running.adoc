@@ -1,0 +1,10 @@
+= LDAP up and running
+triplem
+2006-11-22
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+So, today I defined my LDAP schema, so that I can use LDAP together with evolution. The site http://www.onlamp.com/pub/a/onlamp/2003/03/27/ldap_ab.html?page=3[OnLamp] was quite helpful for this 🙂 Basically I can now write Contacts into the LDAP Directory. Now I am going to try to add the same functionality for egroupware. One of the things I already found out, is, that nearly every application seems to use another schema.
+
+I hope to find a way to match the entries from these schemes 🙂

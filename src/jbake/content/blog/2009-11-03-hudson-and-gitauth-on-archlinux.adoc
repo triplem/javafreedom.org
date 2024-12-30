@@ -1,0 +1,14 @@
+= Hudson and Gitauth on ArchLinux
+triplem
+2009-11-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+I started the development of the http://hudson-ci.org[Hudson] package, an integral part of the ArchLinux Development Stack. This package will use the http://wrapper.tanukisoftware.org/[Java Service Wrapper], like the Sonar and Nexus packages. The only difference to these is, that I have to pack this one here totally on my own, because no pre-packed version exists. 
+
+I hope that I can publish this package quite soon (meaning, this weekend). After this package is done, we can release version 0.2 of the ArchLinux DevStack. 
+
+Another important news is, that I have found another neat tool for Git-Hosting on your own server, which is probably going to be a part of the Development Stack as well. This is a Ruby-only clone of the quite famous http://eagain.net/gitweb/?p=gitosis.git[gitosis] named http://github.com/brownbeagle/gitauth[gitauth]. Currently I am already in contact to the Developer of gitauth, because of some minor issues, which arose during the initial install on my ArchLinux box. I hope that we can solve these issues and that they can (hopefully) provide an LDAP integration for the Git Hosting environment as well.
+
+If you would like to join the team for this Development Stack on ArchLinux, there is still need for helping hands.

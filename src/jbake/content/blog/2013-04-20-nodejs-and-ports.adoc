@@ -1,0 +1,10 @@
+= nodejs and ports
+triplem
+2013-04-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+During my development with nodejs I stumbled over a very annoying problem. The server started, but I was not able to connect to it on the specified port. Furthermore, after a restart of the server, it reported an "EADDRINUSE Address already in use" failure. On further investigations, it looked like that for each time the server started with a port it created a new directory in the application root. 
+
+It took me about one hour, to figure out, that changing the port to a value outside the "root range" (up to 1024 on Linux, but it looks like the same is true for e.g. 3000), everything was working normal. Lesson learned 😉

@@ -1,0 +1,8 @@
+= Midnight Mansion
+triplem
+2005-03-11
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple
+
+Nice Jump and Run game in the style of the old ones (like gianna sisters, e.g.) found http://www.actionsoft.com/midnightmansion.html[here]. This one is for Mac OS only 🙂

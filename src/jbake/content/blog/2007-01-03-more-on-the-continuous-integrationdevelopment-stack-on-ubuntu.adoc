@@ -1,0 +1,116 @@
+= More on the Continuous Integration/Development Stack on Ubuntu
+triplem
+2007-01-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java, Build Management
+
+In the last post, I have written about the installation of the Ubuntu Continuous Integration/Development Stack. I have installed all of the applications and now I have some more notes on this. There are quite some additions to the originally installed stack, as well as some further descriptions, on how to install the whole stack: +
+I added ANT-Contrib as well as JUnit to the ANT installation:
+
+----
+    http://ant-contrib.sourceforge.net/
+    wget http://prdownloads.sourceforge.net/ant-contrib/ant-contrib
+       -1.0b3-bin.tar.gz?download
+    tar xvzf ant-contrib-1.0b3-bin.tar.gz
+    cd ant-contrib-1.0b3
+    cp ant-contrib-1.0b3.jar /usr/share/ant/lib/
+    
+    wget http://prdownloads.sourceforge.net/junit/junit4.1.zip?download
+    unzip junit4.1.zip
+    cd junit4.1
+    cp junit-4.1.jar /usr/share/ant/lib
+----
+
+For testing purposes there is a need for a sample project. Therefor I downloaded a project from the Apache Software Foundation and imported it into the SVN Repository.
+
+----
+    wget http://apache.mirroring.de/jakarta/commons/math/source
+    /commons-math-1.1-src.zip
+    unzip commons-math-1.1-src.zip
+    mv commons-math-1.1-src commons-math
+    cd commons-math
+    mkdir trunk
+    mv * trunk
+    mkdir tags
+    mkdir branches
+    
+    svn import /home/mmay/projects/commons-math 
+       file:///var/svn/sample/ -m "initial import"
+----
+
+You can have a look at the SVN trunk via the Web-Interface: +
+http://HOSTNAME/svn/sample/
+
+Finally I wanted to use the full CruiseControl functionality, therefor some more configurations where needed. First of all the file /etc/apache2/workers.properties has to be created with the following content (btw, we are using mod_jk and not mod_jk2).
+
+----
+    #
+    # workers.properties 
+    #
+    
+    # In Unix, we use forward slashes:
+    ps=/
+    
+    # list the workers by name
+    
+    worker.list=ajp13_worker
+    
+    # ------------------------
+    # First tomcat server
+    # ------------------------
+    worker.tomcat1.port=8009
+    worker.tomcat1.host=localhost
+    worker.tomcat1.type=ajp13
+----
+
+To use this worker, the file jk.conf (directory: /etc/apache2/conf.d/) has to be configured:
+
+----
+    ### MOD_JK Conf
+    JkWorkersFile   /etc/apache2/workers.properties
+    
+    # The location where mod_jk is going to place its log file
+    JkLogFile       /var/log/apache2/mod_jk.log
+    
+    # The log level:
+    # - info log will contain standard mod_jk activity (default).
+    # - warn log will contain non fatal error reports.
+    # - error log will contain also error reports.
+    # - debug log will contain all information on mod_jk activity
+    # - trace log will contain all tracing information on mod_jk
+    #   activity
+    JkLogLevel      info
+    
+    
+    # Assign specific URLs to Tomcat. In general the structure of a
+    # JkMount directive is: JkMount [URL prefix] [Worker name]
+    
+    # send all requests ending in .jsp to ajp13_worker
+    JkMount /*.jsp ajp13_worker
+    # send all requests ending /servlet to ajp13_worker
+    JkMount /*/servlet/ ajp13_worker
+    
+    ## Cruisecontrol
+    JkMount /cruisecontrol/* ajp13_worker
+    
+    # JkUnmount directive acts as an opposite to JkMount and 
+    # blocks access to a particular URL. 
+    # The purpose is to be able to filter out the
+    # particular content types from mounted context.
+    
+    # do not send requests ending with .gif to ajp13_worker
+    #JkUnMount /servlet/*.gif ajp13_worker
+----
+
+To get everthing right, some permissions have to be set as well. First some changes to the tomcat policies (create a file /etc/tomcat5/policy.d/15cruisecontrol.policy) with the following content:
+
+----
+    grant codeBase "file:///usr/share/tomcat5/webapps/cruisecontrol/-" {
+      permission java.security.AllPermission;  
+    };
+----
+
+After this the permissions for the cache directory (can be configured in the web.xml of cruisecontrol) have to be set correctly. This means, that the user tomcat5 should be the owner of the directory (/var/cache/cruisecontrol).
+
+Now we are done, and can enjoy using the stack. Await some more improvements to trac as well as some other niceties.

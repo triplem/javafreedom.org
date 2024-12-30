@@ -1,0 +1,10 @@
+= Trac Alternative
+triplem
+2008-04-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Just found another alternative for the Trac framework:
+
+http://retrospectiva.org/

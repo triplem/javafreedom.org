@@ -1,0 +1,12 @@
+= DevOpsKube - Redmine SSO with KeyCloak via OpenId Connect
+triplem
+2017-01-08
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Because we could not make the logout functionality work using the SAML Plugin of Redmine (see last post), we decided to use the https://bitbucket.org/intelimina/redmine_openid_connect[OpenId Connect Plugin]. Due to the fact, that some functionality (eg. SSL Validation was always enabled, which is not wanted in Development Environments) we have forked this plugin and implemented some fixtures (see https://bitbucket.org/triplem74/redmine_openid_connect[here]). Those fixtures are already commited to the original project as Pull Requests. As soon as those are merged, we are going to use the original version instead of our fork.
+
+Obviously DevOpsKube is not interested in a manual configuration of this SSO connection, but some documentation is always helpful. Unfortunately we haven't found any documentation about the Integration of Redmine and KeyCloak via the OpenId Connect Plugin, therefor we do provide some additional documentation about this integration on our http://devopsku.be/setup/redmine_keycloak/[DevOpsKube Documentation]. The Integration is already commited into our Repositories, but there is still some work to do on the KeyCloak setup (we do need to implement keys, which are used in Redmine as well as KeyCloak). As soon as this is done, we have implemented the first full integration between two components of our DevOpsKube Stack.
+
+Hope you do find this helpful. If you would like to support us, in building up a modern SDLC stack on Kubernetes, do not hesitate to join our effort.

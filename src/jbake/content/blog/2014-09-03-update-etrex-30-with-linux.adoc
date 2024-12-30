@@ -1,0 +1,12 @@
+= Update eTrex 30 with Linux
+triplem
+2014-09-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I am a proud owner of an Garmin etrex 30. Since I do run Linux on all my machines at home, I tried several ways to update the firmware of this device. Unfortunately this is not possible, using WebUpdater from garmin directly. A tool which should make it easy (and most probably it does on windows and/or mac) makes it hard to do on Linux.
+
+Anyways, a download of the lates firmware can be found at http://garmin-etrex.wikispaces.com/firmware. You just need to rename the Downloaded file to GUPDATE.GCD and move it to /Garmin/ on your Garmin device.
+
+After a restart of the eTrex 30, all seems to be fine.

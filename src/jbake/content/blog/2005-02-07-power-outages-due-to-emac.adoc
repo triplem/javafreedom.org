@@ -1,0 +1,10 @@
+= Power Outages due to eMac???
+triplem
+2005-02-07
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Home Entertainment, Common
+
+In my last blog, I wrote about the problems I have with the power outages, as soon as I connect my nice little eMac with my Hifi. I tried to get rid of all un needed equipment on my power lines. So only the hifi and the mac, but still I have a power outage. It looks like the mac is not really protected against such stuff 🙁 What to do now? I am very very very upset about this.
+
+A possible solution would be to get another mac (well, this time a powerbook). But I have already more then enough computers, and therefor I would like to get the current setup up and running. Jeez, I thought I have already the solution, but the problem was, that I have had the mic connected to the stereo and not the headphones jack. after I switched the jacks, the same thing happend again. Another nice power outage, while only the mac and the stereo where connected to the power plug 🙁 This is really nasty. Seems like I need another computer (Powerbook or Powermac) to get this now up and running. BTW, Aiport Express is not an option, since I would also like to connect a mixer (Numark DMX-01USB) to the eMac and the stereo. Very bad now…

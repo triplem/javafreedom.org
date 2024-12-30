@@ -1,0 +1,24 @@
+= Development Stack (Development Server for ArchLinux)
+triplem
+2009-10-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Quite a long time ago (http://javafreedom.org/blog/?p=114[January 2007]) I have already planned to publish a Development Stack for a Linux Server. This plan failed on the Ubuntu Platform. Now I am planning the same for the ArchLinux Distro. Due to the fact, that packages can be put together and uploaded way easier then on any other Disto I know, this time, I will not fail 🙂
+
+The first package was released the day before yesterday. Please read the previous Post for more informations.
+
+The package is called http://aur.archlinux.org/packages.php?ID=31275[Redmine-Mysql-SVN]. If you are interested in helping me building the whole Stack, please contact me. 
+
+Currently I am dreaming of the following packages:
+
+* http://www.redmine.org[Redmine] - Project Management Software
+* http://sonar.codehaus.org[Sonar] - Quality Management Software
+* http://nexus.sonatype.org[Nexus] - Maven Repository Manager
+* http://hudson-ci.org/[Hudson] - Continuous Integration Server
+* http://www.git-scm.org[GIT] - Distributed Version Control System
+
+All striked packages exists already for ArchLinux. Therefore they do not have to be build again. Probably the whole stuff is then packed together using another package. Because most of these Services do provide their own HTTP Server (e.g. Redmine is using Webrick, Sonar, Hudson and Nexus come with Jetty), I would like to provide some nice integrations into one server (Tomcat and Apache HTTPD in this case), so that the overhead can be kept to a minimum.
+
+What do you think? I would definitly like to make this package work and would appreciate any help.

@@ -1,0 +1,23 @@
+= Bylaws
+triplem
+2006-10-23
+:jbake-type: page
+:jbake-status: published
+
+Alle Rechte vorbehalten. Jegliche Vervielfältigung oder Weiterverbreitung in jedem Medium als Ganzes oder in Teilen bedarf der schriftlichen Zustimmung. Inhaltlich Veranwortlicher gemäß §6 MDStV:
+
+E-Mail: 160079+triplem@users.noreply.github.com +
+Home: http://www.javafreedom.org[http://www.javafreedom.org]
+
+Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. +
+Ich verstehe einen Link als einfache Zugangsvermittlung im Sinne von §9 TDG, was bedeutet, dass eine Verantwortlichkeit für die fremden Inhalte ohne positive Kenntnis grundsätzlich nicht gegeben ist. Keine Abmahnung ohne vorherigen Kontakt! Sollte der Inhalt oder die Aufmachung dieser Seiten fremde Rechte Dritter oder gesetzliche Bestimmungen verletzen, so bitte ich um eine entsprechende Nachricht ohne Kostennote. Die Beseitigung einer möglicherweise von diesen Seiten ausgehenden Schutzrecht-Verletzung durch Schutzrecht-Inhaberinnen selbst darf nicht ohne meine Zustimmung stattfinden. +
+Ich garantiere, dass die zu Recht beanstandeten Passagen unverzüglich entfernt werden, ohne dass von Ihrer Seite die Einschaltung eines Rechtsbeistandes erforderlich ist. Dennoch von Ihnen ohne vorherige Kontaktaufnahme ausgelöste Kosten werde ich vollumfänglich zurückweisen und gegebenenfalls Gegenklage wegen Verletzung vorgenannter Bestimmungen einreichen. Vielen Dank für Ihr Verständnis. +
+Sollten Sie trotz meiner sorgfältigen Recherchen einen aus Ihrer Sicht bedenklichen Link finden oder einen Link auf Ihre Seite nicht wünschen, so teilen Sie mir dies einfach formlos per E-Mail mit. Zu Recht beanstandete Links werde ich unverzüglich entfernen, ohne dass Sie einen Rechtsbeistand bemühen müssten. +
+Datenschutz und Datenvermeidung ist mir wichtig! Soweit Sie mir über hier vorhandene Formulare oder per E-Mail persönliche Daten von Ihnen übermitteln, werden diese ausschließlich für die von Ihnen angeforderten Angebote genutzt. Es werden immer nur solche Daten abgefragt, die für den jeweiligen Service zwingend erforderlich sind. Diese persönlichen Informationen werden hierzu entweder per EDV innerhalb des Unternehmens oder in einer Datenbank auf meinem Webserver gespeichert. Eine Weitergabe an Dritte erfolgt selbstverständlich nicht! +
+Wie im Internetleben üblich, kann es sein, dass ich mich einige Zeit erneut bei Ihnen per E-Mail melde, um zu erfahren, ob die Informationen für Sie nützlich und hilfreich waren oder um Ihnen Neuigkeiten zum Thema zu senden. Selbstverständlich können Sie dem jeder Zeit widersprechen und die Löschung Ihrer Daten per einfacher Mail verlangen. +
+Wenn Sie meine Internet-Seiten besuchen, speichert mein Web-Server zum Beispiel die IP-Adresse Ihres Internet Service Providers, die Internet-Seite, von der aus Sie gekommen sind, die Internet-Seiten, die Sie hier besuchen sowie das Datum und die Uhrzeit des Besuches. Ferner wird im Logfile des Web-Servers Ihr Betriebssystem, der Browser-Name und die Browser-Version gespeichert. Diese Daten werden zu statistischen Zwecken und zur Verbesserung meines Auftrittes anonym ausgewertet. +
+Die anonymen Daten werden getrennt von den eventuell mitgeteilten personenbezogenen Informationen gespeichert und lassen keine Rückschlüsse auf eine individuelle Person zu. Eine Verknüpfung oder gar Verwertung verknüpfter personenbezogener Informationen mit anonymen Daten findet nicht statt. Durch diese Trennung von anonymen / allgemein-statistischen und personenbezogenen Informationen bleibt Ihre Privatsphäre zu jedem Zeitpunkt geschützt. +
+Sollten Sie weitere Fragen zum Thema Datenschutz und Datenspeicherung haben, zögern Sie nicht mich anzusprechen. Benutzen Sie dazu einfach die oben genannten Kontaktdaten. +
+Sollten Sie den Text dieser Richtlinien oder Auszüge davon auf Ihren Webseiten verwenden wollen, so dürfen Sie das selbstverständlich. Aus reiner Neugier würde ich mich dann über eine kurze Info per E-Mail freuen. +
+Selbstverständlich kann ich für die Wirksamkeit und Verbindlichkeit meiner Formulierungen keine Gewährleistung übernehmen. Und da Sie den Inhalt kostenlos bekommen haben, dürfen Sie ihn auch nur so weitergeben. +
+Und nur um Mißverständnissen vorzubeugen: diese Erlaubnis gilt nur für diese eine Seite, nicht für meinen gesamten Internet-Auftritt.

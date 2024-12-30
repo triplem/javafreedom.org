@@ -1,0 +1,26 @@
+= Classpath Hell (Build- and Runtime)
+triplem
+2005-01-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+After I wrote the last short blog entry, I came to the conclusion, that I should first of all describe my problem a little better. Therefor I am going to provide a short example, so that everybody understand the problem. +
+We have the applications X, Y and Z which are versioned in the same manner and have one productive version 1.3.1, which is in the maintenance branch and also version 2.0.0 which gets to the customer pretty soon. +
+Also we have a couple of different components
+
+* a and b are server side components and have the productive versions 1.4 and 2.1
+* c and d are client side components and have the versions 1.2 and 1.3 also
+* e and f are commonly used components (used on the server as well as on the client) and have the versions 1.5 and 1.6
+
+The versionnumbering is normally not equal for different components, this is just to make things a little easier for this description. So now I have the following usage of the components: 
+
+* X (1.3.1) uses a 1.4 and b 1.4, therefor every other application has to use these components in the same version, since otherwise it would not be possible to deploy these in the same server instance. Therefor Y and Z (1.3.1) uses also a 1.4 and b 1.4
+* X (2.0.0) uses a 1.4 (no problem here) and b 2.1, this is now not really a problem, I only have to update all the applications to use the same version of component b, which means, that Y (2.0.0) and Z (2.0.0) should now also use b 2.1
+* c (1.2) and d (1.2) use e with the version 1.5 and c use the component f in the version 1.6 and d (1.2) use f (1.5) -&gt; This could be a problem, if one of the server side components (a or b) use also the component f, then this would lead to a classpath problem. Therefor, such commonly components should be used in the same version as well.
+* X (2.0.0) uses the client side component c in the version 1.2 and the component d in the version 1.3. Y (2.0.0) uses then c in the version 1.2 as well, but d in the version 1.2.
+
+So basically the classpath for the build time is not organized as a tree and therefor every developer can mingle the classpath like he wants to. This makes it easier for the developer but harder for the "assembler". +
+Did you understand the problem? I hope so. Basically, there needs to be a central point to define the classpath. This central tool should know everything about the dependencies. Also this tool should be able to update the build- as well as the runtime-classspath for every component as well as application. At the moment and after quite a lot of searching (google is not my friend in this case), I did not come to a solution. But I think that there must be at least some solutions, because I don't think, that we are the only company doing such a big J2EE application??!!!??? 
+
+If you have a solution (open or closed source), I would like to know. Probably we could exchange some ideas?

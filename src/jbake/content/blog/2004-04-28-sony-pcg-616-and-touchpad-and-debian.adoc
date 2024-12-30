@@ -1,0 +1,8 @@
+= Sony PCG 616 and Touchpad and Debian
+triplem
+2004-04-28
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux and Laptop
+
+To get the touchpad working under 2.6.5 I just downloaded (because it is still in unstable, therefor you can also use http://jroller.com/page/triplem74/null[pinning], but I think that just downloading is way easier :-)) the http://packages.debian.org/unstable/x11/xfree86-driver-synaptics package. I also edited the http://www.debianforum.de/forum/viewtopic.php?t=23334[XF86-config] file. This was really easy 🙂 Now everthing works fine. I have now installed gtkpod to sync my iPod with linux. Lets see how this is going to work out 🙂

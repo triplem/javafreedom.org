@@ -1,0 +1,8 @@
+= New Blog
+triplem
+2006-10-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Well, I migrated my old blog at jroller.com to here and all reachable entries are available here as well. Hope that you are coming along and still read my posts.

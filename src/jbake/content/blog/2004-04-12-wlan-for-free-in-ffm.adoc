@@ -1,0 +1,9 @@
+= WLAN for Free in FFM?
+triplem
+2004-04-12
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Communities, WLan
+
+Today is still a nice vacation day here in Germany 🙂 Also the weather is pretty nice, so what would you like to get more? Hm, on the other side the work is getting more and more and therefore I am pressed to do some of this stuff today 🙁 But anyway, I will still enjoy the rest of the day and try to get some work done. It is more relaxed to work at home then to work at the office. Sometimes I really miss the time when I was working for the small startup where I was one of the founders. This meant a lot of work, but also a lot of fun 🙂 But I hope, that better times are coming soon. Currently we, a friend of mine, and myself are kind of planning something similar like http://wirelessleiden.nl/[WirelessLeiden.nl]. Dirk, one of the founders of WirelessLeiden (see: http://wiki.wirelessleiden.nl/wcl/cgi-bin/moin.cgi/NodeDirkx[Dirks Node]), whom I met at CeBIT brought me to this idea. Another friend of mine tried something similar in a small town close to Frankfurt, but with a kind of business background. He wanted to earn money with this, but did not get any money from the bank and therefore the whole idea died. I hope, that I can get him and his knowledge now in this kind of "open source" idea, so that we can get whole FFM covered with WLAN for free 🙂 *dream on Markus* 
+Yepp, more dreams are coming up, probably somebody will join us here? Especially we are looking for somebody living in big skyscrapers, so that we can establish line of sight between the whole city 🙂

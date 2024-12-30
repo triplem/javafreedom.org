@@ -1,0 +1,12 @@
+= XBox wireless III
+triplem
+2005-03-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Home Entertainment, XBox, WLan
+
+Hmm, in the last entry, I wrote, that the XBox is running wireless. Well, it was. But now, it isn't once again. Now I have to find out, where the problem is. Very very strange. 
+
+[Update] 
+
+Hello, fortunately my XBox sees now my XNS-Server and all the shared files, but the streaming of the information via wireless network seems to be impossible. What is the problem there? The server or is it the streaming protocol or even the Access Point? Currently I am not sure, but I hope, that I figure this stuff out, I hope.

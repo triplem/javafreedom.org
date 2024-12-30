@@ -1,0 +1,13 @@
+= Create Postgresql Role
+triplem
+2013-10-21
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+----
+CREATE ROLE username WITH LOGIN PASSWORD 'password'; +
+CREATE DATABASE dbname OWNER username;
+----
+
+Edit pga_hba.conf to avoid connections via trust or clear text passwords.

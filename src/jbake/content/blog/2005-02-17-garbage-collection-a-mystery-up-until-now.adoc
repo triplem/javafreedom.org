@@ -1,0 +1,14 @@
+= Garbage Collection - a Mystery - up until now
+triplem
+2005-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Well, in my company, we have had quite some mem leaks in the java application. We bought JProfiler to find out where. Some interesting things showed up there. Up until then, I have not really worked with such an application, and also not too much with the java.lang.References stuff. The biggest question up until now, is, what the usage of the so called "Phantom References" is. I found out, by google a little and found some interesting web sites about this topic:
+
+* http://resources.ej-technologies.com/jprofiler/help/doc/indexRedirect.html?http&&&resources.ej-technologies.com/jprofiler/help/doc/helptopics/config/finalizers.html[JProfiler Help - Phantom References]
+* http://java.sun.com/developer/technicalArticles/ALT/RefObj/[SUN Documentation about References]
+* http://www-106.ibm.com/developerworks/ibm/library/i-garbage1/[IBM article about Garbage Collection]
+
+Hope the dear reader will find these links as helpful, as I found them.

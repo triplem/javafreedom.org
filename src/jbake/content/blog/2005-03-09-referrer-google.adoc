@@ -1,0 +1,8 @@
+= Referrer - Google
+triplem
+2005-03-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+I try to look nearly every day for the referes on my blog. Most of them are coming directly (thanks to all, reading my blog every day) or from jroller.com (well, obviously, since this is the starting point into the jroller.com blogosphere). Some of the referers are coming from Google. The main search topics to come to my blog are Linux, Sony Vaio and also the D-Link WLan Card DWL-650G. Basically most of the time the search expressions are a combination of the forementioned words. I believe that these topics are pretty interesting to the world, and I will write more about these topics in the future. I would like to get some suggestions, about what topic I should write especially

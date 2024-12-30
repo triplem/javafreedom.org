@@ -1,0 +1,18 @@
+= ARCH Linux - First steps
+triplem
+2009-08-12
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+Hello, I do have quite some experiences with Linux Distros (in the last couple of years mainly Ubuntu). Now I have shifted to ARCH. I am going to write more about this choice in the future. Right now I would like to explain, how to get packages (in my case networkmanager-plasmoid-svn) from the AUR to my machine:
+
+1) download a AUR-Helper, I am using http://wikilinux.altervista.org/dokuwiki/doku.php?id=scriptseprogrammi:yogurt[yogurt] (download the code on the bottom of the page. 
+
+2) Yogurt needs a `pacman -S sudo` upfront, because otherwise it is not working correctly 
+
+3) as root call `visudo` and add your user with the following line to the sudoers-file `username   ALL=(ALL) ALL` 
+
+4) change the line `sudo makepkg -s -i || error "Makepkg was unable to create or install the package."` to `makepkg -s -i || error "Makepkg was unable to create or install the package."`
+
+After this "installation" you can now install a new package using yogurt.sh (e.g. ./yogurt.sh networkmanager-plasmoid-svn). If the script asks you for a password, provide you own password.

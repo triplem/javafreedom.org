@@ -1,0 +1,8 @@
+= Airport Express Client for Ubuntu Breezy Badger
+triplem
+2005-12-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Apple
+
+A couple of days ago I found http://raop-play.sourceforge.net/[this] smart little tool (raop-play). Since I am an owner of an Airport Express I wanted to install this tool on Ubuntu using the .deb-File found on the download-links. But they are using an old version of the libfltk-Package. Therefor I have extracted this package and updated the version-information. Now you can find this updated package link:/projects/raop-play_0.5.1_i386_ubuntu_breezy.deb[here]. Have fun, installing it on Ubuntu Breezy Badger.

@@ -1,0 +1,8 @@
+= CeBIT - 2nd day and counting
+triplem
+2004-03-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Today was the 2nd day for me at CeBIT 2004. It was also the first day at the apache.org booth. I have to admit, that I really liked the atmosphere on the booth. Also the neighbours are pretty nice (Gnome and OpenOffice.org). So, the other Apache guys are cool guys as well (Lars and Dirk). Hope to see them and other commiters in November at the next ApacheCon. We will see… Most people coming to the booth were "bag carriers". Means collectors and kids. But because we do not have any give-aways, there is not a real crowed on the Apache.org booth. Most people were asking for Linux Support (as if we are giving this!). The problem is that on the weekend no real business is done. So, real petty for most companies. Hope that tomorrow more people are coming, so that the time is not getting real slow and boring.

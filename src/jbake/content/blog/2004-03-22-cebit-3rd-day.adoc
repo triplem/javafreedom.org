@@ -1,0 +1,8 @@
+= CeBIT - 3rd day
+triplem
+2004-03-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+The third day of the CeBIT was quite quiet 🙂 Not much business people. We could help a couple of guys, but the most people just wanted to get give-aways, which we obviously could not offer. So I have had some nice chit-chats with some of the guys of the gnome foundation. I decided to install debian on my laptop, because right now Windoze is only installed because of the iPod i own. They told me that rythmbox should be able to sync my iPod as well. Later on this week I really would like to try this. Also it is interesting if debian can support my screen (Sony Vaio GRX616MP - resolution 1600*1200). Another problem is then my wi-fi link, because I am using an D-Link DWL-G650B3. Come back to get more informations.

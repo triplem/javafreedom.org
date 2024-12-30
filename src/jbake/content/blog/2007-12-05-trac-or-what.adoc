@@ -1,0 +1,15 @@
+= Trac... or what?
+triplem
+2007-12-05
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+I was just out of curiosity browsing for different alternatives for http://trac.edgewall.org[Trac] and found the following alternatives:
+
+* http://www.redmine.org[Redmine] - written in Ruby
+* http://collaboa.org/[Collaboa] - Ruby, seems to be not mantained anymore
+* http://software.pmade.com/devalot[Devalot]
+* http://plone.org/products/poi[Plone POI]
+
+There is no real ranking done by myself. I will report back, when I found out more.

@@ -1,0 +1,10 @@
+= DevOpsKube: New Homepage
+triplem
+2016-11-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+We just updated our homepage, which is now reachable via the newly registered Domain http://devopsku.be[devopsku.be]. This homepage is fully generated from the README files of the charts as well as some additional Mardown-files.
+
+Please have a look on this new Page. Any contributions are highly welcome.

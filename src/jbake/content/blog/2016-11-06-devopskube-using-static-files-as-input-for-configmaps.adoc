@@ -1,0 +1,18 @@
+= DevOpsKube: Using static files as input for ConfigMaps
+triplem
+2016-11-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+For some of our charts in https://github.com/devopskube/devopskube/tree/master/charts[DevOpsKube] we wanted to use static files as a template, obviously still be able to use Variables from helm (eg. .Release.Name). This seems to be rather easy, looking at the "https://github.com/kubernetes/helm/blob/master/docs/charts_tips_and_tricks.md#using-the-include-function[include]" statement of helm. Unfortunately this is not really well documented and/or not working as expected. Some projects (eg. https://github.com/sapcc/openstack-helm/blob/master/keystone/templates/etc-configmap.yaml[SAP CC-OpenStack] do use this feature as well. I did try to use the same logic, but unfortunately this was not working (with helm 2.0.0-rc1 at least). 
+
+Here are some guidance on how to implement configmaps in kubernetes using helm and static files. First of all, all static files are put into the <chart-name>/etc-directory. These files are not recognized from helm by itself, therefor we do need to create a Partials-Template (named: _partials.tpl). To do this automatically, we added a Makefile, like the one found at the https://github.com/sapcc/openstack-helm/blob/master/keystone/Makefile[SAP-CC] solution. If you then type "make" in the corresponding chart-directory, a templates/_patials.tpl file is generated, which contains all static files in a corresponding "define"-structure. This file is ignored by git.
+
+To reference the structure in the configmap, it can be included by using the following structure:
+
+----
+{{ include "etc/FILENAMD"  .| printf "%s" | indent 4 }}
+----
+
+For a working example of this, please take a look into our https://github.com/devopskube/devopskube/tree/master/charts/jenkins[jenkins] chart.

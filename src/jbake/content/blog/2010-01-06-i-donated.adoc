@@ -1,0 +1,14 @@
+= I donated...
+triplem
+2010-01-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Hello,
+
+today I donated for the http://www.archserver.org[ArchServer.org] project. Please do so as well. This project is already mentioned in the http://distrowatch.com/weekly.php?issue=20100104#stats[Distro Watch] and I believe that there is more to come. 
+
+I have now shifted all my efforts into this project. Even though the ArchLinux Development Stack is not forgotten, in that all packages are still kept up to date. Furthermore the first VirtualBox Image is still to come, even though a little later then expected, due to the effort I am putting in to the ArchServer project.
+
+So, come and join us, you are more then welcome.

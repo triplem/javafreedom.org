@@ -1,0 +1,10 @@
+= Adium
+triplem
+2005-02-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Cocoa, Mac OS X
+
+Through the blog of http://jroller.com/page/lsd[LSD] I found a pretty nice multi protocol IM for Mac OS X called http://www.adiumx.com/[Adium]. Up until now I was using http://fire.sourceforge.net/[Fire], which is a pretty neat tool for this. I really like the LnF of Adium and I have already set up all my accounts in this tool. Lets see where this is going to lead us 🙂
+
+Oh yeah, I did not told you, that LSD is back in the blogosphere 🙂

@@ -1,0 +1,8 @@
+= Semantic Release für gradle Projekte
+triplem
+2022-01-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+A couple of month ago, I started a small test-project and wrote an article about the usage of semantic versioning and releasing using conventional commits together with gradle. This article is an german and can be found https://github.com/triplem/gradle-by-example/blob/main/documentation/docs/conv_commits_de.adoc[here].

@@ -1,0 +1,12 @@
+= Maps for eTrex 30
+triplem
+2014-09-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Common
+
+If you need some nice Topographic maps for hiking purposes, you can download those at http://gps.maroufi.net/mapdownload.shtml.
+
+Another good source seems to be http://freizeitkarte-osm.de/de/deutschland.html.
+
+There are two kinds of Maps. The ones on the left side are for the use with the Garmin device. I usually copy those to the SD card in the directory /Garmin.

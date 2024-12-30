@@ -1,0 +1,34 @@
+= What do I want from my personal NAS
+triplem
+2013-07-22
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Common, Build Management
+
+In this post I would like to gather some personal requirements for a NAS System I am going to build.
+
+Right now, I am in the process of ripping all my CDs (around 950 unique releases – More than half of it is already finished). The target is to store all these releases on a personal NAS with the ability to stream those to my stereo. For this I have already selected http://www.minimserver.org[minimserver] as the UPNP-Server. This server has the requirement of a JDK to let it run. Therefore the NAS I am going to build must have the ability to run JAVA. 
+
+Since I am already using Linux quite heavily I do not like to let http://www.freenas.org/[FreeNAS] or http://www.nas4free.org/[NAS4Free] run on this NAS, also I am very interested in the underlying File System (ZFS) and/or http://www.freebsd.org[FreeBSD].
+
+Since Linux offers a “similar” File System (https://btrfs.wiki.kernel.org/index.php/Main_Page[btrfs]) I would like to use this one for the NAS. 
+
+The services which I would like to run on the NAS are then the following:
+
+* http://www.thekelleys.org.uk/dnsmasq/doc.html[DNS]
+* http://httpd.apache.org/[Web Server]
+* http://www.samba.org/[Samba]
+* https://github.com/triplem/discogstagger/tree/version2[Discogstagger]
+* http://www.minimserver.org[Minimserver]
+* https://btrfs.wiki.kernel.org/index.php/Main_Page[btrfs]
+* http://www.archlinux.org[Arch Linux] - The distro I know the best
+* Possibility to run https://www.virtualbox.org/[Virtualbox]
+
+There some other options, which would be nice, but are not as “necessary”. There is e.g. http://ajenti.org/[Ajenti], which provides a nice WebGUI for the administration of the NAS, but this does not really correspond to the way Arch Linux works 😉 A possibility would be to use e.g. http://www.centos.org/[CentOS] or +
+http://www.ubuntu.com/[Ubuntu] as a distro, but I am unsure, if this is really going to work out, just for a nice GUI????
+
+The above mentioned requirements are not really tough for todays hardware and therefor I would like to stick to the Stack provided in the nas-portal forum (see http://forum.nas-portal.org/showthread.php?17031-Bauvorschlag-NAS-f%FCr-Jedermann-mit-5-6-HDD-ab-xx%80[here]). 
+
+Since I am going to use a filesystem, which seems to be picky about power outages, I am in need of a UPS, and I am currently thinking about http://www.amazon.de/APC-unterbrechungsfreie-Notstromversorgung-100-000-Ger%C3%A4teschutzversicherung/dp/B0002V73O8[this] one.
+
+So I am going to explain some more interesting stuff about the tagging of my FLACs for the minimserver and about the used tool (discogstagger) in some future posts. Stay seated, so that you can see how an absolute Hardware Noob tries to build his own NAS 😉

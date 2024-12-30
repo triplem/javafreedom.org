@@ -1,0 +1,14 @@
+= New Version of the ArchLinux Sonar package in progress
+triplem
+2009-10-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+I started with a new version of the http://sonar.codehaus.org[Sonar] package for ArchLinux. The major improvement will be the separation of configuration files into /etc/sonar and log files into /var/log/sonar. This separation is done via some hard coding of pathes in the sonar.sh and the wrapper.conf. 
+
+If you are interested in this package, this improvement will be put into the http://aur.archlinux.org/packages.php?ID=31321[AUR] soon. 
+
+I hope that these changes can be used also for the Nexus package, which will be put into the AUR soon as well. 
+
+If you are interested in one of these packages, please contact me.

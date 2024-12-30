@@ -1,0 +1,14 @@
+= More thoughts on the ALM Stack
+triplem
+2011-01-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+I am just thinking, that just providing some Toolset, like the ALM Stack is not enough. There is some documentation needed, not only for configuration, maintance and usage of the ALM Stack, but also some hints and best practices for the handling of projects.
+
+Since we are already providing a wiki in our toolbox (Redmine contains a wiki), we will most probably provide an initial project in Redmine which will be configured the "right" way and contain some documentation.
+
+Most of these best practices are already documented elsewhere, so we will mostly provide links to these resources, as well as additional resources we can provide ourselves.
+
+If you have any input on this, do not hesitate to contact me anytime.

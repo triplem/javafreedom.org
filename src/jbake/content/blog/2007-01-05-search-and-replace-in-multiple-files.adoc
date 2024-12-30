@@ -1,0 +1,14 @@
+= Search and Replace in Multiple Files
+triplem
+2007-01-05
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today I learned how to search and replace in multiple files. It is pretty easy. You can lookup how it works on the page for http://www.debian-administration.org/articles/298[Debian Administrators]. Basically you have to use a perl single line command like:
+
+----
+perl -pi -e 's/about news\.$/about selling advertising space\./' file*
+----
+
+This will edit each file directly on its place and will search for the string `about news.` and will replace it with `about selling advertising space`. You are done 🙂

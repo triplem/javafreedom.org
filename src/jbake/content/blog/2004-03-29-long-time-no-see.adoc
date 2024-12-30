@@ -1,0 +1,8 @@
+= Long Time no see
+triplem
+2004-03-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+This Weekend was kind of special 🙂 First of all, a friend of mine picked me up and we drove to France (round about 250km) just to go shopping and having some fine wine and a real good meal. Great stuff, I can really recommend this. Also I tried to install debian on the computer of my friend. It is running, but I really have problems with the X Server. I don't really understand this, because I took the settings of a working distribution (Knoppix) and copied them, but still X could not find the graphics card (It is an NVidia 5200). Probably I have to install some other stuff, but the thing is, that it is working with knoppix, kind of out of the box. Really strange? Any help here? Right now, I just have a linux machine (my laptop and an SMB Server with some music and stuff on it). Up until now I am not missing Windoze, oh, probably I will not miss it anyway 🙂 The problem for me is, that my company depends heavily on M$. I really hope that I can put them on the right track, so that at least myself and a colleague can install linux on their machines. The problem there is, that we kind of have lots of applications, where you need windoze, and some of them are self-developed apps (e.g. status reports, etc.).

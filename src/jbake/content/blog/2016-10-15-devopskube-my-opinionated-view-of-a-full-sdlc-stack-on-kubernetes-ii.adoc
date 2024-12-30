@@ -1,0 +1,29 @@
+= DevOpsKube – My opinionated View of a full SDLC Stack on Kubernetes II
+triplem
+2016-10-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+In my last post, I described the motivation behind the creation of DevOpsKube. In this post, I would like to propose a SDLC-Stack, which is going to get implemented in the DevOpsKube Stack:
+
+== Components
+
+The following components are included in the current version:
+
+* http://www.redmine.org[Redmine] - Project Management/Issue Tracking
+* http://www.jenkins.io[Jenkins] - Automation Server for CI and CD stuff
+* http://www.sonatype.org/nexus/[TheNexus] - Central Repository for Maven/Gradle/…
+* http://www.sonarqube.org/[SonarQube] - Platform to manage code quality
+* https://gogs.io/[Gogs] - central Git Repository
+
+To provide central data-storeage options we are using https://www.mysql.com/[MySql] for all components in need of a database.
+
+== Helper
+
+Since a vanilla Kubernetes Cluster does not provide any Edge-Loadbalancer, we are going to provide documentation on how to setup the whole cluster including an Edge-Loadbalancer and other useful tools (eg. SSO Components). An initial set of Helpers are:
+
+* https://github.com/nginxinc/kubernetes-ingress[Nginx Ingress] - Load-Balancing for Kubernetes PODs
+* https://github.com/jetstack/kube-lego[Kube-Lego] - Kube-Lego automatically requests certificates for Kubernetes Ingress resources from Let's Encrypt
+
+For the use of a configurable set of PODs, we are using https://github.com/kubernetes/helm[helm] in its latest (not yet ready for production) incarnation.

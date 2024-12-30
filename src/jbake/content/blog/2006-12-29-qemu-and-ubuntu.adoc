@@ -1,0 +1,28 @@
+= QEMU and Ubuntu
+triplem
+2006-12-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I just downloaded the ISO Image of http://buildix.thoughtworks.com["Buildix,"] which is a Knoppix LiveCD with some nice tools for the Build and configuration management. Due to the fact, that I am already running Linux on my Laptop and just would like to browse through some files in this BuildIx, I decided to use http://fabrice.bellard.free.fr/qemu/[qemu] for testing out this distro.
+
+First of all, let me tell you, that I was not able to install the qemu acceleration package on my laptop with Ubuntu Edgy Eft 🙁 But the ISO Image starts just fine with the command line
+
+----
+sudo qemu -boot d -m 256 -cdrom ./buildix-1.1.iso -no-kqemu
+----
+
+In this command line the qemu loads a cdrom image called buildix-1.1.iso with the no-kqemu option, since this is not available on my system. Furthermore, I have given 256M of Memory to this emulation (yeah, it is slow, but it is enough for testing purposes).
+
+With this, it is not possible to use a network connection to the host system, to for example exchange files between the two systems. Therefor I installed the tun/tap stuff (sudo apt-get install uml-utilities). This way is explaned in the http://kidsquid.com/cgi-bin/moin.cgi/FrequentlyAskedQuestions#head-989268518a820a9f33477d3b99754ab5113aa2a3[FAQ] of qemu.
+
+After making the qemu-tab script executable, and call it with
+
+----
+sudo ./qemu-tap -boot d -m 256 -cdrom ./buildix-1.1.iso -no-kqemu  
+----
+
+a new tap-interface is created on the host-system (Ubuntu Linux) with the IP 172.20.0.1. In the guest system I see an interface eth0 and configured this for the same subnet (with ifconfig eth0 172.20.0.2), and can now ping the host system 🙂
+
+Everything I wanted works now in this environment. Pretty slick.

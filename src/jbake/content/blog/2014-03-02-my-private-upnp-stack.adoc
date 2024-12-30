@@ -1,0 +1,28 @@
+= My UPNP Stack
+triplem
+2014-03-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Linux, Musik
+
+Hello,
+
+i have already witten, that I am ripping my whole CD collection (see http://www.discogs.com/user/triplem74/collection[discogs] for the already ripped collection). I have written a https://github.com/triplem/discogstagger[tagger] for tagging my collection and this is working great. 
+
+To play music on my stereo, I thought, that UPNP is a great protocol for it. The stack I am currently using is involving the following toolset:
+
+* http://minimserver.com/[minimserver] as the central music server
+* https://github.com/PeteManchester/MediaPlayer[MediaPlayer] as the UPNP Media Renderer on a Raspberry PI (which is going to be replaced with a http://cubox-i.com/[Cubox-I4Pro] in the near future
+* https://play.google.com/store/apps/details?id=com.bubblesoft.android.bubbleupnp&#038;hl=de[BubbleUPNP] as the Control Point (on Android)
+
+Please note, that parts of this stack are replaceable through other components, but this stack is right now the best working (at least for me). All components do use the UPNP enhancements from http://www.openhome.org/wiki/Oh:Overview[OpenHome], which is an OpenSource Project of http://oss.linn.co.uk/[Linn], IIRC.
+
+The MediaRenderer could be replaced by https://github.com/medoc92/upmpdcli[UPMPDCli], a nice UPNP Frontend for http://www.musicpd.org/[MPD] (my favourite Music Player. But then you should also use http://www.bubblesoftapps.com/bubbleupnpserver/[BubbleUPNPServer] to enjoy all the benefits of the Openhome extensions.
+
+https://github.com/PeteManchester/MediaPlayer[MediaPlayer] is using http://www.musicpd.org/[MPD] or http://www.mplayerhq.hu/[MPlayer] to be able to play the music. MPD do offer quite some extensions, which still can be used with the above mentioned environment.
+
+One Extension is http://ssl.bulix.org/projects/lcd4linux/wiki/plugin_mpd[LCD4Linux], which allows to show some information about the current played song on a small LCD. This is working on my Raspberry, but unfortunately this also seems to have some problems, in that the Display just freezes and the whole Box needs to get restarted. Since the used display is also very small (see http://www.pearl.de/product.jsp?pdid=HPM1184&#038;catid=5618&#038;vid=953&#038;curr=DEM[Pearl Display]) I decided to invest some more time and money into something slightly larger (see http://www.amazon.de/gp/product/B0058S323Q/ref=oh_details_o02_s00_i01?ie=UTF8&#038;psc=1[TaoTronics Display], http://www.amazon.de/gp/product/B00AC29ZSE/ref=oh_details_o02_s00_i00?ie=UTF8&#038;psc=1[Power Supply], http://www.amazon.de/gp/product/B00BUQOQCG/ref=oh_details_o02_s00_i02?ie=UTF8&#038;psc=1[HDMI to Component Adapter] as well as a couple of additional needed cables (MiniHDMI, Component…)). I do hope that this is going to work out. For this stack, LCD4Linux is not needed anymore, since this is a "normal" Screen. Therefor I plan to integrate a Full-Screen Display component into the https://github.com/PeteManchester/MediaPlayer[MediaPlayer]. As soon as this is finished, I will report back, right now I am still waiting, that all the above mentioned components do arrive.
+
+On the beginning of my UPNP discoveries, I stumbled across the http://www.cocktailaudio.de/index.php/de/funktionen.html[X10], which is also a nice toy, but unfortunately does not support gapless UPNP playback (see http://www.cocktailaudio.de/forum/showthread.php?tid=1714&#038;highlight=gapless[X10 Forum (German)]). Unfortunately I needed to buy this device to discover this one ;-( It is still a nice playing toy, but right now is just used for Internet Radio Streaming, since even the Tagging I did with DiscogsTagger is totatlly screwed on this device and the X10 is showing me the albums in totally different format then shown eg. on minimserver.
+
+So, you could buy yourself some expensive devices from Linn, Naim or …, or you spend you money on some decent Hardware like Raspberry PI (uh, the sound of this device is not realy good, without the addition of a good DAC like http://www.hifiberry.com/[Hifiberry]) or a Cubox-I and invest some time in installing the above mentioned stack, then all should be fine, without spending too much Money as well as time.

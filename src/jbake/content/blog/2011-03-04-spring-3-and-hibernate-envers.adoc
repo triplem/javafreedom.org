@@ -1,0 +1,200 @@
+= Spring 3 and Hibernate Envers
+triplem
+2011-03-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+I wanted to add Audit functionalities to an application I am writing currently. I know that this seems to be possible with http://www.springsource.org/node/3022[Spring Data JPA], but since this project has just reached Version 1.0.0.M1 I wanted to wait to use this one. Furthermore the application I am working on is already based on hibernate and some GenericDAO stuff we did with Hibernate, therefor a move does not seem to be too easy. Therefor I wanted to use http://www.jboss.org/envers[Hibernate Envers].
+
+The setup seems to be quite easy, following the steps in the documentation (http://docs.jboss.org/hibernate/envers/3.5/reference/en-US/html_single/[Envers Documentation]). I provided the @Audited Annotation to all Entities to be audited and provided also a new RevEntity and a new RevListener:
+
+----
+import javax.persistence.Entity;
+
+import org.hibernate.envers.DefaultRevisionEntity;
+import org.hibernate.envers.RevisionEntity;
+
+@Entity
+@RevisionEntity(RevListener.class)
+public class RevEntity extends DefaultRevisionEntity {
+
+    private String userName;
+
+    public String getUserName() {
+ 	return userName;
+    }
+
+    public void setUserName(String userName) {
+ 	this.userName = userName;
+    }
+}
+
+----
+
+----
+import org.hibernate.envers.RevisionListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+
+@Configurable
+public class RevListener implements RevisionListener {
+
+    @Autowired
+    private Member member;
+
+    public void newRevision(Object revisionEntity) {
+	RevEntity revEntity = (RevEntity)revisionEntity;
+
+	Member member = MemberHolder.getMember();
+
+	String userName = null;
+	if (member != null) {
+		userName = member.getUsername();
+	}
+
+	revEntity.setUserName(userName);
+    }
+}
+----
+
+The point here is to show, that I am using the Member, to find out what the current user is in our application. 
+
+Now, how do I use the newly created listener in Spring? After using Google a little, I found http://community.jboss.org/message/4635[this] post, which uses Envers, but unfortunately with the SessionFactory instead of the JPA EntityManager, like we are using. Furthermore I found http://stackoverflow.com/questions/1649052/how-can-i-configure-a-jpa-entitylistener-via-a-spring-xml-configuration-file[this], which did not really help me as well, since there was another error message coming up, that my RevListener could not get instantiated. Since the custom EventListener was using Spring Dependency Injections for the Member, I could not use the above mentioned solution. I had to find a way to use the Spring Beans. See http://reusablecoder.blogspot.com/2010/09/configuring-spring-managed-hibernate.html[this] blog post, which describes the problem and a possible solution.
+
+So, basically one step back and the whole stuff again, this time using a Holder for our Members, which provides the current Member (User) of the system. This is done using the current security-context of the application and determine the member therein (see http://stackoverflow.com/questions/360520/unit-testing-with-spring-security[StackOverflow]). 
+
+----
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+
+/**
+ * @link http://stackoverflow.com/questions/360520/unit-testing-with-spring-security
+ */
+public class MemberHolder {
+
+    private MemberHolder() {
+        // hidden default constructor, this is a "normal" utility class
+    }
+
+    public static Member getMember() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Object principal = auth.getPrincipal();
+        Member member;
+
+        if (principal instanceof Member) {
+            member = (Member) principal;
+        } else {
+            return null;
+        }
+
+        if (member.getId() == null) {
+            return null;
+        }
+        return member;
+    }
+}
+----
+
+This member-holder is then called in the RevisionListener:
+
+----
+import org.hibernate.envers.RevisionListener;
+
+import de.xxx.RevEntity;
+import de.xxx.model.MemberHolder;
+
+public class RevListener implements RevisionListener {
+
+    public void newRevision(Object revisionEntity) {
+	RevEntity revEntity = (RevEntity)revisionEntity;
+
+	String userName = MemberHolder.getMember().getUsername();
+
+	revEntity.setUserName(userName);
+    }
+}
+----
+
+Furthermore the application-context.xml was now corrected to look like this:
+
+----
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		  depends-on="transactionManager">
+	<property name="persistenceUnitName" value="persistenceUnit"/>
+	<property name="persistenceUnitManager" ref="persistenceUnitManager"/>
+	<property name="jpaVendorAdapter">
+		<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+	</property>
+	<property name="jpaDialect">
+		<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
+	</property>
+	<property name="jpaProperties">
+		<props>
+			<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+			<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+			<prop key="org.hibernate.envers.auditTablePrefix">AUD_</prop>
+			<prop key="org.hibernate.envers.auditTableSuffix"></prop>
+			<prop key="org.hibernate.envers.storeDataAtDelete">true</prop>
+			<prop key="hibernate.ejb.event.post-insert">
+	org.hibernate.ejb.event.EJB3PostInsertEventListener,org.hibernate.envers.event.AuditEventListener
+			</prop>
+			<prop key="hibernate.ejb.event.post-update">
+	org.hibernate.ejb.event.EJB3PostUpdateEventListener,org.hibernate.envers.event.AuditEventListener
+			</prop>
+			<prop key="hibernate.ejb.event.post-delete">
+	org.hibernate.ejb.event.EJB3PostDeleteEventListener,org.hibernate.envers.event.AuditEventListener
+			</prop>
+		        <prop key="hibernate.ejb.event.pre-collection-update">
+				org.hibernate.envers.event.AuditEventListener
+			</prop>
+			<prop key="hibernate.ejb.event.pre-collection-remove">
+				org.hibernate.envers.event.AuditEventListener
+			</prop>
+			<prop key="hibernate.ejb.event.post-collection-recreate">
+				org.hibernate.envers.event.AuditEventListener
+			</prop>
+		</props>
+	</property>
+</bean>
+----
+
+Some pitfalls I stumbled upon. Do *not* make the property look nice, e.g.:
+
+----
+<prop key="hibernate.ejb.event.post-update">
+    org.hibernate.ejb.event.EJB3PostUpdateEventListener,
+    org.hibernate.envers.event.AuditEventListener
+</prop>
+----
+
+Your application Context will look nice, but you will get a ClassNotFoundException ;-(
+
+Furthermore, your Custom Event Listener should not appear in the Events, e.g. do not do:
+
+----
+<prop key="hibernate.ejb.event.post-update">
+    org.hibernate.ejb.event.EJB3PostUpdateEventListener,de.xxx.RevListener
+</prop>
+----
+
+This will lead to an exception like 
+
+----
+Caused by: org.hibernate.MappingException: Unable to instantiate specified event (post-update) listener class: de.xxx.RevListener
+	at org.hibernate.cfg.Configuration.setListeners(Configuration.java:1766)
+	at org.hibernate.ejb.Ejb3Configuration.setListeners(Ejb3Configuration.java:1550)
+	at org.hibernate.ejb.EventListenerConfigurator.setProperties(EventListenerConfigurator.java:183)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1085)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:685)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:73)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:225)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:308)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1477)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1417)
+	... 53 more
+Caused by: java.lang.ArrayStoreException: de.xxx.RevListener
+	at org.hibernate.cfg.Configuration.setListeners(Configuration.java:1763)
+----
+
+So, I do hope, that this helps you. It did help me 😉

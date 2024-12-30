@@ -1,0 +1,10 @@
+= Domain-Movement
+triplem
+2011-07-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Communities, Common
+
+During the last weekend, I moved my domains (javafreedom.org and wifi-frankfurt.de) to the uberspace.de location. Because of this, it can happen, that emails where not delivered or bounced.
+
+The movement was quite fast (something like 24 hours) for all things. The guys at uberspace.de were really really nice and helped a lot. I can only recommend to any geek out there, to move her domains to uberspace.de.

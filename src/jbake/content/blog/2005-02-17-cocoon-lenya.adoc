@@ -1,0 +1,8 @@
+= Cocoon Lenya
+triplem
+2005-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Communities, WLan
+
+Another message from the confused mind. Currently I am working on a pretty nice homepage for http://wifi-frankfurt.de/[wifi-frankfurt.de] (sorry, it's in german). This homepage is for a free wireless network based in Frankfurt / Main, Germany. I am using Lenya to generate and build this site. Lenya is a pretty straight forward tool. But right now, I would like to include a link to an external resource to my sitetree. anybody here, who can help me there? Anyway, also I am using a forum from an external provider. They told me, that I can use a php-page on my site and then the domain, etc. wouldn't change. Well thats nice, but how to use this with leny. I need to implement a php-page into leny. This will kind of make it pretty hard. Or I just publish this page once (it is updated by the provider of the forum automatically) and just link it from the sitetree.xml (once again, the same problem). I believe that there must be a solution for this, I just cannot find it. Even though I googled quite a lot of time on this issue 🙁

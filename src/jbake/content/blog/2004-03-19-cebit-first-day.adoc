@@ -1,0 +1,8 @@
+= CeBIT - first day
+triplem
+2004-03-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Today I drove to CeBIT, where I will be part of the Apache Team standing there at the booth. Today, I just wanted to set up the computer and everything else, so, nothing really to do, because the booth was still used by another open source project. So I looked around at the worlds biggest IT trade fair. I went to CeBIT already a couple of times as exhibitor as well as as visitor. But I really have to admit, that the IT Business seems to be really down. Basically the fair was pretty much empty and not as much people there as the last time, I went there. Okay, the last time, I went there in 2001, on the end of the hype and all the booth were quite huge and you could not find a place to walk easily because of the crowd. Hopefully that less people are there means also, that more business can be done, because only the really interested people are coming. So, this CeBIT there is not much to take away (like mouses, pens, …). But I guess the purpose of the fair is not to throw money out of the window, but to make real business. Ah, we will see, what happens tomorrow at the Apache booth.

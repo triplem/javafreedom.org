@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module and Class Hierarchies</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="reconstructor-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th bgcolor="#70b0f0" class="navselect">&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/trees.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="trees.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF MODULE HIERARCHY =========== -->
+<h2>Module Hierarchy</h2>
+<ul>
+<li> <b><a href="reconstructor-module.html"><code>reconstructor</code></a></b>
+  <ul>
+    <li> <b><a href="reconstructor.core-module.html"><code>core</code></a></b>
+      <ul>
+        <li> <b><a href="reconstructor.core.config-module.html"><code>config</code></a></b>: <i>Module, which handles the current configuration of a working 
+environment</i>
+        <li> <b><a href="reconstructor.core.image-module.html"><code>image</code></a></b>: <i>Super class for dealing with extracting or building different types of 
+disk images.</i>
+        <li> <b><a href="reconstructor.core.image_filesystems-module.html"><code>image_filesystems</code></a></b>: <i>Module for dealing with extracting or building different types of disk 
+images.</i>
+        <li> <b><a href="reconstructor.core.root-module.html"><code>root</code></a></b>
+          <ul>
+            <li> <b><a href="reconstructor.core.root.debian-module.html"><code>debian</code></a></b>: <i>Handles application/installation of modules to debian-style installer 
+environments (Installer-CDs)</i>
+            <li> <b><a href="reconstructor.core.root.live-module.html"><code>live</code></a></b>: <i>Handles application/installation of modules to liveCD build 
+environments</i>
+            <li> <b><a href="reconstructor.core.root.root-module.html"><code>root</code></a></b>: <i>Interface to handle dealing with applying modules to the build 
+environment</i>
+          </ul>
+      </ul>
+    <li> <b><a href="reconstructor.frontend-module.html"><code>frontend</code></a></b>
+    <li> <b><a href="reconstructor.modules-module.html"><code>modules</code></a></b>
+      <ul>
+        <li> <b><a href="reconstructor.modules.desktop-module.html"><code>desktop</code></a></b>: <i>Base module containing primary desktop customization functionality</i>
+        <li> <b><a href="reconstructor.modules.modules-module.html"><code>modules</code></a></b>: <i>Base class containing primary module functionality</i>
+      </ul>
+    <li> <b><a href="reconstructor.utils-module.html"><code>utils</code></a></b>
+      <ul>
+        <li> <b><a href="reconstructor.utils.logger-module.html"><code>logger</code></a></b>: <i>This modules contains classes, which define the logging API of 
+reconstructor.</i>
+      </ul>
+  </ul>
+</ul>
+
+<!-- =========== START OF CLASS HIERARCHY =========== -->
+<h2>Class Hierarchy</h2>
+<ul>
+  <li> <b><a href="reconstructor.core.config.Config-class.html"><code>reconstructor.core.config.Config</code></a></b>: <i>
+Class, which handles the current configuration of a working 
+environment</i>
+  <li> <b><a href="reconstructor.core.image.Image-class.html"><code>reconstructor.core.image.Image</code></a></b>: <i>
+Deals with extracting or building different types of disk images.</i>
+    <ul>
+  <li> <b><a href="reconstructor.core.image_filesystems.Debian-class.html"><code>reconstructor.core.image_filesystems.Debian</code></a></b>: <i>
+Class for dealing with the Debian installer Image</i>
+  <li> <b><a href="reconstructor.core.image_filesystems.InitRd-class.html"><code>reconstructor.core.image_filesystems.InitRd</code></a></b>: <i>
+Class for dealing with the InitRD boot images</i>
+  <li> <b><a href="reconstructor.core.image_filesystems.Remaster-class.html"><code>reconstructor.core.image_filesystems.Remaster</code></a></b>: <i>
+Class for dealing with Remaster Executables</i>
+  <li> <b><a href="reconstructor.core.image_filesystems.SquashFs-class.html"><code>reconstructor.core.image_filesystems.SquashFs</code></a></b>: <i>
+Class for dealing with the SquashFS root filesystem</i>
+    </ul>
+  <li> <b><a href="reconstructor.core.root.root.Root-class.html"><code>reconstructor.core.root.root.Root</code></a></b>: <i>
+Handles applying modules to the build environment</i>
+    <ul>
+  <li> <b><a href="reconstructor.core.root.debian.RootDebian-class.html"><code>reconstructor.core.root.debian.RootDebian</code></a></b>: <i>
+Handles applying modules to the build environment</i>
+    <ul>
+  <li> <b><a href="reconstructor.core.root.debian.ISODebian-class.html"><code>reconstructor.core.root.debian.ISODebian</code></a></b>: <i>
+Extracts and builds ISO images for Debian-style install discs.</i>
+    </ul>
+  <li> <b><a href="reconstructor.core.root.live.RootLive-class.html"><code>reconstructor.core.root.live.RootLive</code></a></b>: <i>
+Handles application/installation of modules to liveCD build 
+environments</i>
+    <ul>
+  <li> <b><a href="reconstructor.core.root.live.ISOLive-class.html"><code>reconstructor.core.root.live.ISOLive</code></a></b>: <i>
+Extracts and builds ISO Images for LiveCD discs</i>
+    </ul>
+    </ul>
+  <li> <b><a href="reconstructor.modules.desktop.Desktop-class.html"><code>reconstructor.modules.desktop.Desktop</code></a></b>: <i>
+Base class containing primary desktop customization functionality</i>
+  <li> <b><a href="reconstructor.modules.modules.Module-class.html"><code>reconstructor.modules.modules.Module</code></a></b>: <i>
+Base class containing primary module functionality</i>
+  <li> <b><a href="reconstructor.utils.logger.LogHandler-class.html"><code>reconstructor.utils.logger.LogHandler</code></a></b>: <i>
+Handles logging of Reconstructor</i>
+</ul>
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="reconstructor-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Sun Jan 28 22:51:50 2007</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

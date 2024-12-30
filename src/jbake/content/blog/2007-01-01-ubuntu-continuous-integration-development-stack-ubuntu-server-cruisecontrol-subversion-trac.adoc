@@ -1,0 +1,213 @@
+= Ubuntu Continuous Integration / Development Stack (Ubuntu Server, CruiseControl, Subversion, Trac)
+triplem
+2007-01-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Linux, Build Management
+
+I already told you in my last post, that I am currently looking at Buildix, a continuous integration/development stack build ontop of Knoppix. This is a pretty nice distro derivate. The thing is, that I have already a couple of other applications running on my Ubuntu Server and wanted to have something similar on this machine. +
+After a couple of hours, I figured out, that most of the components in Buildix are already available as Ubuntu Packages, therefore I went ahead and installed all these tools on my server. +
+In the Buildix-Environment you can also find some tools from Thougthworks (like the UserManager) as well as some nice scripts to e.g. create new projects very easily. Some of these tools are pretty nice and make the life of the administrator of this machine easier. I would like to point out the script for the creation of new projects. In a later post I will probably point out on how to transfer these scripts. +
+In the following, there is a short description, on how to install this stack. In most of the steps, there are only the packages, you have to install, mentioned.
+
+*1. JDK (1.5.0_08)* +
+Ubuntu Package: +
+sun-java5-jdk 
+
+*2. ANT (1.6.5-6)* +
+Ubuntu Packages: +
+ant +
+ant-doc +
+ant-optional
+
+*3. Tomcat (5.0.30)* +
+Ubuntu Package: +
+tomcat5
+
+*4. Apache HTTP (2.0.55)* +
+Ubuntu Packages: +
+apache2 +
+apache2-common +
+apache2-doc +
+apache2-utils +
+libapache2-mod-jk +
+libapache-mod-jk-doc
+
+*5. Subversion (1.3.2)* +
+Ubuntu Packages: +
+subversion +
+subversion-tools +
+subversion-helper-scripts (0.5-2) +
+libapache2-svn +
+db4.3-util
+
+After the installation, you have to create a Subversion Repository: +
+http://www.howtoforge.com/debian_subversion_websvn:
+
+----
+	mkdir /var/svn 
+	mkdir /var/svn/sample
+	svnadmin create /var/svn/sample
+----
+
+*6. Trac (0.9.6)* +
+trac +
+enscript +
+libapache2-mod-python +
+python-docutils
+
+After the installation of trac the Trac Environment has to be created:
+
+----
+    mkdir /var/trac
+    trac-admin /var/trac/sample initenv Sample sqlite:db/trac.db /var/svn/sample 
+       /usr/share/trac/templates
+----
+
+This will create a trac project named Sample in the directory /var/trac/sample and using an SQLite DB and the subversion repository in +
+/var/svn/sample and the templates in the trac default directory.
+
+After this you will get an output from the system:Project environment for "Sample" created. +
+You may now configure the environment by editing the file: +
+`/var/trac/sample/conf/trac.ini`.
+
+If you'd like to take this new project environment for a test drive, +
+try running the Trac standalone web server `tracd`: 
+
+----
+tracd -port 8000 /var/trac/sample  
+
+----
+
+Then point your browser to http://localhost:8000/sample. +
+There you can also browse the documentation for your installed +
+version of Trac, including information on further setup (such as +
+deploying Trac to a real web server). +
+The latest documentation can also always be found on the project +
+website: +
+http://projects.edgewall.com/trac/ +
+Congratulations! 
+
+After this, you can try your installation with the tracd (like stated in the message above). But since I wanted to use the apache2 server +
+I have had to do some more stuff:
+
+----
+	/var # chown -R www-data trac
+	/usr/lib/cgi-bin # ln -s /usr/share/trac/cgi-bin/trac.cgi trac.cgi
+	/var/trac/sample/conf # htpasswd -c trac.htpasswd cruise
+----
+
+To enable the trac-configuration in Apache, you have to create a new file in the directory +
+/etc/apache2/sites-available. I named this file trac. +
+The following configuration file (trac) works with mod_python.
+
+----
+	Alias /trac "/usr/share/trac/htdocs"	
+	<Directory "/usr/share/trac/htdocs">
+		Options Indexes MultiViews 
+		AllowOverride None
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	# Hack to get cruisecontrol shot the build log.xml file
+	RedirectMatch ^/var/spool/cruisecontrol/(.*) /cruisecontrol/$1
+
+	<Location "/svn">
+		Dav svn
+		SVNParentPath /var/svn
+
+		AuthType Basic
+		AuthName "SVN Repositories"
+		AuthUserFile /etc/apache2/dav_svn.passwd
+#	      AuthzSVNAccessFile /etc/apache2/dav_svn.authz
+
+		<LimitExcept GET PROPFIND OPTIONS REPORT>
+			Require valid-user
+		</LimitExcept>
+	</Location>
+
+	# Trac needs to know where the db is located	
+	<Location /projects> #set up Trac handling      
+			SetHandler mod_python    
+			PythonHandler trac.web.modpython_frontend    
+			PythonOption TracEnvParentDir /var/trac    
+			PythonOption TracUriRoot /projects    
+		SetEnv PYTHON_EGG_CACHE /var/cache/python 
+	</Location>
+
+	<LocationMatch "/projects/[^/]+/login">
+		AuthType Basic
+		AuthName "Trac"
+		AuthUserFile /var/trac/trac.htpasswd
+		Require valid-user
+	</LocationMatch>
+----
+
+Because Apache2 will seg fault on my machine (I believe due to some dependency problems with BerkleyDB or so) my current +
+configuration is using the CGI-mechanism. Therefor you have to exchange the last part of the above configuration.
+
+----
+	# Trac needs to know where the db is located
+	
+	ScriptAlias /projects/sample /usr/share/trac/cgi-bin/trac.cgi
+	<Location /projects/sample>
+		SetEnv TRAC_ENV "/var/trac/sample"
+	</Location>
+
+	<LocationMatch "/projects/sample/login">
+		AuthType Basic
+		AuthName "Buildix Trac"
+		AuthUserFile /var/trac/sample/conf/trac.htpasswd
+		Require valid-user
+	</LocationMatch>
+----
+
+This is doing the job. Not quite as fast as with the mod_python, but it works 🙂 After editing this file, it should be enabled throught the command `a2ensite trac`.
+
+*7. Cruisecontrol (2.5.2)* +
+For Cruisecontrol you can use an existing Debian package at:
+
+http://buildix.thoughtworks.com/download/cruisecontrol_2.5-2.deb
+
+To get CC working with Tomcat5, you have to create a link for the webapp.
+
+----
+    ln -s /usr/share/cruisecontrol/webapps/cruisecontrol 
+       /var/lib/tomcat5/webapps/cruisecontrol
+----
+
+If this does not work, then copy the directory.
+
+*8. Integration Trac + CruiseControl* +
+** Get the Plugin at https://oss.werkbold.de/trac-cc/ +
+Ubuntu packages: +
+libixml2 +
+python-libxml2 +
+python-libxslt1
+
+Add CC-Section to trac.ini: +
+ <a target="_blank" href="https://oss.werkbold.de/trac-cc/wiki/CruiseControlSection">https://oss.werkbold.de/trac-cc/wiki/CruiseControlSection</a>
+
+*9. Trac Plugins* +
+I found some Plugins for Trac very useful. You have to install EZ-Setup for installing some of them: +
+ <a target="_blank" href="http://peak.telecommunity.com/dist/ez_setup.py">http://peak.telecommunity.com/dist/ez_setup.py</a> +
+Install it with `python ez_setup.py`.
+
+One of the most useful Plugins is the WebAdmin Plugin. This Plugin will be included in newer versions of trac, but for +
+the current version (0.9.6) you still have to install it manually +
+ <a target="_blank" href="http://trac.edgewall.org/wiki/WebAdmin">http://trac.edgewall.org/wiki/WebAdmin<br /> </a> Download the *.egg.zip, rename it into .egg and call easy_install *.egg, then the plugin is installed for all projects.
+
+An extension of this plugin is the WebAdminUserPlugin: +
+ <a target="_blank" href="http://trac-hacks.org/wiki/WebAdminUsersPlugin">http://trac-hacks.org/wiki/WebAdminUsersPlugin<br /> </a> Just unzip the zip-file and then call python setup.py install +
+this installs the plugin globally for all projects
+
+I installed some other plugins, you can find most of them on <a target="_blank" href="http://trac-hacks.org/">http://trac-hacks.org</a>. Take a look at the GanttChart Plugin.
+
+*TODOs:* +
+There are still some open points in this description. Like already stated there is a script to create new projects in the buildix-Distro. +
+I would like to include this into my server as well. Also, I am looking forward for the version 0.11 of trac, since there are some nice +
+new features included there. +
+Also I am still missing some project management features (like time and estimates in the trac tickets), which are already added in future +
+version of trac. +
+Another idea would be, to create a new distro based on Ubuntu (possibly called B-Ubuntu) using the <a target="_blank" href="http://reconstructor.aperantis.com/">Reconstructor Toolchain</a>. If you are interested in this, please write me an email, and possibly we can create something like this.

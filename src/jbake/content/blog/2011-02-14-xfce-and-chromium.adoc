@@ -1,0 +1,10 @@
+= Xfce and Chromium
+triplem
+2011-02-14
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I recently switched (once again) from gnome to another Desktop Environment. This time I have chosen Xfce. To make chromium open thunar for folders, I have had to follow the following post in the https://bbs.archlinux.org/viewtopic.php?id=112192[ArchLinux Forum]. Basically it is a minor change in the xdg-open file, which will most probably be break as soon as there is an update to this one, or they are updating this one for the latest Xfce incarnation.
+
+Hope this helps you as much as it helped me.

@@ -1,0 +1,11 @@
+= Ubuntu
+triplem
+2005-03-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: LInux
+
+Well, a couple of days ago, I ruined my Linux installation on my Laptop (still a Vaio GRX-616MP). This was due to the fact, that I recompiled a kernel to get access to a network card, but I compiled it with the configuration file from one of my servers 🙁 How bad. Because the installation of Debian always takes some time, and I wanted to get something different on my Laptop, I had the decision between Ubuntu and Gentoo. Well, at work a colleague of mine just installed Gentoo on his working machine, and I think that this takes a little bit too much time, to get a Desktop machine up and running. Therefor I downloaded Ubuntu and installed it on my Laptop.
+
+To my surprise, the installation is nearly as trivial as a Windows installation. The only real hard think to do, was to partition the hard disk, and even this can be done with some default values. I think the whole installation was up and running in like 1,5 hours. Remember how much time a Debian installation takes? This takes not half of the time. And to be honest, it is a pretty clean install and I am glad I chose Ubuntu. If I would have installed Gentoo, I still would be waiting for Gnome to start 🙂 +
+Nice work, guys. This is a great distribution.

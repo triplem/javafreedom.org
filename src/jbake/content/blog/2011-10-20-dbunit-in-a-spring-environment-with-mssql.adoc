@@ -1,0 +1,112 @@
+= dbUnit in a Spring Environment with MSSQL
+triplem
+2011-10-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Today I needed to export and import some data from a database for testing purposes. I do knew http://www.dbunit.org/[dbUnit] already and this seemed to be the tool of choice. I stumbled about a couple of problems, because another example of the usage of dbUnit with the Spring Framework was using Oracle and furthermore the FlatXmlDataSet. I wanted to use the XmlDataSet, because this seems to be easier to maintain manually.
+
+In the following I will try to show, how to integrate dbUnit into the project. First of all, I needed to put the Maven Plugin into place:
+
+----
+<dependencies>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>2.4.8</version>
+            <scope>test</scope>
+        </dependency>
+...
+</dependencies>
+...
+<build>
+   <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>dbunit-maven-plugin</artifactId>
+                <version>1.0-beta-3</version>
+                <!--jar file that has the jdbc driver -->
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sourceforge.jtds</groupId>
+                        <artifactId>jtds</artifactId>
+                        <version>${jtds.version}</version>
+                    </dependency>
+                </dependencies>
+
+                <configuration>
+                    <driver>${database.driver.classname}</driver>
+                    <url>${database.url}</url>
+                    <username>${database.user}</username>
+                    <password>${database.password}</password>
+                    <dataTypeFactoryName>org.dbunit.ext.mssql.MsSqlDataTypeFactory</dataTypeFactoryName>
+                    <ordered>true</ordered>
+                </configuration>
+            </plugin>
+...
+</plugins>
+</build>
+
+----
+
+After this I was able to call `mvn dbunit:export`, which gave me an export of the current datastructure inside the database. It will generate a file target/dbunit/export.xml, which could then be used in the TestCases (we are using JUnit). 
+
+The TestCases are now looking something like this:
+
+----
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:/META-INF/spring/testAC.xml"})
+public class ServiceTest {
+...
+	@Autowired
+	private DataSource dataSource;
+
+----
+
+Here we are autowiring the dataSource from the Application Context, this is needed to extract all necessary information for the database connection of dbUnit.
+
+----
+// the following methods do make sure, that the database is setup correctly with
+	// dbUnit
+	private IDatabaseConnection getConnection() throws Exception {
+    	// get connection
+        Connection con = dataSource.getConnection();
+        DatabaseMetaData databaseMetaData = con.getMetaData();
+        IDatabaseConnection connection = new DatabaseConnection(con);
+        DatabaseConfig config = connection.getConfig();
+        config.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MsSqlDataTypeFactory());
+        return connection;
+	}
+
+----
+
+Here we are making sure, that the connection is setup correctly and that the right DataTypeFactory is used. This should be the same factory as used in the pom.xml (see above).
+
+----
+private IDataSet getDataSet() throws IOException, DataSetException {
+		File file = new File("src/test/resources/dbexport.xml");
+		assertTrue(file.exists());
+		Reader reader = new FileReader(file);
+		return new XmlDataSet(reader);
+	}
+
+----
+
+Fetching the dataset from a file and use it in the DatabaseOperation of dbUnit.
+
+----
+@Test
+	@Transactional
+	public void testDelete() throws Exception {
+        DatabaseOperation.CLEAN_INSERT.execute(getConnection(), getDataSet());
+		EntityVersionId id = new VersionId("9a5a8eb1f02b4e06ba9117a771f2b69c", 2L);
+		Entity entity = this.entityService.find(id);
+		assertNotNull(entity);
+		this.entityService.delete(id);
+	}
+----
+
+Please note, that we are using a special EntityVersionId, which is part of our Framework and contains two values. This is a combined ID. The usual ID is an UUID (String) and a "version" of type long. I guess, you will most probably not use something like this in your project.
+
+Thats it, now everything works like expected 😉

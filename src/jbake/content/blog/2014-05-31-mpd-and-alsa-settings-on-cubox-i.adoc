@@ -1,0 +1,50 @@
+= MPD and ALSA settings on cubox-i
+triplem
+2014-05-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Musik
+
+I have had some trouble with some songs playing on my cubox-i via the SPDIF-Toslink connection. I heard crackling noises on those songs. First I thought, that those were due to some mistake done during ripping those from my CDs. But I tested those songs on some other devices and recognized, that it is most probably due to high frequencies or something similar. 
+
+Therefor I digged into the concrete settings of ALSA and MPD to fiddle around with Frequency- and Volume-Settings. In the end it turned out, that the solution is rather easy and I just had to reduce the volume of the cubox-i SPDIF out to 98%. Now all crackling noises are gone and I can enjoy the music via my home stereo system.
+
+Here are the settings of ALSA (/etc/asound.conf):
+
+----
+pcm.imxspdif {
+    type hw
+    card imxspdif
+}
+pcm.imxhdmisoc {
+    type hw
+    card imxhdmisoc
+}
+ctl.imxspdif {
+    type hw
+    card imxspdif
+}
+ctl.imxhdmisoc {
+    type hw
+    card imxhdmisoc
+}
+----
+
+The above settings are just setting the devices in the Cubox-I to be used by alsa. The "imxspdif" is important, because this one is used by the following MPD-setting:
+
+----
+audio_output {
+   type   "alsa"
+   name "imxspdif"
+   mixer_type "software"
+}
+
+----
+
+Unfortunately I could not use "alsactl store" to store my alsamixer settings, therefor I have set the mixer_type of MPD to software, which allows to call the 
+
+----
+mpd volume -2
+----
+
+command inside of my mediaplayer-startup script. This command sets the used volume to 98%. Now everything is working fine, on every boot, like wanted 😉

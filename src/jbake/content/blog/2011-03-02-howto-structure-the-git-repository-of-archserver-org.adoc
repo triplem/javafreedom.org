@@ -1,0 +1,51 @@
+= Howto structure the Git-Repository (of ArchServer.org)
+triplem
+2011-03-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, git, Build Management
+
+Hello, 
+
+a little while ago, I felt the urge to propose a new git structure to my fellows at the ArchServer.org team. I guess the explanation on the why could be helpful for others in the git community as well.
+
+Currently we do have one repository with several packages in one git repository (server-core, server-extra, server-community). This was due to the fact, that the base-distribution (http://www.archlinux.org[Arch Linux] that is) uses SVN as their VCS and we were basically migrating their structure in an easy manner to our own systems. 
+
+Right now, we have one branch for each named release (e.g. redgum). Since we are planning to maintain at least two named releases (e.g. redgum and spruce) in parallel, and we have also a testing phase in each release, I suggested two branches for a named release (redgum, redgum-testing). This suggestion was accepted in the mailing list. 
+
+I have looked, how other distros with a named release are doing it, as well as for best practices in the git world (well, I really did this for the company I do work for). Fedora is using Git as their repository as well, and git is quite popular, so there is a wealth of information on this topic out there.
+
+*PROPOSAL*
+
+I propose to restructure the ArchServer.org git repositories to the following structure:
+
+----
+server-core.git/kernel26-lts -> server-core/kernel26-lts.git  
+server-core.git/aif -> server-core/aif.git
+----
+
+In each of those newly created repositories we will then create at least two branches (e.g. redgum and redgum-testing) for each release. The master-Branch is a special branch, in that it is a development branch. Changes in there will go into release branches, but packages from the master-branches will never be put into a release-version directly. Packages always need to get created from the corresponding release branch, to establish a clean workflow for sign-offs of packages.
+
+To let this work, we will need to adapt our http://git.archserver.org/?p=dbscripts.git;a=summary[dbscripts] slightly, but this should not be too much of a hassel. The git repository could be restructured pretty much automatically and the current already available history could be migrated as well.
+
+Furthermore I suggest to use a tool like repo or fedpkg, adapt it to our needs and implement this into our workflow. Package Updates can then be still done via the usual git commands, but to get a friendlier workflow, this tool can be used.
+
+*EXPLANATION*
+
+Let me first explain, why do we want to separate each package into its own repository like suggested by git and other distros like e.g. Fedora.
+
+Git suggests to use a single repository for each project/package (a short explantion of this issue can be found on http://stackoverflow.com/questions/984707/what-are-the-git-limits/984973#984973[StackOverflow]). Basically it comes to the point, that the usage of a repository per package is a best-practice in the git world, and best-pratices do have a sense, like shown in the previous link.
+
+So where is our benefit in splitting repositories (server-core, server-extra and server-community) into several smaller ones (e.g. server-core/kernel26-lts.git)? IMHO the benefit is ease-of-use.
+
+A TU (Trusted User) can then easily get one package, switch to the correct branch (e.g. redgum-testing) make the changes and push these changes back to the main repository. As soon as the package is out of the testing phase, the TU or somebody else can sign-off the changes and merge the package into the release branch (e.g. redgum). We could even say, that only signed packages are allowed to cross the border of the branches, I am unsure, if this could be done by git itself, but it could be a step in the workflow.
+
+So, where is the difference now to the current structure?
+
+Right now, as soon as a TU has made changes and pushed them into the right branch, other TUs will most probably work on other (or even the same) packages, meaning that the TU cannot easily go to the package and merge it into the release branch, he would merge all changes in the whole repository into the branch. The TU has the burden to look up the right commit-ID in the log of the whole repository (remember, git looks on the whole repository and not on sub-folders) and cherry-pick this change (even worse: changes). This does not seem to be right IMHO and it is against the best-practice.
+
+If we are going to split all our repos (server-core, …) into several smaller git repositories, the look and feel of our repository handling will change slightly. To provide a consistent approach for all repositories (e.g. make a new branch for a new release), we will have to provide some tool to make the life of the TUs easier, thats what google is doing with repo and Fedora is doing with fedpkg (see: https://fedorahosted.org/fedora-packager/browser/src/fedpkg.py). These tools offer some functionality not possible with git (at least as far as I know of, see: http://stackoverflow.com/questions/1979167/git-submodule-update/1979194#1979194[StackOverflow]) like branching of several sub-projects, using the same branch for all sub-projects, committing changes in several sub-projects, etc. Also, there does exsits another alternatives (like git subtree, see: http://www.kernel.org/pub/software/scm/git/docs/howto/using-merge-subtree.html[Git Subtree Documentation]), these do not fit our needs very well.
+
+Another advantage of this new structure is, that it could be used for automatic builds of packages as well. Right now, pkgbuild.com for example, starts a new build of a package by request. In the software engineering world there is something that is called Continuuous Integration (CI), which builds a package as soon as a change in the repository appears. The tool I am using for this right now (Hudson/Jenkins) does support the build of unix packages as well, so in the long run, it could be worthwhile to investigate this for our use-case as well.
+
+So, WDYT? What are your thoughts on this one? I guess, that this is the way to go, even though it is not for RC4 or even redgum, but soon afterwards, I would suggest is the latest to implement this approach.

@@ -1,0 +1,194 @@
+= Hibernate Entity and Revision Listeners
+triplem
+2019-05-24
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+In a project I do work on currently, we do use Hibernate 4.3 and Envers 4.3. We wanted to store modification informations like creation date and modification date as well as userinformation on some domain entities as well.
+
+This is done by using Entity Listeners in addition to Hibernate Envers. One problem we faced, was on how to retrieve the username in the Listeners, since this information is not Injectable in a JEE environment.
+
+The following classes/interfaces are used to provide this functionalities. I do hope, that this helps others as well.
+
+----
+@Embeddable
+public class ModificationInformation implements Serializable {
+
+  @Type(type = "org.javafreedom.LocalDateUserType")
+  @Column
+  private LocalDate creationDate;
+
+  @Type(type = "org.javafreedom.LocalDateUserType")
+  @Column
+  private LocalDate modificationDate;
+
+  @NotNull
+  @Column
+  private String createdBy;
+
+  @Column
+  private String modifiedBy;
+
+  public ModificationInformation() {
+    this("SYSTEM");
+  }
+
+  public ModificationInformation(String createdBy) {
+    super();
+    this.createdBy = createdBy;
+  }
+
+  public String getCreatedBy() {
+    return this.createdBy;
+  }
+
+  public void setCreatedBy(String createdBy) {
+    this.createdBy = createdBy;
+  }
+
+  public String getModifiedBy() {
+    return this.modifiedBy;
+  }
+
+  public void setModifiedBy(String modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+  public LocalDate getCreationDate() {
+    return this.creationDate;
+  }
+
+  public void setCreationDate(LocalDate creationDate) {
+    this.creationDate = creationDate;
+  }
+
+  public LocalDate getModificationDate() {
+    return this.modificationDate;
+  }
+
+  public void setModificationDate(LocalDate modificationDate) {
+    this.modificationDate = modificationDate;
+  }
+
+}
+
+----
+
+The above class is marked as @Embeddable and therefor is used as an embedded object inside our domain objects. All classes using this embedded object, do need to implement the following interface.
+
+----
+public interface HasModificationInformation {
+
+  ModificationInformation getModificationInformation();
+
+}
+
+----
+
+The domain object then looks like the following. All properties not related to this short post are obviously skipped.
+
+----
+@Entity
+@Audited
+@EntityListeners({ModificationInformationListener.class})
+@Table(name = "domain_object")
+public class Domain extends implements HasModificationInformation {
+
+  @Embedded
+  private ModificationInformation modificationInformation = 
+                                    new ModificationInformation();
+
+  public ModificationInformation getModificationInformation() {
+    return this.modificationInformation;
+  }
+
+----
+
+This Entity is marked as @Audited, to be able to use Hibernate Envers and its functionality. Furthermore, we added a new Listener (ModificationInformationListener), to be able to act on certain events during the Entity Lifecycle.
+
+We then needed to provide this Listener and furthermore to use Hibernate, the following classes are implemented.
+
+----
+public class ModificationInformationListener extends AbstractUserNameListener {
+
+  @PrePersist
+  public void prePersist(HasModificationInformation hmi) {
+    if (hmi.getModificationInformation().getCreationDate() == null) {
+      hmi.getModificationInformation().setCreationDate(LocalDate.now());
+      hmi.getModificationInformation().setCreatedBy(this.getUserName());
+    }
+
+    this.preUpdate(hmi);
+  }
+
+  @PreUpdate
+  public void preUpdate(HasModificationInformation hmi) {
+    hmi.getModificationInformation().setModificationDate(LocalDate.now());
+    hmi.getModificationInformation().setModifiedBy(this.getUserName());
+  }
+
+}
+
+----
+
+----
+public class EnversRevisionListener extends AbstractUserNameListener implements RevisionListener {
+
+  @Override
+  public void newRevision(Object revisionEntity) {
+    EnversRevisionEntity rev = (EnversRevisionEntity) revisionEntity;
+    rev.setUsername(getUserName());
+  }
+}
+----
+
+As you do see, both Listeners do use an Abstract class (AbstractUserNameListener), which allows to access the Principal of the current Session. This is necessary, because both of theses Listeners are not managed by CDI and therefore cannot use @Inject.
+
+----
+public abstract class AbstractUserNameListener {
+
+  // could be, that this will not work for SOAP/REST API calls
+  protected String getUserName() {
+    BeanManager beanManager = CDI.current().getBeanManager();
+    Bean&lt;Principal&gt; principalBean =
+      (Bean&lt;Principal&gt;) beanManager.getBeans(Principal.class).iterator().next();
+    CreationalContext&lt;Principal&gt; context = beanManager.createCreationalContext(principalBean);
+    Principal principal =
+      (Principal) beanManager.getReference(principalBean, Principal.class, context);
+
+    String userName = principal.getName();
+
+    if (userName == null) {
+      userName = "SYSTEM";
+    }
+
+    return userName;
+  }
+
+}
+----
+
+The above method is basically copy-pasted from https://stackoverflow.com/questions/35617633/cdi-beans-and-hibernate-envers[Stackoverflow].
+
+Now every Update and Persist the internal ModificationInformationListener and the corresponding method in there is called and the user and date information is stored in the domain entity. Furthermore, every Lifecycle Event calls Hibernate Envers, which stores the username in the corresponding EnversRevisionEntity.
+
+----
+@Entity
+@RevisionEntity(EnversRevisionListener.class)
+@Table(name = "envers_revision")
+public class EnversRevisionEntity extends DefaultRevisionEntity {
+
+ private String username;
+
+  public String getUsername() {
+    return username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+}
+----
+
+Hope that this helps. Feedback would be greatly welcome.

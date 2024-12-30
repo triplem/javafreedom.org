@@ -1,0 +1,16 @@
+= "It's getting hot and hotter in the classpath hell..."
+triplem
+2005-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Today I received a nice comment on my blog about the classpath hell problem I am facing. I guess this problem is not well understood, therefor I will try again to explain my problem.
+
+We have, like I stated earlier, many components, which can be inter-dependent between each other (well, obviously no circular dependencies are allowed). So basically, when the version of one component changes, I don't really know, what componoents need to be updated. Some (special) components, which we call applications, which rely on all other components. These applications can even use different versions of components beneath each other. Means, that application a can use version 1.1 of component r and application b can use version 1.2 of component s. Basically the retrieval of different versions of components out of a central repository is pretty much solved using some custom Ant-Tasks.
+
+Due to the fact that we use EJBs and stuff, some components must be used in the same version all over the place, that is pretty straight forward but is still unresolved, in that I don't know, what component relies on what other components. But this could be solved pretty easily (I hope) using a database and some custom tasks. But I get a headache, when it comes to components, which are not server-sided and which could be updated in the application, but due to some issues aren't.
+
+Another big issue is the usage of Java Web Start, which is pretty much a pain in the ass (sorry for the very drastic words, but I am honest here). I have to put together a JNLP file for each application, which states the different components and there versions used. Also I have to fill antoher file called version.xml, where all components with all versions are listed. A real pain, I can tell you. Even though some of this could be done by the usage of some Ant task or by using Maven, not all of this could be done.
+
+Then there is another issue, in that there are basically two production versions of each application out there, where the maintenance is still going on and then there is a third version in development. This makes it even more complicated. I hope, that you understand my issues now. Probably there is somebody out there facing the same problems and has already a solution in her/his pocket????

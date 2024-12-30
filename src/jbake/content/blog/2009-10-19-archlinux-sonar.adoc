@@ -1,0 +1,12 @@
+= ArchLinux Sonar
+triplem
+2009-10-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management, Java
+
+Like already stated, I would like to build a Development Stack for ArchLinux and especially Java. Now I have published another Package of this stack - http://sonar.codehaus.org[Sonar]. Sonar is a quality metric tool for Java and especially http://maven.apache.org[Maven] peojects. This package is in its early phase and it is using the default Derby Db and Jetty as the Web Daemon. The Wrapper delivered with Sonar to start the daemon is still in place and uses the user root. 
+
+http://aur.archlinux.org/packages.php?ID=31321[AUR - java-sonar]
+
+So, this is the first release of this package and I think that there is a lot more to come. BTW, I am still looking for support for this "project". Any help is welcome.

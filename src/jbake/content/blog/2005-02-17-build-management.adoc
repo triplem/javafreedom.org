@@ -1,0 +1,14 @@
+= Build Management
+triplem
+2005-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+In the company I work for right now (http://www.gipmbh.de/[GIPmbH]), we have several quite huge Java Applications. These Applications consists of roughly 40 components. Each component is split in at least three, but mostly more, branches in the SCM. Even the Application itself are split in several Branches (two branches per version per application, means one Maintenance Branch, one QS Branch per Version) and also an additional Development Branch for the next upcoming Version.
+
+One of the problems I have to solve right now, is the classpath hell. For each Component can extend every other component, I have to come up with a solution, so that I have to change the version only once in the classpath and not like it is now, in all componentes and probably even in all Branches. Right now, the classpath for the components are put into the build.xml (yes, we are using ANT 1.6.2, thank you!!!) as well as into the .classpath (yes, it is Eclipse 3.0). Also, for the deployment of the Applications into Java Web Start (I know, very ugly), we need to put the runtime classpath of the applicaton into .jnlp-Files. For the nightly build, the .jar-Files are not versioned, but for the real deployment for our customers, I have to put the version-numbers in there as well, and also I have to put the versions into the so called version.xml-file from Java Web Start.
+
+So basically what I am looking for right now, is something like a classpath-Builder, which helps me to service the full classpath of all components in a central place. From this I would like to generate the .classpath from Eclipse as well as the Ant-Classpath (means build-time as well as run-time classpath). Also the .jnlp and version.xml files should then be generated. I stumbled across http://www.inversoft.com/online/savant/savant.html[Savant] and http://bandaid.sourceforge.net/[BandAid] last night. I hope, this can help me a little with my problems.
+
+Another big problem is, that the repository for the JARs is not structured like e.g. the Maven-Repository, but it is split into Branches. So we have a Repository called Development, in where all development-Jars are stored. There is no separation between components and stuff. I believe to get this sorted out, I definitly have to move to the Maven-Structure, since this seems to get the standard

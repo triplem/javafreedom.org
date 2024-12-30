@@ -1,0 +1,16 @@
+= Working on ArchServer
+triplem
+2009-12-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Today I published the fluxbb Theme for the ArchServer.org website. 
+
+I am still working on the ArchLinux Development Stack. Yesterday I published a new version of the http://aur.archlinux.org/packages.php?ID=32166[Hudson Package] to the http://aur.archlinux.org[AUR]. Unfortunately I did not make any progress with the ISO of the ArchLinux Development Stack. 
+
+Instead I joined forces with the guys from http://www.archserver.org[archserver.org], which is a perfect fit for us, since we can then provide our stack on a more stable Server System.
+
+I forgot to tell, that I am already a Trusted User of the ArchServer Community. Please refer to the http://www.archserver.org/team.html#triplem[Team] page of the project.
+
+So, stay tuned for more information about our DevStack and ArchServer.

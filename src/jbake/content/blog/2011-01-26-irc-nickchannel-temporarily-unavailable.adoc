@@ -1,0 +1,20 @@
+= IRC: nick/channel temporarily unavailable
+triplem
+2011-01-26
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I am using the public ZNC (an IRC bouncer) from http://gshellz.org/gsh/Public_ZNC_HOWTO[globalshellz.org] for my access to the freenode IRC network. I have had a minor problem when I connected to my ZNC. Since my away nick was not registered to my account (which is triplem btw), I have had to "login" each time when I connected to the ZNC and my nick was changed from triplem[a] to triplem. So, I started my IRC client (XChat btw) and forgot to type in my password again, this lead to a problem that my nick was temporarily unavailable. To resolve this I looked on the http://freenode.net/faq.shtml#nicksetup[freenode page] and found the following easy solution:
+
+. Registered my away nick with /nick triplem[a] and /msg nickserv group (of course I needed to login to my account, which was not a problem, since several nicks are already grouped to my main nick and I just chose one of those).
+. I released the original nick (triplem) with the following command: /msg nickserv release triplem <password>, and everything was fine.
+
+Hope this helps you as well. And if you would like to meet me on IRC, you can take a look into the following channels:
+
+* shellium
+* globalshellz
+* netburst
+* archserver
+
+Probably we meet us there 😉

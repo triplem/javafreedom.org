@@ -1,0 +1,29 @@
+= Maven CI Best Practices
+triplem
+2011-02-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Build Management
+
+Yesterday our Admin came to me and told me, that the Harddrive on our CI Server is nearly full. This is due to the fact that our http://nexus.sonatype.org/[Nexus Repository] as well as our http://hudson-ci.org/[Hudson CI Server] are installed on the same machine. Hudson is using it's own locale repository and therefor all Snapshots are filling up the diskspace. 
+
+Hudson has its own local repository due to the fact, that we are following the best practices mentioned by Jason Van Zyl on this http://www.sonatype.com/people/2009/01/maven-continuous-integration-best-practices/[blog post].
+
+What I did now, was to purge the local repository of Hudson. Unfortunately we are not following all Maven best practices and therefor one project (the master pom for all other projects) is then missing from the local repository. I hope that I can clean this up during the next couple of days (hey, we are in a pretty tough project right now, and therefor the time for this is not really there). This means, that we do have to build and "mvn install" this project (base-build) directly after the purge. Furthermore I am cleaning up the Backups we are doing using http://wiki.hudson-ci.org/display/HUDSON/thinBackup[ThinBackup] (a small Hudson Plugin). Therefor we are using the following script:
+
+----
+#!/bin/sh -e
+# fetches all changes in all repositories and sync it to redmine
+cd /var/cache/hudson/mvn-repository
+rm -rf *
+cd /var/lib/hudson/jobs/base-build/workspace
+su hudson -c 'mvn clean install' > /dev/null
+cd /var/cache/hudson/backup
+find . -mtime +5 -exec rm {} \;
+----
+
+Furthermore we are now using a scheduled Task in nexus to purge the Nexus Repository from any Snapshots older then 5 days, but keeping at least the latest snapshot (see http://www.sonatype.com/people/2009/09/nexus-scheduled-tasks/[another blog post]).
+
+After some more cleaning of e.g. log files and more, the disk is now half full (or half empty, depending on your point of view). This was more then enough for me.
+
+Hope this helps.

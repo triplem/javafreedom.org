@@ -1,0 +1,12 @@
+= ArchLinux Rails Package
+triplem
+2009-11-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Sine yesterday I am the official Maintainer of the ArchLinux Rails package, which can still be found in the http://aur.archlinux.org[AUR]. I take over from Grumpytoad, who offered to Mentor me on the next release. So Raider is now known as Twix, everything else stays the same 🙂
+
+I put the sources in the same Git Repository as the ArchLinux DevStack.
+
+So, if you want to help out, you are more then welcome.

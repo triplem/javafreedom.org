@@ -1,0 +1,12 @@
+= ArchServer decisions
+triplem
+2010-01-11
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+The ArchServer project has had some interesting discussions going on over the last couple of days. It is decided now, that the repositories are all named pretty much like the ones from Arch Linux, just with a "server-"-prefix. The repositories are limited to server-core, server-extra, server-testing and server-community. We are not splitting it up, like originally planned into e.g. webapps or lamp. This is done using the group-feature of the PKGBUILD.
+
+You can look up the decision on the http://bbs.archserver.org/viewtopic.php?id=14&p=2[ArchServer Forum].
+
+So, you are reading this, now why don't you participate in the ArchServer effort?

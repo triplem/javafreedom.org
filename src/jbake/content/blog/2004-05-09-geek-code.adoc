@@ -1,0 +1,21 @@
+= Geek Code
+triplem
+2004-05-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Today I found a nice site about the http://www.geekcode.com/[Geek Code] while browsing. A little annoying, that it is slightly old, but still kind of fun. So here is my GeekCode:
+
+----
+-----BEGIN GEEK CODE BLOCK-----  
+GCS/IT d- s++:-- a- C++++ UL+++ P+  
+L+++ E W+++ N+ o- K? w--- O? M- V?  
+PS+++ PE-- Y+ PGP t+ 5++ x++ R* tv-  
+b+++ DI++ D++ G++ e+++ h+ r- y+  
+-----END GEEK CODE BLOCK-----  
+----
+
+If you would like to know what this means, just take a look at the geekcode itself or download http://px.sklar.com/code.html?id=896&fmt=pl[this] program and run it.
+
+Cheers.

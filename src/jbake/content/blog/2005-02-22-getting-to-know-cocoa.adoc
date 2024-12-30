@@ -1,0 +1,17 @@
+triplem
+2005-02-22
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Cocoa, Mac OS X
+
+Well, after some long hours in front of my Mac I got to know Objective-C and Cocoa a little better. I am still in the beginning of this for me "new" language (objective-c) and the framework (Cocoa). I build my first real world window using the Interface Builder delivered by Apple with the XCode toolset.
+
+I browsed quite a couple of websites to the topic and will list some of them here, so that others can also participate on my experiences:
+
+* http://www.cocoabuilder.com/archive/bydate[Cocoabuilder], a pretty nice source for information around Cocoa
+* http://cocoadevcentral.com/[CocoaDevCenter], the place to look at, if you are a Cocoa starter like myself
+* http://www.macdevcenter.com/[MacDevCenter] O'Reillys site for Mac developers, pretty slick
+* http://www.omnigroup.com/developer/sourcecode/[OmniGroup] a page from OmniGroup, where they are publishing there frameworks, used in there applications
+* http://developer.snowmintcs.com/frameworks/sm2dgraphview/[SM2DGraphicsFramework], a nice framework for publishing two dimensional graphics in your application.
+
+These links provide some good view into the scene and if you need more, you can always use our friend http://www.google.com/[Google].

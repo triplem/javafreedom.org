@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>reconstructor.modules.modules.Modules</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="reconstructor-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="reconstructor-module.html">Package&nbsp;reconstructor</a> ::
+        <a href="reconstructor.modules-module.html">Package&nbsp;modules</a> ::
+        <a href="reconstructor.modules.modules-module.html">Module&nbsp;modules</a> ::
+        Class&nbsp;Modules
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/reconstructor.modules.modules.Modules-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="reconstructor.modules.modules.Modules-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class Modules</h2>
+
+<hr/>
+
+Base class containing primary module functionality
+<hr/>
+
+<p><b>Status:</b> Specification
+</p>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>moduleFile</span>)</span></code>
+<br />
+Initialize the Object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#author" class="summary-sig-name"><code>author</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the author of the module</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#category" class="summary-sig-name"><code>category</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the category of the module</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#debian_compatible" class="summary-sig-name"><code>debian_compatible</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns, if the module is debian compatible (can this module be used 
+on an install CD)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#debs_to_add" class="summary-sig-name"><code>debs_to_add</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the debs which are going to be added in the module For these 
+debs the program dpkg will be called.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#description" class="summary-sig-name"><code>description</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the description of the module</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#extras" class="summary-sig-name"><code>extras</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns extras, which will be executed during the execution of the 
+module.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#name" class="summary-sig-name"><code>name</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the name of the module</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#packages_to_add" class="summary-sig-name"><code>packages_to_add</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the packages which are going to be added in the module For 
+these packages the program apt-get install will be called.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#packages_to_remove" class="summary-sig-name"><code>packages_to_remove</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the packages which are going to be removed in the module For 
+these packages the program apt-get remove will be called.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#subcategory" class="summary-sig-name"><code>subcategory</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the subcategory of the module</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#updateURI" class="summary-sig-name"><code>updateURI</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the updateURI of the module</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="reconstructor.modules.modules.Modules-class.html#version" class="summary-sig-name"><code>version</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the version of the module</td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>moduleFile</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  Initialize the Object.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="author"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">author</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the author of the module
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the author of the module
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="category"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">category</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the category of the module
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the category of the module
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="debian_compatible"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">debian_compatible</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns, if the module is debian compatible (can this module be used 
+  on an install CD)
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        true, if and only if the module can be used in an debian 
+        installer CD
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="debs_to_add"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">debs_to_add</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the debs which are going to be added in the module For these 
+  debs the program dpkg will be called.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the list (string) of the debs
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="description"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">description</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the description of the module
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the description of the module
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="extras"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">extras</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns extras, which will be executed during the execution of the 
+  module.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="name"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">name</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the name of the module
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the name of the module
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="packages_to_add"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">packages_to_add</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the packages which are going to be added in the module For 
+  these packages the program apt-get install will be called.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the list (string) of the packages
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="packages_to_remove"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">packages_to_remove</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the packages which are going to be removed in the module For 
+  these packages the program apt-get remove will be called.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the list (string) of the packages
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="subcategory"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">subcategory</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the subcategory of the module
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the subcategory of the module
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="updateURI"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">updateURI</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the updateURI of the module
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the updateURI of the module
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="version"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">version</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the version of the module
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        the version of the module
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="reconstructor-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Sun Jan 28 22:47:30 2007</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,8 @@
+= Reconstructor
+triplem
+2007-01-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Since I would like to use http://reconstructor.aperantis.com[Reconstructor] in the Bubuntu Distro, i am currently heavily involved in this project, to make it clean and provide a command line interface. Thanks to Evan and John for the currently going on link:/projects/reconstructor[API design].

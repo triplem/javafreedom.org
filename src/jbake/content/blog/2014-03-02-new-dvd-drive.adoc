@@ -1,0 +1,8 @@
+= New DVD Drive
+triplem
+2014-03-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Musik
+
+Since I have ripped around 900 CDs with my Laptop, the build-in DVD Rom broke (which is bad, but to be expected on this large amount of CDs). I bought a new external drive (http://www.amazon.de/gp/product/B00DSP1R2E/ref=oh_details_o03_s00_i00?ie=UTF8&psc=1[Samsung SE-218CN]). This one works now without any problems on my ArchLinux Laptop 😉

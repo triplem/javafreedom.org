@@ -1,0 +1,31 @@
+= Planning for a new Linux Server
+triplem
+2009-08-08
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Hello, long time since my last post. Just to give you a short headsup:
+
+Just one thing concerning the last post (Internet Abzocker). This company just send a so-called "Mahnbescheid" last week and we have no entered a "Widerspruch", so let's see what is going to happen.
+
+Now entering the newes topic. I have a (not anymore running) Linux Server at home. This is an old Pentium 3 dual processor with 800MHz and round about 500GB of hard disc space splitted onto 4 discs. This monster is quite lound, and that is the reason I do not let it run 24/7 anymore. Now I am planning to buy a new server. This new machine is going to be a "hand made" server and not a complete machine. 
+
+My current budget is around 500€ (probably a little above), and I the following requirements:
+
+* Dual Core
+* 64bit
+* 4GB Ram
+* 2-4TB HDD
+* SATA-II
+* eSATA
+* ATX-Formfactor / Midi-Tower
+* USB2.0
+* Sound
+* Silent
+
+The problem of the above configuration is, that I did not find any recommendations in the Web for a Linux System, where all of the above compontens are supported 100%. Therefor this is going to be a little bit of a game 🙂
+
+From the software perspective, the OS is going to be a Linux Distribution (most probably Ubuntu Server, but could be Arch as well). I would like to run an Asterisk Server, and most probably the normal SBS-stuff (e.g. Mail, SMB, …). A nice Groupware would be nice as well, and most probably it is going to be http://www.tine20.org/[Tine 2.0]. For me it is quite important that the Groupware syncs with my iPhone.
+
+If you do have any recommendations concerning the above configuration, don't hesitat and contact me, via Twitter or via Mail. I will report on the detailed configuration I came up with and on my experiences with it. The whole system should be up and running by the end of Q3 this year. Currently I am just looking for experiences of others and also for some in-expensive hardware. it is basically a gathering phase, before I am going to spend my bugs 🙂

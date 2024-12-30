@@ -1,0 +1,10 @@
+= ArchServer closing in on first RC
+triplem
+2010-08-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today we finally made a huge step toward a first RC. All packages in our server-core repository are now moved from testing towards their final place in server-core 🙂
+
+Next step will be to create an ISO and the to make some VBox images. Lets see when we get this done.

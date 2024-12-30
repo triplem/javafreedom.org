@@ -1,0 +1,14 @@
+= DevOpsKube: Lots of updates
+triplem
+2016-11-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+We updated the docker Image of https://github.com/devopskube/docker-jenkins[jenkins] to reflect the latest changes on the https://github.com/devopskube/docker-mysql[MySQL Docker Image] (eg. we added the Makefile, a jenkinsfile and use the latest Version Bump Stuff. These new versions of the Image are now also reflected in the main https://github.com/devopskube/devopskube[DevOpsKube] charts. 
+
+Furthermore we updated the https://github.com/devopskube/devopskube-single-node[Single-Node] user-data to use the latest Kubernetes Version (1.4.6). This adoption is in order to reflect the changes found in the https://github.com/coreos/coreos-kubernetes/tree/master/single-node[CoreOS Single-Node] repository.
+
+Next steps are now to use a seed-job for the Jenkins Docker Jobs we do have right now (mainly: docker-mysql as well as docker-jenkins) and to then integrate jenkins with our local https://github.com/devopskube/devopskube/tree/master/charts/gogs[Gogs] chart, to be able to provide a fully working Docker Building in our SDLC stack. 
+
+If you are interested in our efforts, please join us. Any help and any contribution is welcome.

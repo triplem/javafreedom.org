@@ -1,0 +1,14 @@
+= Hudson vs. Jenkins - Hudsons future
+triplem
+2011-03-08
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Build Management
+
+Yesterday Sonatype announced a http://www.sonatype.com/people/[free webinar] about the future of Hudson. I am very interested in the presentation from Jason van Zyl and the outcome therefor. So, I guess up until then, there will be no real news about this topic. 
+
+The presentation seems to be focused on Sonatypes (positive) influence on Hudson and the changes they would like to do. I guess, that this will contain also some output from the survey Sonatype has taken on the "Future of Hudson". 
+
+Since JSR330 (Dependency Inejction) is now already implemented in Hudson, I guess that the Plugin API will change slightly, to use this new concept (which is great IMHO). Furthermore there will be (IMHO) some changes to the UI of Hudson to make a clearer distinction between Hudson and Jenkins. 
+
+So, IMHO Hudson is going to be an integral part of the offerings from Sonatype, let's see where this leads the project and the community.

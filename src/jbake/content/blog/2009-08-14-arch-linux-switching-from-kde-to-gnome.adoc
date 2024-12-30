@@ -1,0 +1,18 @@
+= Arch Linux - switching from KDE to GNOME
+triplem
+2009-08-14
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+Since I am a long time Gnome user (well, I have used Ubuntu for almost 5 years), I thought, if I am going to install a new distro (Arch Linux in this case) I switch my Desktop Environment as well. Therefor I installed KDE. 
+
+Let me tell you, that I was not really happy with this decision, and that's why I have chosen to de-install KDE (version 4.3) and install GNOME 2.6. I followed the instructions for de-installing on the http://wiki.archlinux.de/title/KDE[ArchLinux Wiki (DE)] and everything went smooth. Afterwards, I installed Gnome using once again the http://wiki.archlinux.de/title/GNOME[ArchLinux Wiki (DE)] as a guide.
+
+After re-starting my system, the GDM came up, but after logging in, I got an error message, telling me that the "System has no xclients file. starting up in xterm…". Also I did not receive a nice Gnome Desktop, but only a small shell in the upper left corner. I found http://bbs.archlinux.org/viewtopic.php?id=39998[this] page in the Arch Linux Forum, where somebody claimed that another user could login. Therefor I looked into my own homedirectory and found several X-related subdirectories (starting with a ".", meaning to see them you have to do a `ls -al`). I deleted all KDE and X related stuff and all directories, where I was pretty unsure for what reason they were created. After this, Gnome was running smoothly.
+
+One more thing to add, do not start GDM via rc.conf (DEAMONS=) and via inittab. I put GDM inside both configuration files and GDM started, but showed an error, that another X-Server tried to start as well. After removing GDM from rc.conf, everything was fine.
+
+I am writing this post now under Gnome using Firefox 🙂 
+
+The next step is now to install a nice Theme (ARCH specific) and probably even a bootsplash.

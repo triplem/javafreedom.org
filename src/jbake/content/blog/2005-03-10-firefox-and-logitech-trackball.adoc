@@ -1,0 +1,8 @@
+= Firefox and Logitech Trackball
+triplem
+2005-03-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+I am experiencing a minor problem using my Logitech Trackball together with Firefox. Everytime I am scrolling up and then a small tick back using the wheel, I am going back one back, which is pretty annoying. Any solution out there, or is it a problem with the configuration????

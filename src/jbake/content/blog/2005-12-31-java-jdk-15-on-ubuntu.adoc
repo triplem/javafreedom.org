@@ -1,0 +1,20 @@
+= Java (JDK) 1.5 on Ubuntu
+triplem
+2005-12-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java
+
+Hello, I wanted to install the JDK1.5 on Ubuntu Breezy Badger. I downloaded the rpm from sun and found, that even with alienating this file, I have had no luck. Therefor I searched the internet and found the make-jpkg tool. Try it:
+
+* download JDK1.5 (.bin)
+* sudo apt-get install fakeroot java-package java-common
+* fakeroot make-jpkg sun-j2sdk1.5_1.5.0+update06_i386.bin
+
+This process should ask you for the detected product and if you would like to install it. Say yes and also say yes to the license agreement of SUN. Now you have created a new .deb file
+* install this file using
+
+sudo dpkg -i sun-j2sdk1.5_1.5.0+update06_i386.deb
+* now you need to update your configuration of Java: sudo update-alternatives -config java
+
+Have fun using JDK1.5

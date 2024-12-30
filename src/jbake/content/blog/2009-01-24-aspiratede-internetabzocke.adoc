@@ -1,0 +1,75 @@
+= aspirate.de - Internetabzocke
+triplem
+2009-01-24
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Hallo,
+
+lange habe ich hier nichts veröffentlich.
+
+Viel ist passiert, was ich berichten könnte und wahrscheinlich auch noch werde 🙂 Dies ist mein erster Post ausschließlich auf Deutsch. Ich möchte eine Artikelserie über das Thema Abzocke im Internet starten. Ihr werdet euch fragen, warum. Nun, ein guter Freund von mir ist reingefallen und genau über diesen Vorgang möchte ich hier berichten.
+
+Am 28.12.2008 wollte mein Kumpel (nennen wir Ihn Karl) neue Software auf dem zu Weihnachten bekommenen Laptop installieren. Er ist äußerst sparbewußt und wollte OpenOffice installieren. Also flux den Suchbegriff "Openoffice download" bei Google eingegeben und den ersten Link ganz oben (schnell-downloaden.com) angetippt. Dort wurde er aufgefordert, seine Daten (Name und Adresse) anzugeben. Dies passiert immer wieder und so füllte er das Formular aus, inkl. email Adresse. Er bekam eine Mail mit einem Bestätigungslink. Da auch dies nicht ungewöhnlich ist, klickte er darauf und wartete auf den beginnenden Download. +
+Er bekam eine zweite mail, in der eine sogenannte Widerspruchsbelehrung auftauchte. In dieser Mail waren auch seine Kennung und ein Passwort enthalten. Dies wurde Karl jedoch zu "misteriös" und so hat er dann die mail mail sein lassen und OpenOffice statt dessen direkt bei http://de.OpenOffice.org[de.OpenOffice.org] heruntergeladen (erster "nicht" Werbelink bei google). +
+Gestern, am 23.01.2009, erhielt er dann eine Rechnung von Aspirate.de, dem "Betreiber" von schnell-downloaden.com. Die Rechnung sieht (als email natürlich) wie folgt aus:
+
+----
+Sehr geehrter Herr XXXX,
+wir bedanken uns für die Nutzung der kostenpflichtigen Onlinedienste auf http://schnell-downloaden.com, über das Paymentmodul der aspirate GmbH.
+
+Nunmehr erlauben wir uns, die offene Verbindlichkeit über die Nutzung der Dienste in Rechnung zu stellen.
+
+Ihre Transaktion wird ausgeführt von der aspirate GmbH, Pfälzer-Wald-Straße 65 in 81539 München, Deutschland, und dem Urheber des Onlinedienstes.
+
+Hier finden sie alle wichtigen Transaktionsdetails:
+
+Rechnungsnummer: 49.25.10474
+Bestelldatum: 28.12.2008 13:51:33 Uhr
+Kurz-Info: Download Portal für Software
+Rechnungsbetrag: 96.00 Euro, inkl. 19% MwSt.
+
+Bitte überweisen Sie den offenen Rechnungsbetrag ohne Abzug innerhalb von 10 Tagen auf unser Bankkonto:
+
+Bank    : HypoVereinsbank München
+Inhaber : aspirate GmbH
+Konto   : 665224155
+BLZ     : 70020270
+IBAN    : DE78700202700665224155
+BIC     : HYVEDEMMXXX
+RECHNUNGSBETRAG    :   96.00 Euro
+VERWENDUNGSZWECK   :   49.25.10474
+
+Hiermit erhalten Sie Ihre aktuelle Rechnung von der aspirate GmbH im PDF-Format. Um sich die Rechnung ansehen zu können, klicken Sie bitte auf den Anhang in dieser Email und es öffnet sich automatisch der Acrobat Reader. Nun können Sie sich Ihre Rechnung auch für Ihre Unterlagen ausdrucken.
+
+Haben Sie Fragen, Lob oder auch Kritik, dann schreiben Sie uns an! Unsere Kundenbetreuung steht Ihnen per eMail und Post zur Verfügung. Bitte geben Sie stets die Rechnungsnummer an!
+
+Mail:  support@aspirate.de
+
+Wir wünschen Ihnen weithin viel Spaß mit dem Dienst.
+
+Ihre Kundenbetreuung
+
+aspirate GmbH
+Pfälzer-Wald-Straße 65
+81539 München
+
+eMail: support@aspirate.de
+web: http://www.aspirate.de
+
+Geschäftsführer:
+Christian P. Lakits
+Amtsgericht München HRB 164752
+Steuernummer: 143/115/70634
+----
+
+Weiterhin hängt eine PDF-Version der Rechnung an. Nun wurde Karl sehr unruhig und hat sich im Internet mal informiert. Hier wird immer wieder geraten, eine entsprechend zur Verfügung gestellte Vorlage zu nutzen (z.B. +
+http://www.janolaw.de/vorlagen/muster/wirtschaft_und_handel/internet_und_ebay/internetvertrag-ueber-eine-dienstleistung-widerruf-und-kuendigung.html["Internetvertrag, Widerruf und k&uuml;ndigung"] von Janolaw.de) und per Einschreiben mit Rückschein an die Firma zu senden.
+
+Nun werden wir sehen, was passiert, ich werde weiter berichten. Nachfolgend noch ein paar Links zu diesem Thema:
+
+* http://verbraucherrecht.blogg.de/eintrag.php?id=714[Polizei warnt vor Downloads bei Mega-Downloads.net]
+* http://forum.boocompany.com/viewtopic.php?t=2679[Forum BooCompany - Aspirate.de]
+
+Es gibt noch deutlich mehr informationen zu diesem und noch vielen anderen "Anbietern". Ich werde weiter berichten, wie es in dem konkreten Fall weitergegangen ist.

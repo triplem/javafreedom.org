@@ -1,0 +1,8 @@
+= Softpedia Entry for ArchLinux Development Stack
+triplem
+2009-11-05
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Just now I received an email, that the ArchLinux Development Stack has been added to the http://linux.softpedia.com/get/System/System-Administration/ArchLinux-Development-Stack-52053.shtml[Softpedia Index]. I am unsure, if this is a good thing or not, but it adds visibility to the project 🙂

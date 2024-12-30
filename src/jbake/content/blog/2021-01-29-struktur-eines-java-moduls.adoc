@@ -1,0 +1,41 @@
+= Struktur eines Java Moduls (oder Wie vermeide ich einen Big Ball of Mud)
+triplem
+2021-01-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Microservices sind in aller Munde, jedoch ergeben sich immer wieder Projekte, bei denen es darum geht, schnell und „einfach“ einen Erfolg abzuliefern. Wenn dazu der eingesetzte Technologiestack etwas betagt ist und das Projektteam recht klein, erscheint der Einsatz von Microservices als nur sehr schwer umsetzbar. Daher werden auch heute noch Monolithen gebaut, die jedoch, nach meinem Verständnis, so strukturiert werden müssen, das auch eine „Migration“ zu Microservices prinzipiell einfach möglich erscheint. Das macht dann den vermeintlichen Monotlithen zu einem „Modul Monolithen“ (siehe dazu https://www.informatik-aktuell.de/entwicklung/methoden/vom-monolithen-zu-self-contained-systems.html[Informatik Aktuell]) und nicht zu einem „Big Ball of Mud“ (BBoM). Eine Beschreibung, was schlecht ist an einem BBoM und warum dieser entstehen kann findet sich unter https://de.wikipedia.org/wiki/Big_Ball_of_Mud[Wikipedia] und soll hier nicht näher betrachtet werden. Ein BBoM führt in Folge zu erhöhten Wartungskosten und Aufwand für die Umsetzung von neuen Features, die dann unangenehm auffallen, wenn niemand damit rechnet und in der Kommunikation gegenüber Kunden und Auftraggebern nur schwer zu argumentieren sind.
+
+Wie kann man also einen solchen Big Ball of Mud verhindern? Daraus ergeben sich dann auch Schritte, wie man solche Systeme aufräumen kann bzw. was der Zielzustand eines solchen Monolithen ist.
+
+== Code-Conventions
+
+Code-Conventions sind ein wichtiger Bestandteil um Source Code für alle lesbar und somit auch wartbar zu halten. Häufig werden die https://google.github.io/styleguide/javaguide.html[Google Code Stlye Java] verwendet. Doch Vorsicht, unterschiedliche IDEs (hier: IntelliJ und Eclipse) interpretieren diese geringfügig anders. So sind Codezeilen bei IntelliJ max. 100 Zeichen lang, bei Eclipse 100, heißt also, das Eclipse nach dem 99 Zeichen anfängt, die Zeile umzubrechen, wohingegen IntelliJ nach dem 100sten Zeichen umbricht. Dies sehe ich aber eher als ein marginales Problem an, so dass jeder Entwickler "seine eigene" IDE nutzen kann/darf/soll.
+
+== Qualitätsmetriken
+
+Für die Einhaltung von Code-Conventions und damit zusammenhängenden Qualitätsmetriken können in den IDEs entsprechende Plugins sorgen (SonarLint), die die Entwickler aktiv dabei unterstützen. Wesentliche Code-Metriken (wie zB. lines-of-code in einer Klasse) können Hinweise darauf liefern, ob ein System sich zu einem BBoM entwickelt. Dies kann zB. durch die Verwendung von Sonarqube gemessen und nachgehalten werden. +
+Die Konventionen und –metriken können und sollten in einem Code-Review angesehen und besprochen werden. Dadurch wird die Tendenz der Entropie der Software zu einem BBoM verhindert bzw. zumindest verlangsamt. +
+[Wikipedia - Code Review](https://de.wikipedia.org/wiki/Review_(Softwaretest))
+
+== Package Strukturen
+
+In Java werden packages genutzt, um Quellcode voneinander zu separieren. Diese Separierung ist nur eine kleine Maßnahme für die Strukturierug des Codes und kann zB. zyklische Abhängigkeiten bzw. Domain-Übergreifende Zugriffe nicht verhindern, aber bereits sichtbar machen. Die Quintessenz für das Vorgehen ist die Strukturierung nach Features und Layers. Dieses Vorgehen ist sehr schön https://proandroiddev.com/package-by-type-by-layer-by-feature-vs-package-by-layered-feature-e59921a4dffa[hier] erklärt. In realen Projekten wird es trotz dieser Aufgliederung immer wieder Aufrufe von Klassen in einem Package in einem anderen Package geben. Diese aufgerufenen Klassen sollten durch Interfaces realisiert werden und deutlich dokumentiert werden. Dies stellt sicher, dass die aufrufende Klasse unabhängig von der konkreten Implementierung innerhalb einer spezifischen Domäne bleibt. Somit werden auch Zirkuläre Abhängigkeiten (sprich: Eine Klasse in Package x ruft eine Klasse in Package y auf, die wiederum eine Klasse in Package x aufruft) vermieden. Wenn ein Projekt re-strukturiert wird, können solche Abhängigkeiten sehr deutlich sichtbar werden, zB. wenn man alle packages in eigene Maven-Module packt und somit die Abhängigkeiten zwischen diesen Modulen auch explizit deklarieren muss. Abhängigkeiten zwischen Packages in jedweder Form sollten genau beleuchtet und ggf hinterfragt werden. +
+Dazu ein interessanter Artikel sind die Code Conventions der https://wiki.sei.cmu.edu/confluence/display/java/DCL60-J.+Avoid+cyclic+dependencies+between+packages[Carnegie Melon Universität].
+
+== Loose Kopplung
+
+Wie bereits in der Package Struktur angesprochen, sollten die einzelnen Packages nur loose voneinander abhängen. Dies wird zB. durch die Verwendung von Interfaces unterstützt. Dabei ist darauf zu achten, dass die verwendeten Interfaces möglichst passgenau für die Verwendung geschnitten werden, also nicht ein Interface für einen Service, sondern verschiedene Interfaces, die wiederum von anderen Features genutzt werden können. Interfaces bieten zudem den Vorteil das man idR abstrakter programmiert und somit eine Wiederverwendung von Klassen und Methoden deutlich verbessert. Weiterhin verbessern Interfaces bei richtigem Einsatz die Testbarkeit der Applikation, da man ggf. nur ein Mock (eine konkrete Implementierung des Interfaces) an eine zu testende Methode übergibt. Als Beispiel sei hier mal eine Methode findById(Long id) erwähnt. Natürlich kann jede spezifische Klasse eine eigene Methode (a la findClubById(Long id), findPlayerById(Long id)) implementieren, jedoch ist die Wiederverwendbarkeit deutlich höher, wenn man diese Methoden abstrahiert und ein eigenes Interface ByIdFinder implementiert. Jedoch sollte im Umkehrschluß auch immer darauf geachtet werden, nicht unnötig viele Interfaces (also für jede Klasse) zu nutzen (dazu hat Martin Fowler einen interessanten Artikel geschrieben
+
+https://martinfowler.com/bliki/InterfaceImplementationPair.html[Martin Fowler - Interface implementation Pair]. Ein Schlüssel dazu ist vor allem „Interfaces should be designed around your clients&#8216; needs, often these don't match the implementation“. +
+Zu Interfaces siehe auch: https://cseducators.stackexchange.com/a/547[Stackexchange] und +
+https://martinfowler.com/bliki/MinimalInterface.html[Martin Fowler - Minimal Interface]
+
+== Atomarität von Modulen
+
+Interfaces, Klassen und insbesondere Methoden sollten möglichst Atomar angelegt sein. Das heißt, das eine Methode einen (bzw. mehrere) Parameter bekommt, damit etwas tut, und dann ein Ergebnis zurückgibt, ohne auf dritte Resourcen (zB. die Datenbank) zurückzugreifen. Natürlich müssen Daten in der DB persistiert werden, jedoch sollte das, so möglich, in einer anderen Methode erfolgen, als die komplexe Berechnung von Details. Somit kann die Nutzbarkeit von Unit-Tests erhöht werden, wohingegen der Aufwand für die Erstellung und Ausführung von Integrations-Tests immer deutlich höher ist. Dadurch sinkt auch insbesondere die Zeit, die für einen Build mit allen Tests benötigt wird. Ziel ist hier auch, die Anzahl von Anpassungen für neue Features bzw. Feature-Änderungen möglichst auf eine kleine Anzahl von Klassen zu begrenzen (https://clean-code-developer.de/die-tugenden/#4_Minimiere_Abhaengigkeiten_Minimize_Dependencies_MD[Clean Code Developer - Minimiere Abhängigkeiten]).
+
+Alle oben genannten und mehr Punkte finden sich in den https://clean-code-developer.de/die-tugenden/[Tugenden des Clean Code Developers]. Diese Tugenden sollten in jedem Team bekannt und bestenfalls auch verinnerlicht werden. Dies verhindert Entropie und einen BBoM.
+
+Ein interessanter und für mich inspirierender Artikel zum Thema BBoM, warum ein solcher entsteht und wie man damit umgeht, ist https://medium.com/@maheshwar.ligade/manage-big-ball-of-mud-99f76123d7d4[hier] zu finden.

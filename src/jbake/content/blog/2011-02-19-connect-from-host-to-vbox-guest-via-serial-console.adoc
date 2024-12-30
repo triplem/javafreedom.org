@@ -1,0 +1,20 @@
+= Connect from Host to VBox guest via serial console
+triplem
+2011-02-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today I need to connect to the serial console of a VBox instance to test the serial console boot and connection of the guest system (ArchServer that is). There seem to be a lot of ways on how to do this, I am just explaining, what works for me, using Arch Linux as the Host:
+
+----
+socat UNIX-CONNECT:/home/triplem/com1 TCP-LISTEN:8040
+telnet localhost 8040
+----
+
+This was not working, in that I always received strange Characters in my terminal as soon as I used e.g. the cursor keys. This did not work, even after changing the terminal emulation to VT100 and all others.
+
+The same is true for socat unix-client:/home/triplem/com1 stdout.
+
+I do not seem to be able to work with this kind of stuff, the following tip was not working as well: +
+http://bbs.archserver.org/viewtopic.php?pid=1061#p1061[Work with VBox and serial console].

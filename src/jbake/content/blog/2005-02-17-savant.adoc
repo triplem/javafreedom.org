@@ -1,0 +1,13 @@
+= Savant
+triplem
+2005-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Hello to all Bloggers 🙂 
+
+In the last couple of days I received quite some comments on my blog. Thanks to all. One of the questions from me was, how to get out of the Java Classpath Hell (oh yeah, it is really hot in there). 
+
+http://jroller.com/page/jcarreira[Jason] pointed me to a product which I already have had a very brief look at a couple of weeks ago. This tool (http://www.inversoft.com/online/savant/savant.html[Savant]) seems to be a possible solution for my problem. I will have a close look on this and also will report back on my experiences. I found a pretty nice article at http://www.theserverside.com/articles/article.tss?l=Savant[TheServerSide] about Savant. Like I stated, this will probably solve at least some of my issues. And hopefully I can pretty easily generate an JNLP-file out of the Savant configuration files. So, I will dig deeper into this. +
+Regards to all blogger, especially those, reading this blog. Hopefully I can help you sometime as well

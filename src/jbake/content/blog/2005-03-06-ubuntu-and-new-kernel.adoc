@@ -1,0 +1,8 @@
+= Ubuntu and new kernel
+triplem
+2005-03-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Hmm, to get my orinoco card in monitor mode working (well, I need this to get sure, why the xbox is not working, not for wardriving), I have had to recompile a new kernel with the patches according to http://www.kismetwireless.net/HOWTO-26_Orinoco_Rfmon.txt[KismetWireless.net]. Ubuntu is pretty similar to debian, so I have had some experience in compiling kernels. But still I forgot to do a initrd kind of kernel, and the first reboot did not succeed, because the root filesystem could not be found, because I loaded most of the stuff (if not all) as a module. My new kernel is pretty much based on the Ubuntu standard config and therefor I need now to compile a initrd kernel. Now pretty much much everything works nicely. Fortunately even XBox is now running, without any modifications. Very strange, but nice 🙂

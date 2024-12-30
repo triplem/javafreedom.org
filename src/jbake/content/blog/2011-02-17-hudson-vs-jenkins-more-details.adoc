@@ -1,0 +1,29 @@
+= Hudson vs. Jenkins - more thoughts
+triplem
+2011-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java, Build Management
+
+After having released the last post about Hudson vs. Jenkins, I have read quite a lot about this issue. http://sonatype.com/[Sonatype] seems to have started a new "campaign" on their relationship to and investments into http://www.hudson-ci.org[hudson] (see their latest banner on their homepage, where they state: "Maven + Hudson = a heart is shown here"). 
+
+Of course Sonatype (which is a heavily risk capital backed company) would like to earn money with this move. Some of the reasons are IMHO really well explained on http://blog.tfnico.com/2011/02/sonatype-and-hudsonjenkins-analysis.html?m=1[Thomas Ferris Nicolaisen's blogpost]. Right now it looks like the whole community is in an real outcry about this move and especially the involvement of Sonatype and seem to be slightly annoyed by this move (see: http://lacostej.blogspot.com/2011/02/sonatypes-hudsons-bright-future-answer.html[Jerome's Coffebreak]). 
+
+Not all the critics of Jason on Hudson are 100% right, but he has a point. The only real question here is, why he (Sonatype that is) has not taken Benson (Sonatypes own Hudson Fork, without a real Homepage or anything like that, so it does not seem to "active") and put it into the Hudson code? There could be several reasons, e.g. http://kohsuke.org/[Koshuke] was not really into making Hudson a totally Maven focused application.
+
+Most probably Jason and Sonatype like to push Maven 3 into the market quite heavily. They are not the only company doing this, though. Hudson is a very good fit in Sonatypes software stack. So Sonatype is building up their software stack with Maven 3, Nexus, Hudson and Eclipse kind of stuff. Like http://blog.tfnico.com/2011/02/sonatype-and-hudsonjenkins-analysis.html?m=1[Thomas Ferris Nicolaisen] points out, there is still the option, that Oracle is going to buy-out Sonatype and that would most probably a good fit for Sonatypes investors 😉 (The whole discussion seems to be money related, doesn't it?)
+
+The least we can say is, that Hudson and especially Sonatype is now receiving a lot of attention due to this move, and they should have this attention, because otherwise Hudson would be dead (long live http://www.jenkins-ci.org[Jenkins] ;-)). 
+
+On a sidenote, why did Jason and Sonatype not support http://continuum.apache.org/[Continuum] instead of Hudson, Jason seemed to be a contributor to this project as well? The answer stays unsure, but I guess, Jason is going to put his bets all on market leaders to become a market leader on its own (well, with maven he is already, but what about Sonatype?). There are some strong competitors in the ALM market (is this the right name for this niche?) like e.g. the guys from http://www.maestrodev.com[MaestroDev], but they do not have this momentum as Sonatype has right now. The product portfolio seems to be (at least at a first glance) quite similar, only the selected/made tools are different. Maestro totally focusses on Apache Projects, whereas Sonatype implements its own products (at least this is true for Nexus).
+
+So the question, who will win the race for the most usage in the CI market is still open. I strongly believe that there is a place for Hudson as well as Jenkins in the market. Oracle is going to offer professional support to Hudson and Sonatype is doing it already, something, Jenkins does not have right now (at least not that I am aware of). I and the company I work for am not a real contributor to the success of Sonatype and neither Oracle through buying their products or support, but we will stick to Hudson at least in the near future. Lets see the outcome of all this. Probably I re-decide on this one, depending who fixes the well known http://issues.hudson-ci.org/browse/HUDSON-3134?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel[GZIP Problem] first 😉
+
+Another side note is some missing pieces in the Sonatype Software stack, after they do have already the whole Development Cycle in their portfolio (pretty close to IntelliJ and Atlassian, I guess). One piece of software still missing the from Sonatypes stack would be http://www.sonarsource.com[Sonar] (IMHO), which is used in the IT industry quite often as well. So, lets see, if Sonar stays with the current company or if some other company is going to buy this piece of software as well, it would fit perfectly into the Sonatype offerings though. 
+
+So, the whole Java Open Source market, especially in the Development and Apllication Lifecycle management, seems to change right now. Sonatype seems to be one of the leaders in this market, next to Atlassian, which has a slightly different target group. It is nowadays all about earning money. Hopefully the support into Open Source projects will stay as it is right now from these kind of companies 😉
+
+For more information about this story please also visit:
+
+http://javafreedom.org/blog/?p=380[Hudson and Jenkins now on GitHub] +
+http://javafreedom.org/blog/?p=362[Hudson vs. Jenkins]

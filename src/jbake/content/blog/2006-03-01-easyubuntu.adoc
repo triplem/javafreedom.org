@@ -1,0 +1,9 @@
+= EasyUbuntu
+triplem
+2006-03-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today I found http://easyubuntu.freecontrib.org/[EasyUbuntu]. Pretty nice, I think, so I don't have to install SUNs jdk and other stuff on my own any more 🙂 There is also http://ubuntuforums.org/showthread.php?t=66563[Automatix], which is pretty nice also. Since I am already using Dapper, I guess I have to wait a little to use these tools on my machine. +
+Also today I installed the new ubuntu server (a daily snapshot). Well, what should I say, it is a server distribution and everything works, like I knew it would, since I have had debian installed on this machine.

@@ -1,0 +1,10 @@
+= Hack the LaFonera
+triplem
+2007-01-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Communities, WLan
+
+Hello,
+
+today I found some pretty good links, on howto hack the LaFonera. First of all, I have had to reset the router, since it had the firmware 0.7.1r2 on, and only the r1 version is hackable. Therefor, I followed the description on http://futejia.blogspot.com/2006/12/my-way-to-hack-lafonera.html[this] site. Now I have had a quite old version on my la fonera. Then I followed https://www2.blogger.com/comment.g?blogID=3549947902298705622&postID=399239152421911727[BingoBommels] hack. now it works like a charm. Thanks 🙂

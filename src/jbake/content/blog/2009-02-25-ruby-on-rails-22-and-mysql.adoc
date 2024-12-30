@@ -1,0 +1,18 @@
+= Ruby On Rails 2.2 and MySQL
+triplem
+2009-02-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I have, after upgrading to RoR 2.2, the following problem during the rake db:migrate command:
+
+----
+rake aborted!
+An error has occurred, all later migrations canceled:
+undefined method `each' for #<Mysql:0x58a8b08>
+----
+
+Unfortunately I have had already MySQL 5.1.31 installed, and you will find several posts on the Internet, that there seems to be a problem with this version. Some posts tell you, that you should just copy the libmysql.dll to your \ruby\bin directory. This did not solve my problem. The problem is solved through just downloading an older version of the mysql-client library libmysql.dll from http://instantrails.rubyforge.org/svn/trunk/InstantRails-win/InstantRails/mysql/bin/libmySQL.dll, and copied it to \ruby\bin. Now it works 🙂
+
+BTW, I am working on windows vista.

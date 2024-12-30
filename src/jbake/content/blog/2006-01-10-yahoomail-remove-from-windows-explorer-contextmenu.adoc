@@ -1,0 +1,14 @@
+= YahooMail - remove from Windows Explorer ContextMenu
+triplem
+2006-01-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Windows
+
+In the company I work for, we are using Yahoo Messenger. Yesterday I installed my new Computer (it is the old one, just with a new Windoze install) and also installed Yahoo Messenger on it. Then a new Extension in the ContextMenu of Windows Explorer (E-Mail with Yahoo!) appeared. This was pretty annoying, since I never ever use this. Therefor I deleted the registry key:
+
+----
+HKEY\_CLASSES\_ROOT\*\shellex\ContextMenuHandlers\Yahoo Mail
+----
+
+This deleted the ContextMenu Entry

@@ -1,0 +1,23 @@
+= Archify Gnome
+triplem
+2009-08-14
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+I wanted to make my laptop truely archified. Therefor I installed first of all the murrine engine for GTK and, to have some themes available the corresponding theme collection:
+
+----
+pacman -S gtk-engine-murrine
+pacman -S murrine-themes-collection
+----
+
+After this, I downloaded the http://www.gnome-look.org/content/show.php?content=29688[splashscreen] from gnome-look.org (I later recognized, that this is not really needed anymore, since the splash ist just shown a very very short time). On the same page the http://www.gnome-look.org/content/show.php?content=29687[GDM Greeter] is already referred, and I downloaded it as well.
+
+To install the splashscreen, I furthermore downloaded the package `gnome-splashscreen-manager` from the AUR via yogurt. I just downloaded it, and recognized that some errors seem to be in the PKGBUILD-file, therefor I then removed the last "}" from PKGBUILD and then did a makepkg -s in the same directory to make the package. Finally I installed it via `pacman -U gnome-splashscreen-manager` and could then install the previously downloaded splashscreen.
+
+The GDM Greeter is easily installed via "System -> Administration -> Login Window", where the whole package can be referenced.
+
+For the wallpaper, I have right now installed the package `archlinux-wallpaper` and choose one of those. I have to admit, that I think these backgrounds are a little bit too dark for myself.
+
+Now my system is "archified" and I can show, that I own an Arch Linux system.

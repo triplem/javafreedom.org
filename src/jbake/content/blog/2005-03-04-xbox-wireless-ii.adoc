@@ -1,0 +1,10 @@
+= XBox wireless II
+triplem
+2005-03-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Home Entertainment, XBox, WLan
+
+Hmm, yesterday I posted already about my problems with the XBox and the usage of my wireless network. Somebody asked in the comments for a little more information. Okay now, here it comes: 
+
+At my TV I have a DLink DWL-2000AP wich is configured for client mode. Also I have a switch there (DES-1500E). This link is working with my Laptop (Ubuntu Linux), but not with the XBox. For my main network I am using a Linksys WRT54g running an openwrt-firmware. Like I already stated, the whole stuff is working using my Laptop. Even the port (1400) is working for the XNS protocol, which I try to use. In the last blog I stated already, that I tried to do the whole protocol stuff using my Laptop and this worked. There is no firewall between the networks and also there is no encryption used at all. Probably this information will now make you able to help me?

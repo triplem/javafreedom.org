@@ -1,0 +1,9 @@
+= Geronimo 1.0M1 out
+triplem
+2004-04-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Just read about this on http://apache.slashdot.org/article.pl?sid=04/04/29/1520209&mode=thread&tid=108&tid=126&tid=148&tid=156&tid=185[slashdot.org]. Geronimo is an open source J2EE Implementation quite like JBoss. Some of the guys in the project even worked on JBoss as well, I believe. Well, I hope that this one is going to get certified as soon as the first release comes out. Also I wonder why JBoss is still not certified, while they have bought the license for this a long time ago and have already announced this quite some time ago (see http://www.theserverside.com/news/thread.tss?thread_id=22485[theserverside.com]). This is probably going to be an interesting "race" in the open source area. Which is the first Open Source J2EE Server which gets certified? Personally I really don't care, as long as both products do what they meant to do. +
+I know that JBoss is getting more and more commercialized, even though I still remember the days when JBoss was EJBoss 🙂 There was in the earlier days still another open source application server (http://www.enhydra.org/[Enhydra]), which got also commercialized and then the company just died. Now Enhydra is being developed by http://www.objectweb.org/[ObjectWeb.org], but not as an J2EE Container anymore :-() Another example would be http://www.exolab.org/[exolab.org]. The company behind this, just changed the direction and the project was pretty much abondond (well, parts are still open source (http://www.castor.org/[Castor]), and are used also in geronimo (OpenEJB), when I remember correctly). Due to this, I hope that apache.org is going to release Geronimo pretty soon, so that I don't have to rely on an company kind of OpenSource project 🙂

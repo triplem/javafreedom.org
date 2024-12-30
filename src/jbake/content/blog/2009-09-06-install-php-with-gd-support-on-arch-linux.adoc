@@ -1,0 +1,16 @@
+= Install PHP with GD support on Arch Linux
+triplem
+2009-09-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+To install PHP on an Arch Linux Box is pretty straight forward. Most will need MySQL, pretty easy, take a look at: http://wiki.archlinux.org/index.php/PHP[ArchLinux Wiki - PHP].
+
+If gd.so is not not working, even after uncommenting the line extension=gd.so in php.ini:
+
+Use `ldd /usr/lib/php/2006.../gd.so` and find that some libs are missing, explicitly freetype2 and libpng. Probably even libjpeg. 
+
+After installing those, everything should work fine 🙂
+
+Now all is working.

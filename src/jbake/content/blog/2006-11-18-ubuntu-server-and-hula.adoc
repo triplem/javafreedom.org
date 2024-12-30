@@ -1,0 +1,8 @@
+= Ubuntu Server and Hula
+triplem
+2006-11-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today I tried to install http://hula-project.org[Hula] on an Ubuntu Server. This is a real complex one, I have to admit. Since I installed it, using the Ubuntu Dapper Packages on the http://hula-project.org/Installing_From_Packages[offered site], the installation instructions are not fully self-explaning. In my install, I would like to change the PREFIX to something senseful, but what does it really mean? I am currently investigating this and will report back 🙂

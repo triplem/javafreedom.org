@@ -1,0 +1,12 @@
+= Getting into CXF
+triplem
+2011-10-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Currently I am investigating a couple of EAI frameworks. One of them is http://cxf.apache.org/[Apache CXF]. For this investigation, I am implementing a very easy task and use an easy tutorial (http://www.insaneprogramming.be/?p=140[Creating a REST service with CXF and Spring in 10 minutes]. Well, to be totally honest, it took me more then 10 minutes to get this up and running. Of course, this is mainly due to the fact, that I wanted to gather some more information about JXF and used my own services.
+
+The first issue I stumbled upon was a problem with the error message: "no resource classes found". Problem here was, that my ResourceService (call it Controller or whatever) implemented an interface and the JAX-RS Annotations were defined on the interface, instead of the concrete class. This was not working correctly. No I define all the annotations on the concrete class and everything went fine.
+
+Another issue, I gathered on Tomcat, but not on Jetty, was a problem with the @Path-Annotation. I defined a @Path("/folder") on the class, and on the concrete method I defined another @Path("/{id}"). This throw an exception on starting up Tomcat. After removing the "/" from the second @Path (so: @Path("{id}"). This was another step into the right direction.

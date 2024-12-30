@@ -1,0 +1,21 @@
+= Version Management and Classpath Versioning Problems
+triplem
+2005-02-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+At work we are using Java Web Start and a very restricted versioning process for all of our components. We have different applications all using common components. All of our components are splitted in server and client parts. My current (well this problem already arose during the first version of the first application, though), problem is basically the following: 
+
+* our applications have all two versions (a) a productive one, which are in a maintenance phase and (b) a development one, means, that basically every application has normally two versions
+* each component can basically use every other component in its classpath
+* each application has to use the same server side component versions, since otherwise it would be impossible to deploy these applications on the same app server instance
+* each application can use different client side component versions
+
+This results basically in very different classpathes. Now I would like to use a tool to manage these different classpathes in a very central manner.
+
+Basically the versioning of the components is already solved. The biggest problem is the management of the classpath of the different components and applications. Also the creation of new versions and also the creation of the JNLP and version.xml files for Java Web Start is pretty annoying and time intensive.
+
+Is there already a working solution for something like this out there, or do I have to create my own one? The problem there is, that I definitely would like to share this solution with others, but I am in a closed source environment. Therefore, if there is an open source solution, I could use and extend this and provide this code then to the community, otherwise I have to create a closed source solution 🙁 
+
+Can anybody help me there? One possible solution would be to use a database as a central classpath managing instance. This DB will then contain all components in all versions and also there dependencies. This DB can then be used to generated the classpathes for the ANT buildfiles, as well as the .classpath for the eclipse IDE. What do you think?

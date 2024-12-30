@@ -1,0 +1,8 @@
+= Eclipse and Debian
+triplem
+2004-04-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java
+
+I have to admit, that I use Eclipse as my primary Java IDE. I will probably try NetBeans as well, but up until now, I really have no reason to change 🙂 The only thing missing right now is a pre-packaged Debian package. One of the probs there will be probably that Eclipse uses plugins, and they should be installed with Eclipse. But the user using Eclipse will normally not have the rights to deploy anything in Eclipse or in the directories of Eclipse. Anyway, this should be solvable as well. I have currently installed Eclipse M7 on my machine (since M8 changes quite a lot) and I am quite happy with the GTK version, even though I have to admit, that the Windows very is by far nicer 🙁

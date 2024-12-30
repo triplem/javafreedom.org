@@ -1,0 +1,8 @@
+= ArchServer: Install-Iso works
+triplem
+2010-03-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+After quite some time we have finally an Install-Iso finished. The problems with all previous isos where not so obvious. Arch Linux switched from grub to ISOLINUX and this caused us (and all others) quite some trouble. After all these changes, this is now corrected and our iso is working as well. Thanks for all the work to the AL team.

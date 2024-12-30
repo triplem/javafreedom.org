@@ -1,0 +1,8 @@
+= New Hardware
+triplem
+2006-10-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Well, I bought a new Server (Dell Poweredge 2400) at ebay. This is a real monster, with 50KG 🙂 Whatever, it is now running with Ubuntu Server and I totally got rid of the SCSI stuff inside this server, now all Hard-Drives are running with IDE 100. Really silent and quite nice 🙂

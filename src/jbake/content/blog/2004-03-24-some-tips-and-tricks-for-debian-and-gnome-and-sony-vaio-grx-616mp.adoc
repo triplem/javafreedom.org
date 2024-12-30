@@ -1,0 +1,57 @@
+= Some tips and tricks for Debian and Gnome and Sony Vaio GRX-616MP
+triplem
+2004-03-24
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux and Laptop
+
+Here is the configuration file (XF86Config) I use with the above configuration: 
+
+----
+--- snip ---  
+Section "Device"  
+Identifier "ATI Radeon 5600 Mobility"  
+Driver "ati"  
+EndSection
+
+Section "Monitor"  
+Identifie "Sony Laptop"  
+HorizSync 31.9-37.5  
+VertRefresh 50-100  
+Option "DPMS"  
+EndSection
+
+Section "Screen"  
+Identifier "Default Screen"  
+Device "ATI Radeon 5600 Mobility"  
+Monitor "Sony Laptop"  
+DefaultDepth 24  
+SubSection "Display"  
+Depth 1  
+Modes "1600x1200" "1280x1024" "800x600" "640x480"  
+EndSubSection  
+SubSection "Display"  
+Depth 4  
+Modes "1600x1200" "1280x1024" "800x600" "640x480"  
+EndSubSection  
+SubSection "Display"  
+Depth 8  
+Modes "1600x1200" "1280x1024" "800x600" "640x480"  
+EndSubSection  
+SubSection "Display"  
+Depth 15  
+Modes "1600x1200" "1280x1024" "800x600" "640x480"  
+EndSubSection  
+SubSection "Display"  
+Depth 16  
+Modes "1600x1200" "1280x1024" "800x600" "640x480"  
+EndSubSection  
+SubSection "Display"  
+Depth 24  
+Modes "1600x1200" "1280x1024" "800x600" "640x480"  
+EndSubSection  
+EndSection  
+--- snap ---  
+----
+
+Hope this helps.

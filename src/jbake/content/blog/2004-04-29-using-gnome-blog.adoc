@@ -1,0 +1,15 @@
+= Using Gnome Blog
+triplem
+2004-04-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+This blog entry is written entirely with the http://www.gnome.org/%7Eseth/gnome-blog/[Gnome Blog] application. If you are using Debian, just apt-get install gnome-blog and you are done 🙂 You will find this application in the Accessoires.
+
+You have to make the following entries in the preferences:
+
+* BlogProtocol: BloggerAPI
+* XML-RPC URL: http://www.jroller.com/xmlrpc
+
+Type in your username and password, and you are done 🙂

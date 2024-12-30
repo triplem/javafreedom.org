@@ -1,0 +1,31 @@
+= Palm T|X (TX) and Evolution NetSync
+triplem
+2006-03-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+Today I got the network sync via the wifi adapter of the Palm TX device working. There is no way to configure this via the GUI of the Evolution Synch mechanism (gpilotd). Therefor I have had to modify the gpilotd-configuration file via an editor. This file can be found (on Ubuntu Dapper Drake) in the directory ~/.gnome2/gnome-pilot.d. On some websites there is a short explanation, that you should enter an IP and a hostname for the palm device. Well, for me it just works without. So in the following there is my gpilotd-file: 
+
+----
+[General]  
+sync\_PC\_Id=1477526593  
+progress_stepping=1  
+num_devices=1  
+num_pilots=1
+
+[Device0]  
+type=4  
+name=NetworkSync  
+timeout=2
+
+[Pilot0]  
+name=PalmPilotTX  
+pilotid=XXXX  
+creation=YYYY  
+romversion=ZZZZ  
+pilotusername=NAME  
+basedir=/home/NAME/PalmPilotTX
+----
+
+I hope that this will work for others as well. There are just two minor drawbacks with this configuration. I have to start gpilotd manually and also you cannot even think about using the GUI again for the configuration of the Palm Sync 🙁 Well, maybe there is going to be a solution in the next release?

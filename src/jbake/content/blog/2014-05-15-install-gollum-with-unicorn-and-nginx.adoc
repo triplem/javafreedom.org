@@ -1,0 +1,10 @@
+= Install Gollum with Unicorn and nginx
+triplem
+2014-05-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I just documented on how to install gollum on an http://www.archlinux.org[ArchLinux] machine using http://unicorn.bogomips.org/[Unicorn] and an nginx reverse proxy. https://github.com/triplem/public_config/blob/master/applications/gollum.md[This documentation] provides detailed installation instructions as well as config files.
+
+One of the requirements I had, was to be able to run multiple instances of gollum, as well as using systemd to start and stop these instances easily. There is a gollum package in the https://aur.archlinux.org/packages/gollum/[AUR], but this does use the webRick, and therefor I decided to start from scratch.

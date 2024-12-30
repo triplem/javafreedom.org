@@ -1,0 +1,12 @@
+= XBox wireless?
+triplem
+2005-03-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Home Entertainment, XBox, WLan
+
+At the beginning of this week, I picked up my XBox. This is a patched box, where XBox MediaCenter is running. I already have an Access Point on my TV, which is in Client Mode. Therefore I tried to connect the box to this AP. It is, for some reason, not working. I tried to use my Laptop with Ubuntu on the same AP and this is running perfectly.
+
+I see the XBox from my Laptop, when they are both connected to the same switch and also to the AP. Also, it is not a problem, with my Laptop to connect to the rest of the wireless network. Only the XBox seems to have problems to connect to other computers using wireless. As long as the XBox is wired to the network, no problem with connecting to other computers. Now I wander, where the problem lies???
+
+The problem just occurs, if the router/gateway is only reachable via wireless. If they are on the same switch (not the one on my TV set), which is also an AP, then I can connect even to computers on the wireless lan (e.g. my eMac). Does anybody has any clue, what the problem is?

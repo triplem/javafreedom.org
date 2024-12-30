@@ -1,0 +1,10 @@
+= ArchLinux Development Stack supports ArchServer.org
+triplem
+2009-12-16
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Yesterday, we build our first package exclusivly for http://www.archserver.org[ArchServer.org]. It is the gitweb ArchServer Theme and can be found on our http://repo.or.cz/w/archlinuxdevstack.git/tree/HEAD:/gitweb-theme[Git Repository]. This is just a rough first draft, but it is already running on http://git.archserver.org[git.archserver.org].
+
+Now we are going to support the guys from ArchServer.org a little more. Since we are already doing an ISO Image, we will now create the first ISO for ArchServer. This is a minor shift in our goals, since we will use this ISO then to distribute our own packages.

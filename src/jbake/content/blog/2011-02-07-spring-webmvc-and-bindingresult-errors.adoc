@@ -1,0 +1,26 @@
+= Spring WebMVC and BindingResult Errors
+triplem
+2011-02-07
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+We have the need to add FieldErrors inside the Controller, we have tried it several times using the usual FieldError-Constructor:
+
+----
+FieldError error = new FieldError("objectname", "fieldName", "text",  false, new String[]{"error.invalid.fieldcontent"}, new Object[]{"argument"}, "defaultMessage");
+result.addError(error);
+
+----
+
+This wasn't working, until I stumbled across http://www.openscope.net/2010/02/08/spring-mvc-3-0-and-jsr-303-aka-javax-validation/[this] posting from TechnoBabble. You (We) needed to add the @ModelAttribute(MODEL_NAME) annotation to our method signature, like so:
+
+----
+@RequestMapping(method = RequestMethod.PUT)
+public String update(@ModelAttribute(MODEL_NAME) @Valid Model model, BindingResult result, ModelMap modelMap)
+----
+
+Now everything works fine. Thanks to Antonio Gonzalez from TechnoBabbel.
+
+*Additional Note:* +
+If you would like to skip the @ModelAttribute Annotation, it is possible as well, but then the modelMap needs to contain the object name in CamelCase (e.g. "objectName" and not "objectname"). This works as well.

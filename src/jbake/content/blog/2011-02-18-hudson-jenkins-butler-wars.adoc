@@ -1,0 +1,18 @@
+= Hudson / Jenkins - Butler wars
+triplem
+2011-02-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java, Build Management
+
+Today I found a nice article about the split of Hudson and Jenking. It has a nice title and is really well written. Furthermore it shows some of the possible implications of this "war". 
+
+http://weblogs.java.net/blog/johnsmart/archive/2011/02/16/jenkins-and-hudson-butler-wars[Butler Wars].
+
+Read on.
+
+For more information about this story please also visit:
+
+link:/posts/2011-02-18-hudson-and-jekins-now-on-github/[Hudson and Jenkins now on GitHub] +
+link:/posts/2011-02-17-hudson-vs-jenkins-more-details/[Hudson vs. Jenkins - more thoughts] +
+link:/posts/2011-02-10-hudson-vs-jenkins/[Hudson vs. Jenkins]

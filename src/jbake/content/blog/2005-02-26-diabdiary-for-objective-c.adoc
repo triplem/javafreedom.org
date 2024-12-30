@@ -1,0 +1,14 @@
+= DiabDiary for Objective-C
+triplem
+2005-02-26
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Cocoa, Diabetes, Mac OS X
+
+I already told you, that I am going to program a little application for the management diabetes blood glucose and insuline injections. Today I finised my first draft of this application. It is pretty basic and does not contain much functionality except entering new entries , deletion of them and also loading and saving of this data. Basically it is a copy of one of the examples found in the "Learning Cocoa with Objective-C" book. This book is really helpful and should be in the shelf of every Cocoa beginner 🙂
+
+I will publish this little program soon on my homepage javafreedom.org, which is down at the moment, but will be the place for this and other projects I was/am involved in.
+
+I have named the application DiabDiary and hope that this name is not already taken by another software. A screenshot of the main window of the application (remember, this is a very early stage of the software) can be viewed here:
+
+image:/projects/images/diabdiary.png[Screenshot]

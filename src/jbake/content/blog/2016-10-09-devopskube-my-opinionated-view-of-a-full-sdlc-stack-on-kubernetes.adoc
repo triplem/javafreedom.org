@@ -1,0 +1,30 @@
+= DevOpsKube - My opinionated View of a full SDLC Stack on Kubernetes
+triplem
+2016-10-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+== What is DevOpsKube?
+
+A Kubernetes "cluster" with all things SDLC (Software Development Life Cycle)/DevOps related. This Solution is going to be implemented so that it Can be installed onto a one node cluster. In later phases also big installations should be possible.
+
+== What is the Motivation behind DevOpsKube?
+
+It was/is the dream of myself to be able to install such a full SDLC stack easily on own Hardware and/or environment. Kubernetes seems like the natural choice for this.
+
+Up until now there is no full DevOps Stack for vanilla Kubernetes. The following "solutions" can be found when googling:
+
+* http://fabric8.io/[fabric8] - highly based on RedHats https://www.openshift.com/[OpenShift], probably the closest to my requirements
+* https://github.com/harbur/docker-sdlc[Harbur] - mainly focused on docker and has no real kubernetes support
+* http://softwarefactory-project.io/[Software Factory] - from RedHat as well, based on https://www.openstack.org/[OpenStack]
+* https://blog.codecentric.de/en/2015/10/continuous-integration-platform-using-docker-container-jenkins-sonarqube-nexus-gitlab/[Marcel Birkner] - a blog-post from codecentric (merely an blog-post with some docker containers)
+* https://www.gopaddle.io/#/[GoPaddle] - seems to be focused on a full CI Environment to install Container on Kubernetes and uses eg. Jenkins, but is commercial and has a different focus then the above mentioned ones
+
+None of the above mentioned stacks do fulfill my needs/my idea, therefor I decided to put this stack together to allow to install a full SDLC stack on an own Kubernetes cluster or even on the Google Cloud.
+
+So watch this place closely during the next couple of days, because Herr you will read First as soon as this Project is started and where you can reach it.
+
+So what do you think? Are you interested? Would you like to contribute? Please just leave a comment and/or write me an email.
+
+*EDIT 2016-10-09 16:10*: Updated the links, so that they do work in WordPress

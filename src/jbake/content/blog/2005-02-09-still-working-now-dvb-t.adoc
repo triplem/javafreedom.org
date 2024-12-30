@@ -1,0 +1,12 @@
+= Still working - Now DVB-T
+triplem
+2005-02-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Home Entertainment
+
+Haha, my eMac and my hifi are still working together. Great.
+
+Today I googled for a couple of DVB-T receivers. Since I am living in an area, where DVB-T is available I don't need the TV antenna cable anymore. These boxes are pretty nice, but up until now, there does not seem to be one, which is able to stream my movies from the eMac to the TV directly. This is possible with my dBox (which runs linux). One of the nicer boxes seems to be http://www.hauppauge.co.uk/pages/products/data_dec2000-t.html[Hauppauge DEC2000-T]. But even via VDR does not seem to be able to stream from the Mac or a Linux box to the TV 🙁 Anyway, I guess I will buy this box, because I can then stream from the box to the pc and I can still use my old dBox to stream the other way. 
+
+Well, another day, some other confused thoughts…

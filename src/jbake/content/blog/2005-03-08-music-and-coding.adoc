@@ -1,0 +1,8 @@
+= Music and Coding
+triplem
+2005-03-08
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Musik
+
+Just stumbled across http://www.jroller.com/page/dissonance/20050220#what_music_do_you_listen[this] Blog. Pretty nice topic, I believe. I am coming from the rave scene as well, but now my taste changed and I am listening to Trip Hop and Ambient mainly. One of my all time favourite in Trip Hop/Downtempo is Kid Loco. Probably you know this guy. Slick music somewhere in between Hip Hop, Ambient and Techno. Also I begin to favour Jazz and stuff like this. With Jazz, I mean pretty much the electronic version of it, like Thievery Coporation. In the Ambient section I really like to listen to The Orb, especially there song "Little fluffy clouds" is another all time favourite of mine. So, what do you listen to during coding time?

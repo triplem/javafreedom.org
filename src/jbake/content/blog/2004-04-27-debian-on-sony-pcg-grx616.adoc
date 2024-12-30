@@ -1,0 +1,16 @@
+= Debian on Sony PCG-GRX616
+triplem
+2004-04-27
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux and Laptop
+
+Now finally I have reached my goal. Everything is working (well, nearly everything). I got the WLAN card (DLink DWL-G650) up and running on the 2.4.25 as well as the 2.6.5 kernel. Quite good. The http://www.sourceforge.net/projects/madwifi[MadWifi] driver is really working. I have had a couple of probs with this, but this was due to the other network card (ee100pro) in the laptop. Also sound is working on the 2.4.25 kernel, up until now I have not tried to run this on the 2.6.5 kernel, but this is one of the next steps.
+
+Another topic is the CD-R drive and burning a new CD. This is my current step, and I believe that this is going to work pretty easily (at least I hope so). My current configuration is pretty straight forward. I am using Gnome as the X-System and I am really having fun with it. Though I am not using Epiphany as a browser, since I used Firefox on Windows and still use Firefox at my company PC, I am also using this on my Debian Laptop System. The same is with the mail system. On all my systems, I am using Thunderbird, even though I am going to look into evolution in the near future as well.
+
+So, now I am really living in a Windoze free environment, and I have to admit, that live is going to be a little bit more fun. I even wrote already a presentation with http://www.openoffice.org/[OpenOffice.org] and it turned out that it could be really easily transfered to Powerpoint (well, at work I still have to use M$ 🙁 ).
+
+Another thing which still has to be done, is that Gnome 2.4 has some problems with SMB-Fileshares. Therefor, I have to export my shares on my linux server as NFS, so that I can get access to these files as well, but this should be pretty straight forward as well (at least I hope so).
+
+I hope that the future of linux on the desktop is going to be a big one, since I have already some really good experiences.

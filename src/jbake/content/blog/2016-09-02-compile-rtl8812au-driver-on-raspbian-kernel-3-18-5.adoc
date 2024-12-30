@@ -1,0 +1,10 @@
+= Compile rtl8812au Driver on Raspbian (Kernel 3.18.5+)
+triplem
+2016-09-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I tried the everywhere mentioned method with https://github.com/gnab/rtl8812au, but this was not working as expcected. Therefor I tried the method mentioned on the http://www.spinics.net/linux/fedora/fedora-users/msg456380.html[Fedora Mailing List]. This does not contain the patches for the Raspberry PI. The Makefile needs to get adopted, so that you can compile this driver on the Raspberry Pi.
+
+The compile seems to work now. I have uploaded all sources to https://github.com/triplem/rtl8812au[Github]. In this repository is also the 8812au.ko, which is compiled on a Raspbian Box with Kernel 3.18.5+. Hope this will work out now.

@@ -1,0 +1,14 @@
+= Fleurys Insights into the open source scene…
+triplem
+2004-05-05
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+I just stumbled across this http://www.crn.com/sections/BreakingNews/dailyarchives.asp?ArticleID=49878[article]. Marc (the founder of the JBoss Group) states that "The nonprofit nature [of Apache] really bothers me, actually". Yeah, I can understand this one, since Apache.org is right now his biggest competitor in the J2EE market (hmm, except IBM and BEA for sure). But it is his biggest competitor in the Open Source arena, and for sure some of the big players from the J2EE market are on the new J2EE Server from Apache (http://www.oetrends.com/news.php?action=view_record&idnum=327[Geronimo]).
+
+Furthermore Marc uses Axis to proof, that the development at Apache.org is totally based on IBMs involvement and that when IBM leaves a project (Axis) the project basically dies. Well, what happens, if JBoss Group is not developing JBoss anymore? Anyway, it is true, that Axis is an IBM tool and it always was, but also take a look at ws.apache.org which is an own TLD project from Apache dedicated to WebServices. What happend to Axis can happen all over open source, even if it is based on the viral GPL. Even though IBM grabbed the code of Axis and did whatever with it, he could have used the AXIS sources for another fork as well. His decision.
+
+So, I believe that he is very wrong in his opionions, when he states "And there are very few of us [middleware vendors] there's JBoss, BEA and IBM", he is definitly missing the biggest player in the open source arena (apache.org). For sure jboss has some advantages due to the longer time frame this product is on the market, but I will definitly use geronimo instead of Jboss as soon as it is on the market, and others are doing this as well (probably even IBM??).
+
+Lets see what comes out of this, when the race really begins 🙂

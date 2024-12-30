@@ -1,0 +1,12 @@
+= Remove unwanted ^M tags from file using vi
+triplem
+2009-10-26
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+After I opened a file in gedit (under Gnome), and edited the file, this file contains now a lot of ^M-tags on the end of each line.
+
+To remove these tags (using vi), I found http://www.tech-recipes.com/rx/150/remove-m-characters-at-end-of-lines-in-vi/[this] page, where a standard syntax for this kind of search and replace of special characters is explained.
+
+This command is kind of tricky in that you have to type the Ctrl-V and Ctrl-M in sequence to receive the right command.

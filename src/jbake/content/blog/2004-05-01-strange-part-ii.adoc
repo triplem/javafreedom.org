@@ -1,0 +1,8 @@
+= Strange, part II
+triplem
+2004-05-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Okay, jroller.com seems to not find the custom.css files, and can therefor not show the weblog site correct. So, all my changes got lost and therefor I just reinstalled the sotto-Theme. Though like I stated without all my changes. Pretty bad.:-( Hope that I can re-install all my changes and make some additonal improvements. The Blog of http://jroller.com/page/lsd[Leo Simmons] has the same problems, I acutally copied most of the stuff from him, therefor this is not a real problem.

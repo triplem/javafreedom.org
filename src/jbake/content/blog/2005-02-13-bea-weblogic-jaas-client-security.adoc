@@ -1,0 +1,10 @@
+= BEA Weblogic JAAS Client Security
+triplem
+2005-02-13
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Hello, we are programming our application using JBoss, and now I got the task to transfer the application to BEA. I have a couple of problems, since we are using JAAS on the client side and no code on the JBoss side, it gets a little difficult.
+
+First, we are using a custom ClientLoginModule. This is due to the fact, that we have a different Principal 🙁 This ClientLoginModule uses the SecurityAsosciation to transfer this principal to the server. I use the Weblogic Environment class, but this class does not allow a non-string principal. What to do? I thought about serializing the principal???

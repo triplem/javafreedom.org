@@ -1,0 +1,75 @@
+= Generate a Maven Release w/o Manual Intervention
+triplem
+2016-10-16
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Build Management
+
+At the company where I work at currently we do have several, around 70 to be precise, inter-related Components. Some of those Components are multi-modules, which makes a fully Automatic release-build even harder. The used SCM is git, awnd we do use Nexus as a Central artifact repository.
+
+What are the Problems of the Release Generation Process? What are the manual steps, why are they manual? Where can failures happen in this Process? Are there any other Problems, which need to get resolved to make the Process easier and (hopefully) fully Automatic?
+
+Well, identifying the Manual steps is quite easy, to replace those with automatisms will help but can be quite expensive or even plainly impossible. Lets take a look on those steps:
+
+* Check components if there are any dependencies, which are updated, and update those
+* Check components for changes to see where we do need to create a release
+* Create a release of this component
+
+== Check for updated dependencies
+
+For some components, that are used throughout the whole Application and should be used in the same Version all over the place, we do have to update all other components, even if they do not use the latest SNAPSHOT version. This is mainly true for the Model of the core component, which is used in all Components accessing the DB and/or the Rest API. To make sure, that the same Version is used everywhere, the version is adopted in all released components manually. This is obviously rather error prone, since one can overlook some components and their dependencies.
+
+Other Components are shared as well, but could be used in different versions in different Components. Here the developer decided which version to use in her component. This is error prone as well, since it can lead to dependencies issues via transitive dependencies.
+
+The above mentioned points hint to architectural smells in the system, but to resolve those, would be a longer project and we wanted to make the whole release process easier quite urgently to be able to have some time to resolve those architectural issues. 
+
+We decided to just update all dependencies (internal ones, that is) to the latest version. This has still the disadvantage that some changes on one component are not probably tested on the Development and Staging Environment, but at least the reason for this is quite obvious and not hidden in "transitive" dependencies like up until now.
+
+How to update all dependencies to the latest version? Lets take a look at the http://www.mojohaus.org/versions-maven-plugin/[Maven Versions plugin], which comes to the rescue. 
+
+* versions:update-parent will update the parent version to the latest available version
+* versions:update-properties will update the versions of all dependencies in our project
+
+That looks pretty simple, does it? Well, there are some drawbacks in these steps. One should avoid to update all dependencies (eg. used frameworks like spring) but just internal dependencies. This can be done using the "includes" property of the plugin-goal. Problem here is, that you should know all groupIds (that is the classifier, we do use) of all internal dependencies before running this goal. Other then that, multi-module projects do have some problems here as well, in that the properties defined in the multi-module-master but used in the sub-modules are not updated correctly. That is why we defined that a new dependency has to be declared in the dependencyManagement in the multi-module-master. This is error-prone, since each developer has to follow this, but we do seldomly declare new internal dependencies in this phase anymore, so that this problem is minor.
+
+To be able to recognize this change in the following steps, you need to make sure, that the changes are commited and pushed and to be on the safe side during the release preparation, make sure that no files (mvn versions will create a backup-file of your pom) are still lying around (mvn versions:commmit).
+
+== Check for Changes in Components
+
+To see if a component has any changes, we should take a look into the Logs of the version control system. We should start with this on the bottom of the dependency hierarchy, so that if the component has changes, we do release it and all components above can be updated. In a manual step, we are usually going from the top to the bottom, to be sure, that all dependencies are met. This ist depending on the developers, which declare a dependency as "SNAPSHOT", if they do need a later version. The problem with this approach is, that sometimes transitive dependencies for components, which do not use the SNAPSHOT version are updated, without the developer knowing. This could lead to problems, if the version changes method signatures, which will stay the same if the version updates are done automatically. Therefor some common rules for versioning should be defined (see http://semver.org/[Semver]). Furthermore we do have to make sure, that all components are considered.
+
+This can be automted quite easily in just comparing the last known "release"-commit with the current commit and decide if there are any changes in between.
+
+Some helpful commands for this are:
+
+----
+git log --all --grep='[maven-release-plugin]' --format='%H' -n 1
+
+----
+
+The above command shows all commits containing the maven-release-plugin pattern. To see, if there are any changes after this commit, you need to grep the commit id from the latter command and do the following command:
+
+----
+git rev-list "$commit_id"..HEAD
+
+----
+
+Before running these commits, please make sure, that you are on the correct branch (in our case master or rc):
+
+----
+git ls-remote --exit-code $GIT_URL/$project refs/heads/$branch
+----
+
+== Create a release
+
+The creation of a release using the http://maven.apache.org/maven-release/maven-release-plugin/[Release Plugin] of Maven is not as painful as https://axelfontaine.com/blog/final-nail.html[some] people think, and works quite well for us since a long time. In the past, we did create a release manually via the https://wiki.jenkins-ci.org/display/JENKINS/M2+Release+Plugin[Jenkins Plugin]. To be able to let the release process run automatically without an interruption due to questions of the new version, you should use the command-line flag "-batch-mode" for the maven call.
+
+To make sure, that the release is working correctly and no changes on the git repository are made, you should use a "dryRun" beforehand.
+
+== Automate It (Full Pull)
+
+To automate the above mentioned steps, we do need a list of all projects in the correct sequence, which is manually created and adopted, as soon as some dependencies change and/or new dependencies are created (this make the whole process error prone as well, but up until now, there is now real alternative to it). 
+
+This list of projects is then processed in the given sequence. Each project is cloned and version bumped. After this changes are checked. As soon as this is done and there are changes, a release is created.
+
+To make the implementation easier, we re-used the bash-libs from the https://github.com/kubernetes/release[kubernetes release] project (mainly common.sh and gitlib.sh), but with some major extensions. For the maven calls, we created our own mvnlib extension.

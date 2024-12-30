@@ -1,0 +1,8 @@
+= New Package gitauth
+triplem
+2009-11-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Today I publishe a new package (http://github.com/brownbeagle/gitauth[gitauth]) to the http://aur.archlinux.org/packages.php?ID=31907[AUR]. I have already written some lines about gitauth. Mainly it is a ruby written replacement for Gitosis. This will be in the future a major part of the ArchLinux Developement Stack.

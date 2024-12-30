@@ -1,0 +1,19 @@
+= Ubuntu and SyncEvolution
+triplem
+2007-03-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I just tried to compile http://www.estamos.de/projects/SyncML/[SyncEvolution] with Ubuntu Feisty Fawn. To do this, there are a couple of required packages.
+
+I have installed the following packages:
+
+* libedata-cal1.2-dev
+* libedata-book1.2-dev
+* libebook1.2-dev
+* libedataserver1.2-dev
+* libecal1.2-dev
+* evolution-data-server-dev
+
+This did the trick on my machine. Obviously I already installed the build-essentials and other stuff for the building of packages.

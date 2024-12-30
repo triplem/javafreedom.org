@@ -1,0 +1,14 @@
+= ArchServer Merchandizing Store opened
+triplem
+2010-03-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Hello,
+
+we have now our own Merchandizing (or lets call it Schwag like the guys from http://www.archlinux.org[Arch Linux]) online. Please take a look on http://www.zazzle.com/archserver?rf=238742509226063771[zazzle.com]. 
+
+Right now there is just one product online, but there are more to come 😉
+
+So, if you have suggestions or remarks, post them in our http://bbs.archserver.org[Forum] or write me an email.

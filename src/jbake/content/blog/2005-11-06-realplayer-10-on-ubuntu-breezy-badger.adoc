@@ -1,0 +1,21 @@
+= Realplayer 10 on Ubuntu Breezy Badger
+triplem
+2005-11-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I installed Breezy Badger on my laptop. This is a really great Linux Distro and I like it a lot. The only drawback up until now is, that RealPlayer 10 is not easily installable. Due to this here is a small guide on how to do this. 
+
+First you have to download the RealPlayer from http://www.real.com/linux[RealPlayer 10 for Linux]. There you have to download the RPM-Package. If you have done this, you can alienate this with the command `sudo alien RealPlayer10GOLD.rpm`. After this, you have a Debian-Package which you can install using `sudo dpkg -i realplayer\_10.0.6.776-20050916\_i386.deb`. Realplayer is now installed on your machine in the directory /usr/local/RealPlayer and can be called using the `realplay` command in the directory mentioned above. 
+
+To hear RealAudo-Data from e.g. Amazon.de you have to download the w32codecs and install them, like mentioned in http://wiki.ubuntuusers.de/Codecs. After this, you have to copy these codecs into the right locations, like metioned on http://www.ubuntu-forum.de/post/4163/lastpost.html. You pretty easily have to
+
+----
+> cd /usr/local/RealPlayer/codecs/
+> sudo cp /usr/lib/win32/dnet.so.6.0 .
+> sudo cp /usr/lib/win32/ddnt.so.6.0 .
+> sudo ln -s dnet.so.6.0 dnet.so
+----
+
+After this, everything should work.

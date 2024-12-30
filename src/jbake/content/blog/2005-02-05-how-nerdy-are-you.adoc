@@ -1,0 +1,10 @@
+= How nerdy are you?
+triplem
+2005-02-05
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Well, it seems I am a real nerd 🙂 +
+ image:http://www.wxplotter.com/images/ft/nq.php?val=5762[I am nerdier than 87% of all people. Are you nerdier? Click here to find out!,link=http://www.wxplotter.com/ft_nq.php?im] +
+Found via http://jroller.com/page/bloggingFool/20050205#not_as_nerdy_as_i[BloggingFool]

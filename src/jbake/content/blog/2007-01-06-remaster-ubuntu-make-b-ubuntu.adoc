@@ -1,0 +1,11 @@
+= Remaster Ubuntu -> Make B-Ubuntu
+triplem
+2007-01-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+To create a "new" Ubuntu Distro, I followed the steps in the https://help.ubuntu.com/community/LiveCDCustomization/6%2e06[LiveCDCustomization] guide.
+
+Another useful link: http://archive.ubuntulinux.org/ubuntu/dists/breezy/main/installer-i386/current/doc/manual/en/ch04s06.html[Debian Installer for Breezy] +
+Remastering Scripts: https://help.ubuntu.com/community/InstallCDCustomization/Scripts[Scripts] and https://help.ubuntu.com/community/InstallCDCustomization[Documentation]

@@ -1,0 +1,49 @@
+= Startup iTunes using AppleScript
+triplem
+2005-02-13
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Cocoa, Mac OS X
+
+Finally I have created an "alarm clock" out of my eMac. In the following you will find the script and some short notes about it. Hope you will find it useful. There are actually a lot of other scripts out there, which are mostly Shareware. I just wanted to creat my own little script. It is pretty easy, and I used it to get used to the AppleScript grammar, so don't expect too much. 
+
+One of the pre-requisites this script runs, is an existing "Wakeup"-playlist in your iTunes application. 
+
+I will post any updates in this blog 🙂 Also there will be a downloadable version pretty soon.
+
+This short script can be used as an alarm clock with iTunes 
+
+* the volume of the system is set to high (0-7), where 7 is high
+* the volume of iTunes is set to high (0-100), where 100 is high
+* the playlist "Wakeup" is selected and displayed in the iTunes window
+* the playlist property song repeat is set to "repeat all songs"
+* the "Wakeup" playlist is selected
+* it begins with the first song in the playlist
+
+Basically every time my computer starts up, it will run this little script, starts up iTunes and plays the first song of the playlist "Wakeup" with all volume parameters throttled to HIGH
+
+You have to save this script as a program without start dialog and then put it in your start objects. Furthermore, you can then select to startup your computer at any given time in the "System Preferences -> Energy". If you are using network shares, please make sure, that they are mounted, otherwise you will get trouble.
+
+You should also select to login the user automatically, otherwise this script is pretty useless.
+
+----
+set volume 7  
+tell application "iTunes"  
+activate  
+set sound volume to 100  
+try  
+set the\_wakeup\_playlist to first user playlist whose name is "Wakeup"  
+set song repeat of the\_wakeup\_playlist to all  
+tell playlist the\_wakeup\_playlist  
+tell application "iTunes"  
+set the view of the front browser window to playlist (name of the\_wakeup\_playlist)  
+end tell  
+set play\_track to first track of the\_wakeup_playlist  
+play play_track  
+end tell  
+set playlist\_name to the name of the\_wakeup_playlist as string  
+on error errormsg number errornumber  
+display dialog errormsg  
+end try  
+end tell
+----

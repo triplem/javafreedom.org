@@ -1,0 +1,10 @@
+= Java Performance Analysis
+triplem
+2005-02-16
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Today a couple of (young) colleagues tested the performance of different OSes together with Java. I was very upset about the fact, that Windoze seems to have the highest rank in there testing. I would have thought, that Linux would have been pretty close at least to the results of windows, but by far not 🙁 
+
+They compared Win 2003 Server with an SuSE Server 9.1. The testing was done by using an XML translation (the tool used is called XEP). The translation of a large XML file needs on an Win machine around 20 minutes, on the linux box it was much more 🙁 Do you think, that this is a normal result, or did we do something totally wrong? I told them, that they should also try different JDKs (e.g. JRockit) and make the tests also on a Solaris 8 machine. I hope that we will get better results with this. What do you think?

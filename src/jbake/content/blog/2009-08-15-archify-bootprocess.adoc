@@ -1,0 +1,24 @@
+= Archify Bootprocess
+triplem
+2009-08-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+To make a nice boot-process, I have had to install http://wiki.archlinux.org/index.php/Fbsplash[fbsplash]. The install is pretty seemless and easy. To make the whole process really nice, my menu.lst is configured as follows:
+
+----
+title  Arch Linux (boot logo)
+root   (hd0,0)
+kernel /vmlinuz26 root=/dev/disk/by-uuid/577947c2-06ad-4bce-825f-a882228f724d ro quiet console=tty1 vga=795 splash=silent,theme:arch-black,fadein,fadeout
+initrd /kernel26.img
+
+----
+
+Note, that I did not write a logo.nologo into the kernel-line, like suggested in the Arch Wiki.
+
+For this, I installed beforehand the themes from the package `fbsplash-theme-arch-black`. To make the whole process more streamlined, I also edited the /etc/conf.d/fbsplash file:
+
+----
+SPLASH_STAY_SILENT="yes"
+----

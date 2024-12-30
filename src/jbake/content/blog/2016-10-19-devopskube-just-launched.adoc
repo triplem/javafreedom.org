@@ -1,0 +1,10 @@
+= DevOpsKube - Just launched...
+triplem
+2016-10-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+The first version (the components mentioned in the roadmap for version 0.1 are implemented) is now published on our github page. The site is now reachable via http://devopsku.be[devopsku.be].
+
+It would be great, if you come by and contribute to this new and interesting project. Every contribution is greatly welcome.

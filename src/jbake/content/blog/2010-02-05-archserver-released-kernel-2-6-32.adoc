@@ -1,0 +1,12 @@
+= ArchServer released Kernel 2.6.32
+triplem
+2010-02-05
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today the Archserver.org project released the "new" LTS kernel of the 2.6.32 series. The kernel as well as the whole core (e.g. binutils, gcc, etc) are already uploaded for x86_64. The i686 packages will be updated soon as well.
+
+ArchServer is making good progress, and we have now released the first version of VirtualBox Images. 
+
+If you are interested and/or would like to participate, please navigate to http://www.archserver.org[ArchServer.org].

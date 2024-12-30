@@ -1,0 +1,8 @@
+= Ubuntu - Non Free Formats
+triplem
+2006-03-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Today I also found a very nice page in the Ubuntu Wiki about Non-Free (or restricted, as they put it) Formats and how to install these on your Ubuntu distribution: https://wiki.ubuntu.com/RestrictedFormats?action=show&redirect=Java[Ubuntu - RestrictedFormats]. There is a short description on how to install Java, MP3 and even Realplayer 🙁 This is real interesting stuff.

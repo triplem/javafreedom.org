@@ -1,0 +1,39 @@
+= Use rtl8812AU on ArchlinuxArm
+triplem
+2017-10-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+For my Raspberry Pi, I needed to support the rtl8821au driver for my wireless USB device. The following steps worked for me.
+
+This is based on https://edimax.freshdesk.com/support/solutions/articles/14000032146-how-to-install-ew-7811-ac600-series-adapter-on-raspberry-pi[this article]
+
+----
+pacman -S make dkms linux-raspberrypi-headers
+git clone https://github.com/diederikdehaas/rtl8812AU.git
+cd rtl8812AU
+change Makefile:
+CONFIG_PLATFORM_I386_PC from y to n
+CONFIG_PLATFORM_ARM_RPI from n to y
+make
+make install
+reboot
+
+----
+
+To use the driver and the device, several additional steps have to be followed, this is based on https://raspberrypi.stackexchange.com/questions/7987/wifi-configuration-on-arch-linux-arm[StackExchange].
+
+----
+pacman -S netctl dhclient
+cd /etc/netctl
+install -m640 examples/wireless-wpa wireless-home
+Adopt above file to your needs
+Add /etc/netctl/hooks/dhcp:
+  #!/bin/sh
+  DHCPClient='dhclient'
+netctl start wireless-home
+netctl enable wireless-home
+----
+
+After all those steps and another reboot, the wifi-device should work.

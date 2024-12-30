@@ -1,0 +1,10 @@
+= Back on Trac(k)
+triplem
+2007-09-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Linux
+
+Long time no see. So this weekend, I have had some time to put the new Eclipse 3.3 (Europa) on my Laptop. I wanted to use this together with the latest Trac (0.11dev) on my server using Mylyn. This is not really working out of the box. Therefor I discovered some patches and put some more patches into place as well (http://trac.edgewall.org/attachment/ticket/5945/attachment.py.patch[Patch concerning the Attachment of files]) and http://trac-hacks.org/ticket/1075[Trac-Hacks Ticket 1075]. This is running with Trac 0.11dev-r5982. 
+
+Also I have created the egg file for the XMLRPC-Plugin of Trac on my server (link:/projects/trac-xmlrpc/TracXMLRPC-0.1-py2.4.egg[TracXMLRPC-0.1-py2.4.egg]). Also there is the patch available on the above mentioned page http://trac-hacks.org/ticket/1075, which you should apply on the 0.10 trunk of the plugin.

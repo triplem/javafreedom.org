@@ -1,0 +1,14 @@
+= Tonido Plug 2 - Wlan
+triplem
+2012-08-12
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, WLan
+
+I have the problem, that after a certain amount of time, the wlan is not responding anymore on my Tonido Plug 2. I have now updated the Power Management on the device to "off" using the following commands:
+
+----
+sudo iwconfig mlan0 power off<br />
+----
+
+Hope, that this helps 😉

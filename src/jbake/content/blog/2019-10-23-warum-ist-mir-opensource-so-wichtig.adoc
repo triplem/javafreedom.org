@@ -1,0 +1,18 @@
+= Warum ist mir OpenSource so wichtig?
+triplem
+2019-10-23
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Seitdem ich profesionell Software entwickle, treibe ich mich in OpenSource Projekten herum. Warum ist immer mal wieder eine Frage, die mir gestellt wird. Hier möchte ich kurz darauf eingehen, was OpenSource für mich bedeutet und warum ich mich immer wieder mit Projekten im OpenSource Umfeld beschäftige.
+
+Der wohl wichtigste Grund für mich, liegt darin, das ich viel lernen kann. Man lernt nicht nur durch das lesen von Offenem Quellcode, sondern auch, wenn man eigene Code veröffentlicht und von anderen reviewen lässt.
+
+Ein anderer wichtiger Grund ist die Kommunikation mit anderen Entwicklern. Andere Entwickler haben einen anderen Blickwinkel, durch den man einiges lernen kann. Hier hat sich Stackoverflow als das Hilfsmittel der Wahl etabliert. Dort kann man Fragen stellen, aber auch eigene Antworten geben. Die Fragen, aber auch die Antworten werden bewertet und man kann dadurch viel lernen, immer in der Kommunikation mit anderen. Eines der wohl interessantes Projekte an dem ich beteiligt war, hatte einen IRC-Channel, auf dem täglich (eher nächtlich) Meetings stattfanden und man sich ausgetauscht hat.
+
+Jedoch lernt man nicht nur durch das lesen und schreiben von Code, auch das lesen von Dokumentation zu verschiedenen Projekten öffnet die Augen für neues. Bug-Reports sind ebenso immer wieder auch interessant, denn dort lernt man, Software mit anderen Augen zu sehen.
+
+In den letzten Jahren sind andere Projekte aufgetaucht, bei denen es um Gesundheitliche belange geht. Hier geht es nicht nur um den Austausch von Code, sondern plötzlich auch um konkrete Gesundheitliche Fragen. Das bedeutet mir (als Diabetiker) eine ganze Menge.
+
+Die Tätigkeiten in einem OpenSource Projekt sind vielfältig und jeder kann dazu beitragen, warum also nicht auch Du?

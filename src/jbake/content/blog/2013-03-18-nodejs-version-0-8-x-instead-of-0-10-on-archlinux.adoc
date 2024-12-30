@@ -1,0 +1,12 @@
+= nodejs version 0.8.x instead of 0.10 on ArchLinux
+triplem
+2013-03-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Right now, I am developing a node application. Since we are using 0.8 and on ArchLinux 0.10 is installed if figured to install https://github.com/isaacs/nave[nave] and https://github.com/visionmedia/n[n]. This is all working fine, as long as I am not using a binary npm package, like node-expat. To install this, I needed to remove the node_modules folder after the change of the node version, and furthermore I needed to define the python-version. The install of packages is then possible with the following command:
+
+----
+npm install --python=/usr/bin/python2
+----

@@ -1,0 +1,38 @@
+= Git: split repository into several smaller ones
+triplem
+2011-01-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, git
+
+In our company we did create a new project using git as the repository. The repository is central on our development server as well as on each developers machine. Previously we used SVN, so the whole team is still used to a central repository, and furthermore our infrastructure (Redmine, Hudson, ...) needs access to the repository. 
+
+After creating the project, we did several refactorings and splitted the whole project into several smaller ones. We did this all in one repository, without any problem. But because e.g. Hudson needs access to a single project, and we wanted to build all components standalone, we had a problem. We needed to split the git repository.
+
+To solve this issue, first we needed to push all changes to the new repositories (note that we pushed the whole project into different repositories, to keep the whole history). For this to work, we first copied the whole project into different directories (named after the project names) and then executed the following script:
+
+----
+#!/bin/sh
+cd $1.git
+git remote rm origin
+git remote add origin ssh://mmay@server.tst/srv/git/$1.git
+git push origin master
+
+----
+
+After this is done, the new repositories needed to get cleaned up:
+
+----
+cd $1.git
+pwd
+git filter-branch --subdirectory-filter $1 HEAD -- -- all
+git reset --hard
+git gc --aggressive
+git prune
+----
+
+After this, we removed the projects from the original projects, but kept the repository itself, just to have all the initial history before the split into several components with different subdirectories.
+
+Hope that this helps you as well 😉
+
+PS: Some of this stuff was taken from http://stackoverflow.com/questions/359424/detach-subdirectory-into-separate-git-repository.

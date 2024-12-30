@@ -1,0 +1,8 @@
+= del.icio.us Account
+triplem
+2005-03-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Well, I have now my own del.icio.us account. You can see all my bookmarks there using my username http://del.icio.us/triplem74[triplem74] . Have fun with it 🙂 It was really interesting to me, that up until now nobody has inserted http://www.metacrawler.com/[Metacrawler.com] as a search-engine there. Is everybody using http://google.com/[Google] and nobody using an engine like this???

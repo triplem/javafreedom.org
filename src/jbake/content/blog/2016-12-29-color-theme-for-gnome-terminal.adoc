@@ -1,0 +1,12 @@
+= Color Theme for Gnome Terminal
+triplem
+2016-12-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+On my search for a nice color theme for Gnome Terminal, I did found the following collection, which I downloaded. I have chosen the Dracula Theme 😉 Working rather nicely.
+
+https://github.com/Mayccoll/Gogh[Color Scheme for Gnome Terminal]
+
+Hope you are going to enjoy this one as well 😉

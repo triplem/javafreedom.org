@@ -1,0 +1,16 @@
+= gradle-by-example
+triplem
+2022-02-08
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+== Build a multi-module project with gradle
+
+The full source-code for this article can be found on https://github.com/triplem/gradle-by-example[github].
+
+A couple of month ago, I wrote a short https://github.com/triplem/gradle-by-example/blob/main/documentation/docs/index.adoc[article] about the usage of gradle in an kotlin project. 
+
+In this article, I described the usage of "jacoco", but with the advent of kotlinx-serialization and other neat and nice kotlin native tools, this is not really feasable anymore. Those tools often generate classes or extensions, which are also detected by jacoco and which are not dismissed during the determination of the coverage. This leads to a lower coverage, and should be therefor avoided. 
+
+There comes https://github.com/Kotlin/kotlinx-kover[kotlinx-kover] to the rescue. In a future version of https://github.com/triplem/gradle-by-example[gradle-by-example] this will be reflected.

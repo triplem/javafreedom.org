@@ -1,0 +1,8 @@
+= New Blog Client
+triplem
+2005-02-23
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Java
+
+For this post, I am using the pretty nice BlogClient found http://rollerweblogger.org/page/roller/20050117[here]. Since it is a Java Application, it runs pretty smoothly on my Mac 🙂

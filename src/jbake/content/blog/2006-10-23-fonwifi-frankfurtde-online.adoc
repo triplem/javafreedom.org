@@ -1,0 +1,8 @@
+= fon.wifi-frankfurt.de online
+triplem
+2006-10-23
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: WLan, Communities
+
+Nun ist auch das neue http://fon.wifi-frankfurt.de[fon.wifi-frankfurt.de] blog online. Unbedingt mal vorbeischauen 🙂

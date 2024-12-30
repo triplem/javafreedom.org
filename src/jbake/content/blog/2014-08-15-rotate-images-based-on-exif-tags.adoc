@@ -1,0 +1,16 @@
+= Rotate Images based on EXIF Tags
+triplem
+2014-08-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Back from vacation I am currently in the process to create an image gallery using http://sigal.saimon.org/[sigal]. 
+
+Unfortunately sigal can only copy EXIF tags to the (smaller) images in the gallery or rotate the images correctly. 
+
+Since this is needed for some of the pictures, I have done, I use http://www.sentex.net/~mwandel/jhead/[jhead].
+
+The following line is quite helpful to rotate jpgs based on the EXIF tags:
+
+`find -name &quot;*.JPG&quot; -exec jhead -autorot {} \;`

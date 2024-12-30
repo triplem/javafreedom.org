@@ -1,0 +1,10 @@
+= Live ISO
+triplem
+2009-12-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Today I started the building of a Live CD for the ArchLinux Development Stack. For this I am using the http://wiki.archlinux.org/index.php/Archiso[ArchIso] tools from Arch. I hope that this is working out. Some sources will appear in the ArchLinux Development Stack http://repo.or.cz/w/archlinuxdevstack.git[Repository] soon.
+
+If you are interested in this, I am very interested in your feedback. So, do not hesitate and contact me 🙂

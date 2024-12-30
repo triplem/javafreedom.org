@@ -1,0 +1,8 @@
+= ArchServer Kernel Update
+triplem
+2010-04-12
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+The last weekend was a busy weekend for me. I have updated the kernel of ArchServer to its latest incarnation 2.6.32.11. If you find time, please try out ArchServer and test the newest Kernel version.

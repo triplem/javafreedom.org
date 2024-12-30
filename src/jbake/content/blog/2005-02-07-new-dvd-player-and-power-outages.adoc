@@ -1,0 +1,12 @@
+= New DVD Player and power outages...
+triplem
+2005-02-07
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Common, Home Entertainment
+
+Well, today I received my new DVD player, which I got as a goody with my credit card 🙂 So, basically this one was for free. It works pretty good, except, that it does not recognize MP3 DVDs. It is a Mustek one, so I guess a pretty cheap one. But hey, up until now, I have had to use my XBox as a DVD player and also a portable CD Player as a CD Player. Now I just have a fixed apperature on my Hifi-Rack 🙂 Finally I also got rid of my VCR.
+
+But I still have a problem, connecting my eMac to the Hifi via a normal RCA cable. Every time I connect both (the eMac and the Hifi) my main fuse is going to blow. The problem is not occuring, when both of my servers are not connected to the power. I still don't get, where the problem is 🙁 I just have one phase for my whole flat, so probably this is the problem? I really don't get it, since even when the servers are not powered, I get the power outage. Only when the servers and the attached screen are not connected to the power cable at all, the stuff is working. This is pretty bad, since all my MP3s are saved on my central file server.
+
+Any ideas, why this is happening? Like I said, this just happens, when I connect the eMac and the Hifi, the stuff itself is working pretty great. Where is the problem????????

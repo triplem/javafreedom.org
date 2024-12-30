@@ -1,0 +1,10 @@
+= NetApp
+triplem
+2005-03-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+Today I went to a presentation of a NetApp FAS, which is a kind of SAN solution. It was quite impressive. In the beginning I was quite sceptical, since all they showed, was pretty much a file server with some smart logic for dynamic resize features for network shares (CIFS and NFS). I still think, that this could be done via a Linux Box and LVM stuff? Am I right?
+
+Later they presented a feature to connect to this box using iSCSI, which enables you to use any kind of file system and mount this on the server. This could be used e.g. for an Exchange Server or something like this. Pretty nice. At the moment, it is not clear, if the company is going to buy such a heavy and pretty expensive solution, but I will support it.

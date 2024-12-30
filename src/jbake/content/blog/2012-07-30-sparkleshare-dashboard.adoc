@@ -1,0 +1,30 @@
+= SparkleShare Dashboard
+triplem
+2012-07-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, git
+
+Today I wanted to install SparkleShare-Dashboard on my Linux Laptop. I was pretty glad, since it is a nodejs application and the target plattform, where I would like to install this application finally, will be a nodejs system (ArchLinux ARM) as well. 
+
+To install SparkleShare Dashboard on the latest nodejs-Version (v0.8.4) I had to adopt the Git-Child-Process creation in the backend/git.js-Module. For the full working version, please see https://github.com/triplem/SparkleShare-Dashboard[my github account]. 
+
+There is also a little "difficulty" and probably a miss-understanding in the community of how to create a "SparkleShare-Git-Repository". I have done it, therefore please find a step-by-step guide:
+
+----
+mkdir -p /home/USERNAME/sparkle/public.git
+cd /home/USERNAME/sparkle/public.git
+git init --bare
+mkdir /home/USERNAME/tmp
+cd /tmp
+git clone file:///home/USERNAME/sparkle/public.git
+cd /tmp/public
+touch README.txt
+git add README.txt
+git commit -m "Initial commit"
+git push origin master
+cd ..
+rm /tmp/public -rf
+----
+
+This should be it, you do have an initial commit in the repository, and therefor SparkleShare can attach the id to the repository (the id is the SHA1-id of the first commit in the repository).

@@ -1,0 +1,134 @@
+= Install upmpdcli on Raspi 1 B+ with hifiberry dacplus using Archlinux
+triplem
+2016-10-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Musik
+
+This could have been done using packages from the https://aur.archlinux.org[AUR], but I wanted to have the latest version. Furthermore some specifics do apply to my personal setup, because me is still using an rather old raspi 1 B+.
+
+So, see the following steps to get this up and running on your own machine as well.
+
+The first step is just for easier handling of users, so install sudo on the machine:
+
+----
+pacman -S sudo
+visudo to add user alarm to sudoers
+
+----
+
+For details, on how to use sudo, please see the famous https://wiki.archlinux.org/index.php/sudo[ArchWiki].
+
+After this, several packages should get installed, to be able to compile all necessary packages:
+
+----
+pacman -S base-devel libupnp libmpdclient libmicrohttpd jsoncpp curl expat python2
+
+----
+
+As the usual user (alarm in my case), you can now download and compile and install libupnpp as well as upmpdcli. Note, that this could have been done using the AUR packages for these modules as well, but like I said, I wanted to do this all on my own and use the latest package versions.
+
+----
+curl -O http://www.lesbonscomptes.com/upmpdcli/downloads/libupnpp-0.16.0.tar.gz
+tar xzf libupnpp-0.16.0.tar.gz
+cd libupnpp-0.16.0
+./configure --prefix=/usr
+sudo make install
+cd ..
+curl -O http://www.lesbonscomptes.com/upmpdcli/downloads/upmpdcli-1.2.15.tar.gz
+tar xzf upmpdcli-1.2.15.tar.gz
+cd upmpdcli-1.2.15
+./configure --sysconfdir=/etc --prefix=/usr
+sudo make install
+groupadd --system upmpdcli
+useradd -g upmpdcli --system upmpdcli -s /bin/false -d /
+chown upmpdcli:upmpdcli /etc/upmpdcli.conf
+mkdir /var/log/upmpdcli
+chown upmpdcli:upmpdcli /var/log/upmpdcli
+mkdir /var/cache/upmpdcli
+chown upmpdcli:upmpdcli /var/cache/upmpdcli
+mkdir /usr/share/upmpdcli
+chown upmpdcli:upmpdcli /usr/share/upmpdcli
+install -Dm644 systemd/upmpdcli.service /usr/lib/systemd/system/upmpdcli.service
+sed '/\[Service\]/a User=upmpdcli' -i /usr/lib/systemd/system/upmpdcli.service
+
+----
+
+Now, several options should be edited in the /etc/upmpdcli.conf file, but this is not strictly necessary:
+
+* edit /etc/upmpdcli.conf
+* adopt friendlyname (eg. Upnp Sleeping Room)
+* adopt logfile (mine is /var/log/upmpdcli/upmpdcli.log)
+* adopt cachedir (mine is /var/cache/upmpdcli)
+
+Now enable the services installed previously:
+
+----
+systemctl enable upmpdcli
+----
+
+Since me is using a hifiberry dac, I needed to add an overlay to the boot process by editing /boot/config.txt and adding the following line:
+
+----
+dtoverlay=hifiberry-dacplus
+----
+
+Since we are going to use alsa for the sound handling, we do need to install several packages:
+
+----
+pacman -S alsa-tools alsa-utils
+----
+
+To now enable this dac (basically a soundcard) the /etc/asound.conf should get edited:
+
+----
+pcm.!default  {
+   type hw
+   card sndrpihifiberry
+}
+ctl.!default {
+   type hw
+   card sndrpihifiberry
+}
+----
+
+To be able to handle alsa using the user "alarm", we do need to add this user to the audio group as well:
+
+----
+sudo usermod -aG audio alarm
+----
+
+Since upmpdcli uses mpd, we do need to install this one as well:
+
+----
+pacman -S mpd
+----
+
+Now we can add the above mentioned soundcard to the file /etc/mpd.conf as well.
+
+----
+user "mpd"
+pid_file "/run/mpd/mpd.pid"
+state_file "/var/lib/mpd/mpdstate"
+playlist_directory "/var/lib/mpd/playlists"
+log_file "/var/log/mpd/mpd.log"
+#log_level "verbose"
+replaygain "album"
+replaygain_preamp "15"
+audio_output {
+   type "alsa"
+   name "sndrpihifiberry"
+   mixer_type "software"
+}
+----
+
+Now you should reboot the machine. Afterwards, you can test the soundcard by issueing the following commands:
+
+----
+cat /proc/asound/cards
+aplay -l
+----
+
+You can furthermore test the soundcard by issueing "aplay A-WAV-FILE", which plays the given file.
+
+All should be set, and the Controlpoint should now show the Renderer and be able to play albums and songs on this one.

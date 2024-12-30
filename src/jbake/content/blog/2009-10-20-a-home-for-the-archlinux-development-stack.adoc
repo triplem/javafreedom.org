@@ -1,0 +1,12 @@
+= A Home for the ArchLinux Development Stack
+triplem
+2009-10-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java, Build Management
+
+The ArchLinux Development Stack found a Home. I received some very friendly, personel and quick support from the guys at http://openpario.net[Open+Pario] and that was the main reason I chose this one. They are hosting a http://www.redmine.org[Redmine] instance and http://www.git-scm.org[GIT], so this is a perfect fit for the stack. 
+
+Please browse to http://openpario.mime.oregonstate.edu:3000/projects/archdevstack to get an impression of the project. 
+
+Like already stated, any help is welcome, so register yourself and provide feedback, suggestions and everything else you can think of.

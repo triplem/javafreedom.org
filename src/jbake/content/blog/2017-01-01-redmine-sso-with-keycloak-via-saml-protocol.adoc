@@ -1,0 +1,47 @@
+= Redmine SSO with KeyCloak via SAML Protocol
+triplem
+2017-01-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+For the http://devopsku.be[DevOpsKube-Stack] we are currently implementing a Single-Sign-On (SSO) solution for http://www.redmine.org[Redmine]. For this we do use http://www.keycloak.org/[KeyCloak] as the Identity Provider and the SAML Protocol using the https://github.com/chrodriguez/redmine_omniauth_saml[Redmine Omniauth SAML Plugin]. Unfortunately there is just the sample initializer found on the Plugin, but not any additional information. Therefor we do describe some steps on how to get this to work, for your own enjoyment.
+
+. Install the https://github.com/chrodriguez/redmine_omniauth_saml[Redmine Omniauth SAML Plugin] like described on their README
+. Create a client in your Keycloak Server. we have named it "redmine"
+. Create Mappers in your keycloak for the redmine-Client using the following properties:
+.. Name: firstname, Type: User Property, Property: firstName, Friendly Name: givenName, SAML Attribute: firstname
+.. Name: lastname, Type: User Property, Property: lastName, Friendly Name: surname, SAML Attribute: lastname
+.. Name: email, Type: User Property, Property: email, Friendly Name: email, SAML Attribute: email
+. Now the saml.rb file (see https://github.com/chrodriguez/redmine_omniauth_saml/blob/master/sample-saml-initializers.rb[Sample File]) should be configured like the following:
+
+----
+Redmine::OmniAuthSAML::Base.configure do |config|
+  config.saml = {
+    :assertion_consumer_service_url => "http://REDMINE_URL/auth/saml/callback", # OmniAuth callback URL
+    :issuer                         => "redmine",                    # The issuer name / entity ID. Must be an URI as per SAML 2.0 spec.
+    :idp_sso_target_url             => "https://KEYCLOAK_URL/auth/realms/REALM_NAME/protocol/saml", # SSO login endpoint
+    #:idp_cert_fingerprint           => "certificate fingerprint", # SSO ssl certificate fingerprint
+    # Alternatively, specify the full certifiate:
+    :idp_cert                       => "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
+    :name_identifier_format         => "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
+    :signout_url                    => "https://KEYCLOAK_URL/auth/realms/REALM_NAME/protocol/saml/clients/redmine", # Optional signout URL, not supported by all identity providers
+    :idp_slo_target_url             => "https://KEYCLOAK_URL/auth/realms/REALM_NAME/protocol/saml/clients/redmine",
+    :name_identifier_value          => "mail", # Which redmine field is used as name_identifier_value for SAML logout
+    :attribute_mapping              => {
+    # How will we map attributes from SSO to redmine attributes -- custom properties
+      :login      => 'info.email',
+      :mail       => 'info.email',
+      :firstname  => 'info.first_name',
+      :lastname   => 'info.last_name'
+    }
+  }
+  config.on_login do |omniauth_hash, user|
+    # Implement any hook you want here
+  end
+end
+----
+
+Right now, the logout is not working properly, but we do still work on this one. As soon as this integration is finished, we are able to provide the first "real" integration for DevOpsKube.
+
+If you have any further questions, do not hesitate to ask in the comments.

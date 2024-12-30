@@ -1,0 +1,8 @@
+= Desklets
+triplem
+2006-10-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Since I am using Ubuntu Linux on nearly all of my machines (except on work, where I have to use Windoof), I wanted to have some nice Desklets on my machine. Something like Konfabulator or the Apple Widgets. Therefor I am using normally http://www.gdesklets.org[gDesklets] (Site currently down 🙁 ). But I am not really impressed with the performance of this tool. Therefor I stumbled across http://adesklets.sf.net[aDesklets], which seems to be not as resource hungry. I am right now not sure, what project is better, but gdesklets seems to have more desklets available. Anyway, I will give aDesklets a try and hope, that the guys from gdesklets will soon bring their site up, so that I can download their new version, which they promised 🙂

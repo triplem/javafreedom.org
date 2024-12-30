@@ -1,0 +1,21 @@
+= ArchServer - ALM Stack
+triplem
+2011-01-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Please take a closer look onto the newest addition of the ArchServer distribution. I have just published a ALM (Application Lifecycle Management) Stack for this distro with all ALM related tools already installed. 
+
+The stack contains the following components:
+
+* Redmine - project management software (bug tracking, wiki, forums, …) found at http://redmine.org
+* Hudson - Continuous Integration Tool found at http://hudson-ci.org
+* Maven - the java build management Tool found at http://maven.apache.org
+* Sonar - Quality Management Software found at http://sonarsource.org
+* Nexus - Maven Repository Management found at http://sonatype.org
+* Git - Distributed Version Control found at http://git-scm.org
+
+You can find all scripts to install such a stack (I named the stack Archlinux Development Stack earlier on, but it should now be called ArchServer ALM Stack), on https://github.com/triplem/almstack[Github]. There is also additional information about this stack. In the near future I hope to add more components as well as more documentation. The documentation should then be also put into the ArchServer.org wiki.
+
+The Virtualbox image itself can be found on our mirror at http://mirror.archserver.org/iso/vbox/ArchServer-ALMStack-20110101-i686.vdi.lzma. The image is lzma-compressed, so you need lzma to decompress the image.

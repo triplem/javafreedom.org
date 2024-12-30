@@ -1,0 +1,14 @@
+= Which OS are you?
+triplem
+2004-04-27
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common
+
+http://bbspot.com/News/2003/01/os_quiz.php[<img width="300" height="90" border="0" alt="You are Debian Linux. People have difficulty getting to know you.  Once you finally open your shell they're apt to love you." src="http://www.bbspot.com/Images/News_Features/2003/01/os_quiz/debian.jpg" />
+
+Which OS are You?
+
+Well, what exactly is new there? I am really using Debian even on my desktop system. What does this tell me? I did the right choice, or "man, they can really look inside me"?.
+
+Found via http://www.coffee-bytes.com/[Coffe-Bytes.com].

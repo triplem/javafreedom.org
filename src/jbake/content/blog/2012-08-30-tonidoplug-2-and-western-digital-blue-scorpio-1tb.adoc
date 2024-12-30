@@ -1,0 +1,10 @@
+= tonidoplug 2 and Western Digital Blue Scorpio 1TB
+triplem
+2012-08-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I just bought a 2,5" Blue Scorpio from Western Digital. Basically I thought that it is 2,5" and should fit into my Tonido Plug 2. Unfortunately this is only true with some minor "Hardware modifications" on the Tonido Plug. I had to use a Scissor to adopt the Tonido Plug to the HDD and also the cover does not fit anymore. Anyway, the drive seems to work and I am now in the process to install ArchLinux ARM on this new device and boot permanently from it.
+
+More on this one in a later post.

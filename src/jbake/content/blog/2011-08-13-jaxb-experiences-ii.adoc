@@ -1,0 +1,175 @@
+= JAXB Experiences II
+triplem
+2011-08-13
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Like already stated, we do have a large object tree, which we are exporting to xml using JAXB. Now we are also importing this tree again. Because of several Bi-/Uni-Directional Depedencies this object tree is kind of hard to reflect in XML. We do have one Root-Element, and several objects depending on this element uni-directional. Since the export is started fro the Root element, we are calling the corresponding service to find all uni-directional dependencies. These dependencies are exported into separate XML-files. +
+Since we do have in the child a reference to the root, we need to reflect this via an Reference on the property, otherwise the XML-file would be quite large and reflect the whole objects more then once, which leads to problems as well. +
+Problem is now, that the XMLIDRef is not really working, because the XMLIDRef is not referencing another object in the same file (the root element is defined in the original file). To work around this, we are using @XmlJavaTypeAdapter on the root property in the child object. This Adapter needs to get initialized and assigned to the unmarshaller. Please take a look onto the example below:
+
+----
+private Object unmarshall(Class clazz, Map&lt;Class, XmlAdapter&gt; adapters, String fileName) throws Exception {
+        // Create a JAXB context passing in the class of the object we want to marshal/unmarshal
+        final JAXBContext context = JAXBContext.newInstance(clazz);
+
+        // Create the marshaller, this is the nifty little thing that will actually transform the object into XML
+		final Unmarshaller unmarshaller = context.createUnmarshaller();
+		unmarshaller.setEventHandler(new javax.xml.bind.helpers.DefaultValidationEventHandler());
+		for (Class adapterClass : adapters.keySet()) {
+			unmarshaller.setAdapter(adapterClass, adapters.get(adapterClass));
+		}
+
+		log.info("Starting unmarshaller");
+		Object unmarshalledObject = unmarshaller.unmarshal(new FileInputStream(fileName));
+		log.info("Finished unmarshaller");
+
+        return unmarshalledObject;
+	}
+
+----
+
+The concrete adapters are added in the calling method:
+
+----
+public Child unmarshallEntityWrapper(RootElement element, String fileName) throws Exception {
+		Map&lt;Class, XmlAdapter&gt; adapters = new HashMap&lt;Class, XmlAdapter&gt;();
+
+		determineAdapter(element, adapters);
+        return (Child)this.unmarshall(Child.class, adapters, fileName);
+	}
+
+	private void determineAdapter(RootElement element, Map&lt;Class, XmlAdapter&gt; adapters) {
+		RootElementAdapter adapter = new RootElementAdapter();
+		for (SubElement subElement : element.getSubElements()) {
+			adpater.put(subElement.getId(), subElement);
+		}
+
+		adapters.put(Adapter.class, adapter);
+	}
+
+----
+
+The Adapter itself is pretty straight forward:
+
+----
+public class RootElementAdapter extends XmlAdapter&lt;String, RootElement&gt; {
+
+	private Map&lt;String, RootElement&gt; rootElements = new HashMap&lt;String, RootElement&gt;();
+
+	public Map&lt;String, RootElement&gt; getRootElements() {
+		return rootElements;
+	}
+
+	@Override
+	public RootElement unmarshal(String id) throws Exception {
+		return rootElements.get(id);
+	}
+
+	@Override
+	public String marshal(RootElement rootElement) throws Exception {
+		return rootElement.getId();
+	}
+}
+
+----
+
+The classes itself are pretty straight forward as well. Please notice, that the ChildElement is stored in another XML-file and because of this, we do need the Adapter, like already stated above. The RootElement does not have any relationship to the Child-elements:
+
+----
+@XmlRootElement(name = "RootElement")
+public class RootElement implements Serializable {
+   ...
+}
+
+public class ChildElement implements Serializable {
+   @XmlJavaTypeAdapter(RootElementAdapter.class)
+   public RootElement getRootElement() {
+     ....
+   }
+}
+
+----
+
+In the service, which is handling the marshalling, we are now fetching all ChildElements belonging to the RootElement via a service method like so:
+
+----
+public List&lt;ChildElement&gt; findChildsByRootElement(RootElement rootElement) {
+   ...
+}
+
+----
+
+Because we would like to marshall these elements into their own XML-file, we do have to create a Wrapper Object, which basically wraps all elements:
+
+----
+@XmlRootElement
+@XmlSeeAlso({ChildElement.class, ChildA.class, ChildB.class})
+public class ChildElementWrapper {
+
+	private Collection&lt;ChildElement&gt; childElements;
+
+	public ChildElementWrapper() {
+	}
+
+	public ChildElementWrapper(Collection&lt;ChildElement&gt; childElements) {
+		this.childElements = childElements;
+	}
+
+	@XmlElementWrapper(name = "childElements")
+	@XmlElement(name = "childElement")
+	public Collection&lt;ChildElement&gt; getChildElements() {
+		return childElements;
+	}
+
+	public void setChildElements(Collection&lt;ChildElement&gt; childElements) {
+		this.childElements = childElements;
+	}
+}
+
+----
+
+Another important thing, we learned during the implementation of this Import/Export layer was that the usual Inheritance from Hibernate using Discriminators is not really nicely handled. The Wrapper-Class has to use the @XmlSeeAlso-Annotation, like stated above. Now all the concrete implementations of the ChildElement-Class are marked with the type-attribute in the XML-file. Since we are using hibernates replicate and we need the Discriminator Value, we are using the following solution:
+
+----
+...
+			switch (childElement.getElementType()) {
+				case A:
+					ChildA childA = (ChildA)childElement;
+					this.jcDao.store(childA);
+					this.jcDao.updateDiscriminator(childA, "DiscriminatorA");
+					break;
+				case B:
+					ChildB childB = (childB)childElement;
+					this.jcDao.store(childB);
+					this.jcDao.updateDiscriminator(childB, "DiscriminatorB");
+					break;
+				default:
+					break;
+			}
+...
+
+	public Object store(Object object) {
+		if (this.entityManager == null) throw new IllegalStateException("Entity manager has not been injected");
+
+		Session session = (Session)this.entityManager.getDelegate();
+
+		session.replicate(object, ReplicationMode.OVERWRITE);
+
+		return object;
+	}
+
+	public void updateDiscriminator(Object object, String discriminator) {
+		if (this.entityManager == null) throw new IllegalStateException("Entity manager has not been injected");
+
+		Session session = (Session)this.entityManager.getDelegate();
+
+		String hqlUpdate = "update ChildElement set type = :discriminator where id = :id";
+		int updateEntities = session.createQuery(hqlUpdate).setString("id", object.toString())
+									 .setString("discriminator", discriminator)
+									 .executeUpdate();
+	}
+----
+
+I hope, that this explanation is easy enough to follow 😉

@@ -1,0 +1,10 @@
+= Hudson vs. Jenkins - Jenkins releasing often
+triplem
+2011-03-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Build Management
+
+This seems to be one of the main differences between the two projects, the Release Cycle. While Hudson is right now at 1.396 Jenkins is already at 1.400. I wander if the bugfixes in Jenkins are all merged back into Hudson, since there are quite some "nice" fixes in there, especially some for Maven projects (see the http://jenkins-ci.org/changelog[Jenkins Changelog]). Both projects have still not fixed my personal highlight bug (http://issues.jenkins-ci.org/browse/JENKINS-2154[Error Generating Documentation]). Hope that one of those will fix it soon. I promise that I will use the corresponding fork and will not look back 😉
+
+Lets see, which fork is going to win this race.

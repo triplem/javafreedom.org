@@ -1,0 +1,8 @@
+= Songbird
+triplem
+2006-10-24
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple, Linux, Musik
+
+Yesterday I found http://www.songbirdnest.com/[Songbird], a media player based on Firefox. Because of this, it runs on any platform. I think even though it is in beta mode (version 0.2), it looks pretty promising and is working quite good. And it has some nice icons and stuff 🙂

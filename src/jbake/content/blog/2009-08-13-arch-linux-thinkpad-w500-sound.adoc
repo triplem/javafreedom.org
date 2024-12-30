@@ -1,0 +1,42 @@
+= Arch Linux Thinkpad W500 (Sound)
+triplem
+2009-08-13
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+I have now successfully installed Arch Linux on my Thinkpad W500. Sound was a problem. I do have the following Soundcard in the Laptop:
+
+----
+[root@athene modprobe.d]# cat /proc/asound/card0/codec#* | grep Codec
+Codec: Conexant CX20561 (Hermosa)
+Codec: Conexant ID 2c06
+
+----
+
+To get this up and running I edited the file `/etc/modprobe.d/alsa-sound.conf` (keep in mind, that there is probably already a file 50-alsa.conf or something like that, which is can be configured in the described way as well, I just renamed this file) with the following entries:
+
+----
+options snd_slots=snd-hda-intel
+options snd-hda-intel model=laptop
+alias snd-card-0 snd-hda-intel
+alias sound-slot-0 snd-hda-intel
+----
+
+and added my user to the group audio using the following command: 
+
+----
+gpasswd -a USERNAME audio
+----
+
+You can then test your audio device with the following command:
+
+----
+aplay /usr/share/sounds/alsa/Front_Center.wav
+----
+
+The following link (in german) was really useful for me: http://wiki.archlinux.de/title/Alsa
+
+Be aware, that you will find the Soundcard in the following list with the model name Conexant 5051 
+
+http://free-electrons.com/kerneldoc/latest/sound/alsa/HD-Audio-Models.txt

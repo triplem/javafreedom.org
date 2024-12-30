@@ -1,0 +1,10 @@
+= NFS using Linux Ubuntu Feisty Fawn
+triplem
+2007-04-07
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+Hello,
+
+I just upgraded (basically I installed totally from scratch) my machine to Ubuntu Feisty Fawn. I am working at home with NFS all the time. The process of mounting was pretty slow after the upgrade. Therefor I read a couple of articles on the web and figured, that you have to install portmap on your client machine as well. Now everthing is working.

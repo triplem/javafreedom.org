@@ -1,0 +1,83 @@
+= git und der Merge Conflict
+triplem
+2021-02-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Common, git
+
+*TL;DR* 
+
+Es werden Ansätze beschrieben, die Merge-Konflikte mit git verhindern bzw. handhabbarer machen. Die wohl wichtigeste Regel lautet "Tue nur das nötigste" und "Bleib am Ball" (Tugenden aus der Clean Code Philosophie).
+
+Derzeit arbeite ich in einem kleinen Team, das ein bereits produktives System weiterentwickelt. Die eigentliche Entwicklungsumgebung beinhaltet Eclipse und SVN als Versionskontroll-System. In unserem Team verwenden wir (in weiten Teilen) IntelliJ (meine bevorzugte IDE) und git als VCS. Ursprünglich wurde git eingeführt um Mergekonflikte zu vermeiden und dadurch das mergen zu vereinfachen. git als dezentrales VCS ist SVN in weiten Teilen überlegen, insbesondere lassen sich damit einfach lokale Branches bzw. Feature Branches erzeugen und teilen. Durch die Verwendung von SVN müssen wir immer sicherstellen, das eine "lineare" Versionshistorie vorliegt. Dies ist bei git, im Gegensatz zu SVN, keine Selbstverständlichkeit, und lässt sich nur durch die Verwendung von rebase anstelle von merge hinbekommen. Ein Workaround dazu ist, das man die nicht-linearen Einträge schlicht ignoriert, wenn man den aktuellen Branch (nennen wir Ihn release) auf SVN mergen möchte. Dieser Workaround wird im Team derzeit eingesetzt.
+
+Feature Branches werden extensiv eingesetzt. Durch leider nur sehr grob definierte User-Stories laufen die Feature Branches teilweise recht lange und es wird nicht nur eine User-Story darin abgearbeitet. Es gibt für jeden Hotfix einen eigenen Branch, der dann in den releasse-Branch gemerged wird. Diese Branches werden (leider nicht immer zeitnah) in den Development-Branch (develop) gemerged. Die Anzahl der Hotfixes ist derzeit recht hoch (bis zu 3 Stück pro Woche), was zu einem gestörten Ablauf des Sprints sorgt.
+
+In der derzeitigen Verwendung werden die Vorteile von git zwar genutzt, jedoch erweist sich dies immer wieder als schwierig und führt zu langen Merge-"Orgien". Dadurch entsteht immer wieder unnötiger Aufwand und auch Frust.
+
+Nachfolgend möchte ich einen Vorschlag ausarbeiten und Lösungsansätze bieten, um das Konflikt-Potential der Merges zu verringern bzw. gar ganz zu vermeiden.
+
+== Reduktion der Anzahl der Hotfixes
+
+Dies vereinfacht bzw verringert nicht nur die Anzahl der notwendigen Merges, sondern erhöht auch die Stabilität der Sprints. Um das zu erreichen muss die Qualität der Auslieferungen steigen. Dies muss das durch automatisierte, aber auch manuelle Tests sichergestellt werden.
+
+Hotfixes sollten zeitnah/umgehend in den Integrations Branch (develop) integriert werden, um diese allen anderen Entwicklern zur Verfügung zu stellen.
+
+== Einhaltung der Code-Conventions
+
+Durch die Verwendung von verschiedenen IDEs (IntelliJ und Eclipse), aber auch durch miss-konfigurationen auf verschiedenen Entwickler-Systemen kommte es zu Merge-Konflikten. Eine Code-Convention (Google Java Style Guide) ist eingeführt und muss entsprechend genutzt werden. Die Verwendung von UTF-8 ist für alle Dateien (mit Ausnahme von *.properties) verpflichtend. Eine deutliche Verringerung von Merge-Konflikten ist hier jedoch nicht zu erwarten, da diese durch git selbst bzw. durch Unterstützung der Merge Funktionalitäten der IDEs bereits abgepuffert werden (Stichwort: Zauberstab in IntelliJ).
+
+== Verringerung der Laufzeit von Feature-Branches
+
+Je länger ein Branch existiert, desto mehr Änderungen ergeben sich sowohl in dem Feature-Branch aber auch in dem Eltern-Branch. Dies führt zu einem erhöhten Merge-Aufwand, insbesondere, wenn in allen betroffenen Branches dieselben Dateien angepasst werden. Dies kann durch eine kurze Laufzeit eines Feature-Branches eingegrenzt werden. +
+Hier ist jeder selbst dafür verantwortlich, neue Features in Teilen so zu programmieren, das man die Änderungen möglichst frühzeitig integrieren (in den develop-Branch mergen) kann.
+
+Insbesondere wenn man ein neues Feature anfängt, sollte man sich überlegen, welchen Branch man nutzt und welche Änderungen man bereits auf dem develop-Branch durchführen kann.
+
+== Vermeiden von Anpassungen an vielen Dateien
+
+Wie im Abschnitt vorher erwähnt, wird ein Merge schwieriger, sobald Dateien in mehreren Branches angepasst werden. Wenn Änderungen nur an wenigen Dateien erfolgen verringert sich also die Wahrscheinlichkeit, das es Überschneidungen gibt.
+
+Dies lässt sich durch Absprachen zwischen den Entwicklern, aber auch durch eine bessere Kapselung von Klassen erreichen. Wenn eine Klasse richtig gekapselt ist, ist eine Änderung nur an dieser Klasse notwendig und eben nicht über den kompletten Classpath verteilt.
+
+https://stackoverflow.com/a/13444663/1546453 +
+https://stackoverflow.com/a/457988/1546453
+
+== Squashen von Commits
+
+Um die Commits die vom Feature Branch auf den develop Branch gerebased werden und somit die Anzahl der Merges gering und übersichtlich zu halten, kann man die zu rebasenden Commits mit einem "squash" zusammenfassen.
+
+Diese Funktionalität ist im VCS-ChangeLog von IntelliJ über den Context-Menüpunkt "Interactively Rebase from Here" verfügbar.
+
+Hier gilt es zu beachten, das dies nur mit lokalen Änderungen, die noch nicht gepushed wurden, gemacht werden darf, da damit die Versionshistorie verändert wird (sprich: ein force push/pull wäre notwendig, und dies ist zu vermeiden).
+
+http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html +
+https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History +
+https://intellij-support.jetbrains.com/hc/en-us/community/posts/360001787220-Squash-and-Merge-Github
+
+== Verwendung von git rerere
+
+Durch die Verwendung von rebase werden bei einem rebasen eines Branches auf einen anderen Branch (meist develop) immer alle Commits seit Abzweigung es Feature Branches erneut gemerged. Daher kommt es zu einem wiederholten Merge derselben Commits.
+
+Dies kann durch die Verwendung von git rerere verbessert werden. Hiermit werden die bereits durchgeführten Merges aufgezeichnet und zu einem späteren Zeitpunkt wieder genutzt. Dies wird jedoch nur für den lokalen Nutzer gespeichert, so dass dies nur eine lokale Lösung ist. Wenn also ein Feature-Branch nur von einer Person genutzt bzw. gemerged wird, ist dies ein valides Vorgehen.
+
+Siehe dazu insbesondere auch +
+https://git-scm.com/docs/git-rerere +
+https://medium.com/@techupbusiness/enable-git-rerere-for-easy-merging-303c6f2dacd3
+
+== Vermeiden von rebase (mit -force) und merge
+
+Wenn ein Branch bereits gemerged wurde, führt dies bei einem rebase dazu, das alle Änderungen, die bereits in dem Merge Commit gemacht wurden nochmals durchgeführt werden und die Versionshistorie sich ändert. Dies gilt es zu vermeiden.
+
+Daher sollte man am besten entweder nur Mergen bzw. nur Rebasen.
+
+== FAZIT
+
+Your milage may vary. Im Prinzip sollte jeder das verwendete Toolset kennen und verstehen. Eigene Lösungswege gibt es immer und ich wäre daran interessiert, eure Lösungen bzw Best-Practices zu erfahren um auch mein Skillset zu verbessern.
+
+== Weiterführende Information (unbedingt lesenswert)
+
+https://tobywf.com/2018/01/the-ultimate-git-merge-vs-rebase-tutorial/ +
+https://stackoverflow.com/a/11219380/1546453
+
+https://clean-code-developer.de/die-tugenden/

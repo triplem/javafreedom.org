@@ -1,0 +1,10 @@
+= Marsedit
+triplem
+2005-03-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Apple
+
+This post was done using MarsEdit. I am still trying several Weblog Tools, but I have to admit, that I really like the NetNewsWire integration of this one 🙂 Editing this entry with another protocol to use. Now it is Moveable Type. Now it is again MetaWeblog-Compatible. I wonder, why I cannot set any category? Is this not supported from the protocol? Oh, I think, that now I can set categories, first, I have had to refresh the posts. Lets try… It should be now in Java and General. Well, this is not really a Java Related Post, but… 
+
+Well, it seems like it is not possible to use two categories, but I am able to set one category. This is fine with me. So back to General…, or should I create a new category called Mac???

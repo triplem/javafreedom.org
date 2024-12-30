@@ -1,0 +1,14 @@
+= IntelliJ on ArchLinux
+triplem
+2014-06-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Linux
+
+After the latest upgrade to OpenJDK (7.u60_2.5.0-2) my IntelliJ version was not working correctly anymore. 
+
+After browsing, I found this solution:
+
+http://stackoverflow.com/a/20499851[StackOverflow]
+
+Worked like a charm 😉

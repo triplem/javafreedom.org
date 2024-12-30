@@ -1,0 +1,28 @@
+= IPv6 on Netcup using ArchLinux
+triplem
+2014-04-21
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+I just enabled IPv6 on my Netcup Server, this is quite easy. There is one real important point in the documentation (found http://www.netcup-wiki.de/wiki/Zus%C3%A4tzliche_IP_Adresse_konfigurieren[here]): "poweroff" is needed, without this, the Adress will not get assigned to the VServer.
+
+I am using netctl for the configuration, and my config looks like this:
+
+----
+Description='A basic static ethernet connection'
+Interface=ens3
+Connection=ethernet
+IP=dhcp
+## For IPv6 autoconfiguration
+#IP6=stateless
+## For IPv6 static address configuration
+IP6=static
+Address6=('2a03:4000:5:f1::1/64')
+Gateway6='fe80::1'
+DNS=('2001:4860:4860::8888' '2001:4860:4860::8844')
+----
+
+Note, that IPv4 is configured via DHCP whereas IPv6 is configured static. Furthermore the gateway for IPv6 is set to the current machine, this is according to the documentation of Netcup (found in some forums). Furthermore I did configure some DNS-Server here. These are the ones of Google. 
+
+You can then use ping6 to ping some hosts and test, if the connection is working. The host is reachable from the outside with the given IP.

@@ -1,0 +1,31 @@
+= Create Image Gallery
+triplem
+2016-09-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+More a note to myself. 
+
+Put all images in folders and create a corresponding index.md file in each folder:
+
+----
+Title: Fuschoelpass (18.08.2016)
+Representative: DSC01775.JPG
+## Fuschoelpass (18.08.2016)
+DESCRIPTION
+
+----
+
+Resize all images in each folder:
+
+----
+for file in *.JPG; do convert $file -resize 1920 $file; done
+
+----
+
+Generate Gallery using sigal:
+
+----
+sigal build source . ../generated
+----

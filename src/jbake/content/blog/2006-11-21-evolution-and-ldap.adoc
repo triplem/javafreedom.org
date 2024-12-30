@@ -1,0 +1,25 @@
+= Evolution and LDAP
+triplem
+2006-11-21
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+First you have to install openldap (which is also required for egroupware, but more on this, later on). After this, you need to modify the configurationfile /etc/ldap/slapd.conf. There you have to add the entry
+
+----
+\# Indexing options for database #1  
+index objectClass eq  
+rootdn "cn=admin,dc=javafreedom,dc=org"
+rootpw secret
+----
+
+This will give the user admin with the password secret write access to the LDAP Directory. Please note, that I changed the domain to my current domain (javafreedom.org). With this user, you can later add entries to the Directory. I would also like to establish different users with different rights, but this I have to investigate.
+
+Furthermore I added the schema evolutionperson.schema to the slapd, so that I can use nearly all fields of the Evolution contacts. In Ubuntu, you can find this file in the directory /usr/share/evolution-data-server-1.8. So add this with the following entry into the configuration:
+
+----
+include /etc/ldap/schema/evolutionperson.schema
+----
+
+Now I can use nearly all fields in evolution, only the Instant Messaging Attributes are missing, but I am trying to add these on my own.

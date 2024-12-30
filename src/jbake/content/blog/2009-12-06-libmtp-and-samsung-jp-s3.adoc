@@ -1,0 +1,43 @@
+= libmtp and Samsung JP-S3
+triplem
+2009-12-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+A close relative bought a JP-S3 from Samsung. This is a so called MTP-Device. I do not have any Device with an Windows Media Player 10, which is needed to sync the this device. Therefore I browsed through the Internet and finally found http://libmtp.sourceforge.net/[libmtp]. This is a library to sync devices through the Media Transfer protocol (a M$ specific protocol, I believe). 
+
+I have had a couple of problems with this, until I removed the usb_storeage Module from the module list as well as the ehci_hcd module. After I did this, the command `mtp-detect` gives me a lot of information, after before the command just gave me, that the resource is busy.
+
+The following commands are needed for the whole sync:
+
+----
+rmmod ehci_hcd
+rmmod usb_storage (really important)</p>
+<p>mtp-detect
+
+----
+
+If you are really brave, you can sync your tracks, using 
+
+----
+mtp-sendtr -t TRACKNAME -a AUTHOR -g GENRE -n TRACKNO -l CD-TITLE SOURCEFILE FOLDERNO_ON_DEVICE
+
+----
+
+so e.g. 
+
+----
+mtp-sendtr sendtr -t "Burning Fire" -a "James Kelly" -g "Pop" -n 1 -l "Babylon" -y 2006 -b "Babylon" -/media/cd/001\ Burning\ Fire.mp3 32775
+
+----
+
+The number 32775 is the code for the folder and can be found out with 
+
+----
+mtp-folders
+----
+
+The application will ask for needed additional information.
+
+Fortunately now I could call the gnomad2 tool and sync the stuff. The banshee-stuff did not work and just gave me the information, that the Resource is busy 🙁

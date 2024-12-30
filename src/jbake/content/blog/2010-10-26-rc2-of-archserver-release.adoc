@@ -1,0 +1,8 @@
+= RC2 of ArchServer release
+triplem
+2010-10-26
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+The ArchServer Team just released the latest RC of the redgum release. Please download the latest Iso http://mirror.archserver.org/iso/[here].

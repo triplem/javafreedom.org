@@ -1,0 +1,8 @@
+= ArchServer: First Project Status Meeting
+triplem
+2010-03-03
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+This Friday, the ArchServer Community will have its first official project status meeting. See http://wiki.archserver.org/index.php/2010-03-05_Meeting_Agenda[here] for the agenda and the timeframe for this meeting.

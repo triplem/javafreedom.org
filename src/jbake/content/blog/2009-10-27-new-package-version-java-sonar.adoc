@@ -1,0 +1,14 @@
+= New Package Version java-sonar
+triplem
+2009-10-27
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+I have now finally published the newest version of the ArchLinux DevStack package Sonar. This contains now some major improvements in the Linux-ification. Meaning that now all configuration files are stored in /etc/sonar and the PID file is stored in /var/run. The logs are also stored in /var/log/sonar.
+
+I hope, that this will help you in using this package. The next version of the package will include an own user for Sonar.
+
+This new package can also be found in the http://repo.or.cz/w/archlinuxdevstack.git[GIT-Repository] as well as in the http://aur.archlinux.org/packages.php?ID=31321[AUR]. For new Features and Bugs, please visit the http://openpario.mime.oregonstate.edu:3000/projects/archdevstack[Project Homepage].
+
+All Help is welcome and appreciated.

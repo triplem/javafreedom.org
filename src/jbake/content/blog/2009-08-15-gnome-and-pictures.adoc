@@ -1,0 +1,41 @@
+= Gnome and Pictures
+triplem
+2009-08-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+I am currently in the process of Arch-iefing my Gnome Desktop. Therefor I wanted to exchange the standard Gnome Foot Icon on the Main Menu through the Arch logo. This is not really easy, and could just be done using the following process:
+
+Run all of the following commands as root 
+
+----
+cd /usr/share/icons/gnome/24x24/places
+
+----
+
+Make a backup of the original logo 
+
+----
+mv start-here.png start-here-old.png
+
+----
+
+And finally copy an image (for example http://pictures.javafreedom.org/starthere.png[this] one) to the above mentioned location: 
+
+----
+mv NEW_ICON start-here.png
+
+----
+
+At last, kill the panel process, so that the Gnome panels are refreshing: 
+
+----
+pkill gnome-panel
+----
+
+All of the above is taken from the http://bbs.archlinux.org/viewtopic.php?id=74881[Arch Forum], furthermore there is a detailed explanation on the http://wiki.archlinux.org/index.php/Gnome_Tips#Change_the_Gnome_Foot_Icon_to_an_Arch_Icon[Gnome Tips] as well.
+
+Another problem is the background image of the Lock Screen. This can be, like written on the http://wiki.archlinux.de/title/GNOME#Hintergrundbild:_Gesperrter_Bildschirm[ARCH Wiki (DE)], changed only by replacing another image. I did the same like written in this Wiki entry, now my Desktop is Archified.
+
+Hope this helps others as well. If so, do not hesitate, to contact me on Twitter as well (http://www.twitter.com/triplem74[Twitter Triplem74]).

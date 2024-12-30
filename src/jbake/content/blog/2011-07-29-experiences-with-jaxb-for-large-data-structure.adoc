@@ -1,0 +1,142 @@
+= Experiences with JAXB for large data structure
+triplem
+2011-07-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+We are going to implement a Data-Export/Import out of a Spring-Hibernate Application with JAXB. During the Development of this feature, I learned quite some lessons and would like to let you participate.
+
+First of all, we have a entity structure using inheritance all over the place. All entities are inheriting from a common "BaseEntity". Furthermore we are using Bi-Directional relationships with Hibernate for most of the entities as well. Therefor the data-export with JAXB grows quite large and furthermore we received a "OutOfMemoryError: Java heap space"-Exception. During Trial/Error kind of learning JAXB, we received the "Class has two properties of the same name" issue. How to solve all these issues? 
+
+First of all we tried and implemented the CycleRecoverable-Interface on our BaseEntity. Therefor the BaseEntity looks like the following:
+
+----
+@MappedSuperclass
+public class BaseEntity implements Serializable, GenericEntity<String>, CycleRecoverable {
+
+    @Id
+    @DocumentId
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
+    protected String id;
+
+    @Version
+    protected Integer version;
+
+    public Object onCycleDetected(Context context) {
+	    BaseEntity entity = new BaseEntity();
+	    entity.setId(this.getId());
+	    return entity;
+    }
+
+    @XmlID
+    public String getId() {
+        return this.id;
+    }
+
+// more getter and setter
+
+----
+
+On looking closely to the above code, you will recognize the method onCycleDetected. This method is defined in the interface "com.sun.xml.bind.CycleRecoverable". 
+
+HINT: Do not use the sometimes suggested "com.sun.xml.internal.bind.CycleRecoverable" interface, if you do not have the "correct" interface, add the following dependency to your pom:
+
+----
+<dependency>
+            <groupId>sun-jaxb</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+----
+
+Furthermore you will recognize, that the @XmlID-Annotation is defined on the method and not on the property. This is due to the fact, that this method is already defined in the interface GenericEntity and otherwise you would receive the "Class has two properties of the same name"-exception. This is one lesson learned, declare the @XmlID and @XmlIDREF annontations on the methods and not on the properties 😉 
+
+One Level above the above mentioned BaseEntity we do have another Entity called BaseEntityParent, which defines a relationship to Child Objects, which contain some language specific settings:
+
+----
+public abstract class BaseEntityParent<T extends BaseEntityDetail> extends
+		BaseEntity {
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
+		   mappedBy = "parent", orphanRemoval = true)
+	@MapKey(name = "isoLanguageCode")
+	private Map<String, T> details;
+
+   // more stuff in here
+
+----
+
+This object did cause the "Class has two properties of the same name"-exception in the first place, because the Child Object references the parent itself as well. Therefor we implemented the CycleRecoverable interface in the BaseEntity.
+
+----
+@MappedSuperclass
+public class BaseEntityDetail<T extends BaseEntityParent> extends BaseEntity {
+
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	private T parent;
+
+	@Size(max = 10)
+	@NotNull
+	@Column(nullable = false, length = 10)
+	private String isoLanguageCode;
+
+----
+
+After the implementation of the CycleRecoverable-Interface this problem was gone. We still received, like already stated the Out-Of-Memory exception on an Object with a large set of dependent Objects. Therefor we are now using the @XmlIDREF annotation in the related bi-directional objects. In the following we do have the Object module, which does have some bi-directional relationships to other objects:
+
+----
+@Entity
+@XmlRootElement(name = Module.MODEL_NAME)
+@XmlSeeAlso(ModuleDetail.class)
+public class Module extends BaseEntityParent<ModuleDetail> implements
+		Serializable {
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "module", orphanRemoval = true)
+	@OrderBy("id")
+	@XmlElementWrapper(name = Document.MODEL_NAME_PLURAL)
+	@XmlElement(name = Document.MODEL_NAME)
+	private Set<Document> documents = new HashSet<Document>();
+
+// more properties
+
+----
+
+----
+@Entity
+@XmlRootElement(name = Document.MODEL_NAME)
+@XmlSeeAlso(DocumentDetail.class)
+public class Document extends BaseEntityParent<DocumentDetail> {
+
+	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	@JoinColumn
+	private Module module;
+
+	@XmlIDREF
+	public Module getModule() {
+		return module;
+	}
+----
+
+The Document defines now the @XmlIDREF on the method, like stated above (otherwise we did receive the "Class has two properties of the same name"-exception). This makes sure, that the module is just marshalled once and all references to this object are now just marshalled with the ID of the object. 
+
+Most probably there is still some space for improvements, but this approach (after implemented on all related objects) did save enough space to get rid of the "Out of Memory"-Exception. On implementing this "pattern", we lowered the memory used for the marshalled XML-file quite a lot. In the first successful run, the XML-file was around 33MB, now it is just around 2MB for the same set of data. 
+
+One more word about the implementation of the CycleRecoverable interface. You can remove this implementation as soon as you have put all @XmlID and @XmlIDREF in place. For me it was really easy to find all missing parts, because I have had already a marshalled object tree in place (with CycleRecoverable) and could easily find out the missing parts (without CycleRecoverable) because of the error-messages, which are like: 
+
+----
+MarshalException: A cycle is detected in the object graph. 
+This will cause infinitely deep XML: 
+ff80808131616f9b01316172b9840001 -> ff80808131616f9b013161797cda0019 -> 
+ff80808131616f9b01316172b9840001
+----
+
+I was able to search for the Entities using the ids in the already marshalled file 😉
+
+I hope you do find this one helpful. Give it a try for yourself, and report back (in the comments or via link:mailto:mmay@javafreedom.org[email]) if you have problems. 
+
+So, basically you do not need to implement the CycleRecoverable interface, if you put @XmlID and @XmlIDREF in place, thats definitly another lesson I learned during this implementation.
+
+I think, our entity structure is not as unsual and we do have implemented some other nice stuff (eg. the Language specific stuff with the details) which could be useful for you as well. So, if you have any question about this, I am more then willing to help you out as well.

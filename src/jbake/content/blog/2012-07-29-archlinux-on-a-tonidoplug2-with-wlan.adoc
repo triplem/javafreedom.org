@@ -1,0 +1,57 @@
+= ArchLinux on a TonidoPlug2 with WLAN
+triplem
+2012-07-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, WLan
+
+Hello,
+
+for my current vacation (my wife is going to look Olympic Games via TV the whole time) I decided to do me a favor and bought a TonidoPlug2. Since I am pretty much into ArchLinux, I decided to put ArchLinux on this device as well (see http://archlinuxarm.org/platforms/armv5/tonidoplug-2[ArchLinux ARM]). I used the Installation description on the above site without any problems, the way I did it, it went quite smooth. The difference was, that I did install the whole distribution on an USB-Stick before the device even arrived using my ArchLinux Laptop. Very nice 😉
+
+Now I am in the process of finish the Installation on the device (following some advice from http://binarybitme.blogspot.de/2012/07/arch-linux-arm-post-install-notes.html[binarybitme] and this went pretty smooth as well. The tipp with the haveged is pretty useful for the current upgrade of pacman, which requires some entropy for the `pacman-key --init` command.
+
+Furthermore I decided to use WLAN on this device (hey, thats why I decided to buy this one). Therefor I found one interesting http://archlinuxarm.org/forum/viewtopic.php?f=20&t=1659&start=60#p16315[forum entry] which helped a lot 😉 In the current version of Arch Linux, the firmware is beneath /usr/lib and not under /lib, like described in the post. Then I installed netcfg and configured /etc/rc.conf and /etc/network.d/w-int-static (wireless device) as well as the /etc/conf.d/netcfg (without this one, netcfg can work, as long as rc.conf is configured correctly). For the whole wlan stuff to work (depending on your used security key) I had to install wpa_supplicant.
+
+rc.conf: 
+
+----
+MODULES=(mwifiex_sdio)</p>
+<p>HOSTNAME="triton"</p>
+<p># Default network config (fallback, just to get access to the device, if
+# wlan configs fail)
+interface=eth0
+address=192.168.1.25
+netmask=255.255.255.0
+gateway=</p>
+<p>DAEMONS=(... network net-profiles ...)
+----
+
+/etc/network.d/w-int-static 
+
+----
+CONNECTION='wireless'
+DESCRIPTION='A wpa_supplicant configuration based wireless connection'
+INTERFACE='mlan0'
+SECURITY='wpa-config'
+WPA_CONF='/etc/wpa_supplicant/wpa_supplicant.conf'
+IP='static'
+ADDR='192.168.0.25'
+#ROUTES=('default via 192.168.0.1')
+GATEWAY='192.168.0.1'
+DNS=('192.168.0.1')
+# Uncomment this if your ssid is hidden
+#HIDDEN=yes
+----
+
+/etc/conf.d/netcfg 
+
+----
+NETWORKS=(w-int-static)
+# Specify the name of your wired interface for net-auto-wired
+WIRED_INTERFACE="eth0"
+# Specify the name of your wireless interface for net-auto-wireless
+WIRELESS_INTERFACE="mlan0"
+----
+
+I am not going to show my wpa_supplicant-settings, but these were fairly easy and could already be tested on the laptop.

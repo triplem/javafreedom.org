@@ -1,0 +1,8 @@
+= Desklets / Widgets II
+triplem
+2006-10-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: LInux
+
+I just found another alternative to gDesklets and aDesklets. This is http://www.kryogenix.org/code/jackfield/introduction[Jackfield], with which it seems to be possible to use Dashboard Widgets from Apple. I will have a look on this and report back, as soon as I have some experiences with it 🙂

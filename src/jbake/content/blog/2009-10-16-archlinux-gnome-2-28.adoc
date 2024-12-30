@@ -1,0 +1,18 @@
+= ArchLinux Gnome 2.28
+triplem
+2009-10-16
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Linux und Laptop
+
+Yesterday I upgraded Gnome on my ArchLinux Laptop to the version 2.28. There are quite some changes in this new version of Gnome. The first I recognized, was the different Background-Picture of the Login Screen. To change this Background just type in the following into the Terminal:
+
+----
+gksudo -u gdm dbus-launch gnome-appearance-properties 
+----
+
+This calls the gnome-appearance application using the gdm session. Select a nice Background, and you are done. It is normal, that two accessability icons appear in your panel. To fix this, just log-off and they should be vanished. If you still have one, please go to the Keyboard Settings and turn off the accessabiliity feature. 
+
+One more problem, I do have right now, is the Keyboard Layout of the GDM Login Screen. This is by default set to the US design (qwerty) and not like expected to DE (qwertz). The normal Keyboard Layout for Gnome is already set to DE, but still the GDM Login Screen is set to US. 
+
+I found the http://bbs.archlinux.org/viewtopic.php?id=82459&action=new[this] Forum entry, and will dig deeper. Hopefully I find an easy solution, then I will report back.

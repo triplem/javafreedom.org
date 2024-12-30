@@ -1,0 +1,21 @@
+= Hudson and Jenkins now on GitHub
+triplem
+2011-02-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Java, Build Management
+
+I think, the whole fork stuff with Hudson and Jenkins gets even more hilarious. In a http://java.net/projects/hudson/lists/dev/archive/2011-02/message/148[vote], the Hudson community decided to move (take your breath) to github.com.
+
+See http://www.infoq.com/news/2011/02/sonatype-hudson[InfoQ] for more details about this movement. Now both https://github.com/hudson[Hudson] as well as https://github.com/jenkinsci[Jenkins] are on github. 
+
+Jason (van Zyl) seem to have made already quite some changes to Hudson so, I would expect some major changes coming up for the next Hudson release. Of course these changes are related to (guess what?) Maven. These changes are going to diverge Hudson and Jenkins, and I guess that in the long run these two projects are going to diverge so much, that there is no "drop-in" of Jenkins Plugins into Hudson and Vice-versa. On the other hand, Sonatype is known for their strong commitment to backward compatibility (see Maven 2/3), but is the same true for the Jenkins guys? I do hope so. 
+
+Still, new features developed for one of these forks will not directly appear in the other version. Since Sonatype seems to be doing some major restructuring of the hudson core, I doubt, that features on Hudson will easily be transportable to Jenkins, and vice versa.
+
+Lets see whats going to happen 😉
+
+For more information about this story please also visit:
+
+http://javafreedom.org/blog/?p=366[Hudson vs. Jenkins - more thoughts] +
+http://javafreedom.org/blog/?p=362[Hudson vs. Jenkins]

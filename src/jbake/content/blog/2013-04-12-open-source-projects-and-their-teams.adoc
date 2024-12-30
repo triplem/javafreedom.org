@@ -1,0 +1,15 @@
+= Open Source Projects and their Teams
+triplem
+2013-04-12
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Communities
+
+In any Open Source Project you will find the same players like in most (say all)  teams. 
+
+I have just participated in a Leadership Training and got introduced to the roles in teams. At the same time I started to program in an open source team to implement a small application. Since this is not my first involvement in an open source team, I thought, it would be quite interesting to map the "official company environment" onto the open source world. Not really to my surprise I found out, that the company environment is quite similar to the open source environment.
+
+There are some differences in open source teams and teams in a company (eg. there is usually no money involved at the beginning of an open source project), but there are also a lot of common things. I was involved in quite some OSS projects and all projects which are successful there is a strong leader (see http://maven.apache.org[maven]. There are, of course, other open source projects, which totally belong to the community (see http://www.debian.org[Debian], but there are no commercial interests and also all decisions in these projects do take quite a long time (see: http://lxer.com/module/forums/t/29437/).
+
+IMHO this is also true for companies. With strong I mean somebody able to sell his vision and got people interested in +
+the technology behind. Nowadays technology is mostly something new and interesting like eg nodejs or nosql. In a company environment you do not need a nice technology to gather people around you, but to gather bright people you do need it as well.

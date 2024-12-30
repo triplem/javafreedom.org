@@ -1,0 +1,8 @@
+= GUIKACHU and Ubuntu
+triplem
+2006-03-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+For the installation of guikachu you can use the easy way (well, apt-get install guikachu), but this will give you a very buggy version of this tool. Therefor I wanted to use the latest version (http://cactus.rulez.org/projects/guikachu/download/guikachu-1.5.8.tar.gz[Guikachu 1.5.8]). Therefor I did a kind of adventure. Here are my experiences: There are some pre-requesits to make the guikachu stuff on your own. First you have to get the tarball. Then you should also get all the required libraries like expat, libglademm, libgtkmm, glibmm and the XML::Parser stuff. Also you definitly should use gcc-3.3 and g++-3.3. Then I have had to create a link from g++-3.3 to g++, so that the make stuff could find the g++ compiler. Very annyoing. But now it looks like I have this stuff working. For what purpose do I need this guikachu? I would like to implement a new application on my palm pilot and I don't wanna do this using suerwaba, because this is not really the way to go, if you would like to implement stuff which uses the hardware etc. Let's see where this is going to end. I think it is quite annoying, that there are no real good apps for the development of palm os software on linux. So the whole stuff now compiles, but still not running. I get a very annoying glibc error message. what to do??????

@@ -1,0 +1,8 @@
+= Database based Build??!!!??
+triplem
+2005-03-23
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Yesterday I had a meeting in my company. This meeting was about the build management and version management of our very complex application. The application is a java GUI frontend for a mainframe application running on Software AG Adabase Natural stuff. The whole application consists of several (around 10) different components. The biggest Component (the main one, where all the functionality and all masks are included) is around 1900 classes big. We are using Eclipse as an IDE (I have to admit, that the application is growing to big even for such a nice IDE, so I will probably switch back to the classic text editor). Also we are using VSS for version management (:-( ). Because of this (VSS) I cannot really use such tools like Gump or anything for Continuous Integration. The only tool, which supports VSS is Cruise Control and Ant. Another major draw back is the usage of JWS for deploymnt of the application at the client side. This means, that all jar-files have to be signed and versioned. For this, my Project Manager would like to use a Database to make this easier and kind of fully automatic. I actually don't like the idea of using a DB for the buildprocess. One of the drawbacks for this (IMHO) is, that the build is then not easy transferrable to other machines (better: places). But because we are in a closed source environment this is not really a good argument 🙁 Any other suggestions?

@@ -1,0 +1,15 @@
+= Cocoon Lenya II
+triplem
+2005-10-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java
+
+Hmm, well, I just had to do something like 
+
+----
+<node id="someID" xhref="somelink">  
+</node>
+----
+
+Didn't work the last time 🙂

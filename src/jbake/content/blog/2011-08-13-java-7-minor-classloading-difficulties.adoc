@@ -1,0 +1,12 @@
+= Java 7 - minor classloading difficulties
+triplem
+2011-08-13
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Java, Linux
+
+Since I am using Arch Linux, I am more then accustomed to using the latest and greates versions of all the stuff. Unfortunately this is not always very good. During the last couple of days I experienced a couple of class loading issues with Java 7 (as opposed to Java 6).
+
+I am currently testing Broadleaf Commerce and had to report an issue to theses guys because of some problems I did receive during compilation and running this application. Something similar happened to me on my project at work as well. I call this "class loading issues", but it is probably slightly more. I do have problems loading configuration data correctly. (see issue http://www.broadleafcommerce.org/jira/browse/BLC-96[96 on the Broadleaf JIRA])
+
+To work around this issue, I just installed Java 6 again. Now it is working like a charm.

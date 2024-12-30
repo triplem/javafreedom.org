@@ -1,0 +1,14 @@
+= Determine Musicbrainz Id from Discogs Release
+triplem
+2018-01-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Musik
+
+I just figured out, how you are able to retrieve the Musicbrainz Id (MBID) from a specific Discogs Release. The following link can be used:
+
+https://beta.musicbrainz.org/ws/2/url?inc=release-rels&fmt=json&resource=https://www.discogs.com/release/XXXX
+
+Obviously for the XXXX you need to put the release-Id of the release in discogs. 
+
+The https://www.github.com/triplem/discogstagger[Discogstagger2] contains a small script (scripts/find_mb_ids.py) which calls the above mentioned url and puts the determined mb-id and the given discogs-id in a file. This script is based on an existing id.txt, which I do use to determine the discogs id for each releaase i own.

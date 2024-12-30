@@ -1,0 +1,10 @@
+= Package java-nexus published in AUR
+triplem
+2009-10-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+Today I published another part of the ArchLinux Development Stack, the http://aur.archlinux.org/packages.php?ID=31630[java-nexus] package. This package contains the http://nexus.sonatype.org/[Nexus] program, a Maven Repository Manager. 
+
+If you are interested in this package, please vote for it in the AUR or, even better, join the http://openpario.mime.oregonstate.edu:3000/projects/archdevstack[project].

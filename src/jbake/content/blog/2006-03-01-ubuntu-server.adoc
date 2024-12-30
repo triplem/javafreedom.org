@@ -1,0 +1,8 @@
+= Ubuntu Server
+triplem
+2006-03-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux
+
+Like I stated earlier, today I installed the server installation of ubuntu (https://wiki.ubuntu.com/ServerTeam?highlight=%28ServerTeam%29[Ubuntu ServerTeam]. I have to admit, that the installation worked pretty straight forward, like I expected. I installed no LAMP-Server, and therefor the installation is a very clean install. This is good, because no un-needed packaged are installed, but there is not even an SSH server installed 🙁 Anyway, the ServerTeam does not have defined any real server compontens which should be installed, this is bad. I definitly would like to install webmin, and I believe that I am going to install this, but will it be in the next release? Because of this, and because I just installed this new distribution, with just a few installation/configuration changes, I think I will change my decision to another server-based distribution like http://contribs.org/[SME Server]. The only thing is, that this is not based on deb-packages, and I got used to these 🙁 Well, let's see what the future brings.

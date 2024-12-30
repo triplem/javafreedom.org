@@ -1,0 +1,8 @@
+= SVN Best Practices
+triplem
+2007-01-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Build Management
+
+While searching, because of the changes I would like to make for bubuntu, I stumbled across a good site about best practices in the SVN environment at http://svn.collab.net/repos/svn/trunk/doc/user/svn-best-practices.html[collab.net].

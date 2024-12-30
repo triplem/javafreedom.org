@@ -1,0 +1,12 @@
+= Hudson Package added
+triplem
+2009-11-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Linux, Build Management
+
+I made it a little early and in a very simple version. The hudson package can now be found in the http://aur.archlinux.org/packages.php?ID=31726[AUR]. This version still is running totally contained in the /opt/hudson-directory, all logs and configuration are stored in there. This will be changed in the next version of this package. 
+
+In the next iteration, we will think a little about other tools, to make this Development Stack a successful project. Meaning e.g., that we are going to provide http://github.com/brownbeagle/gitauth[gitauth]. Furthermore, we will digg into LDAP a little, to provide a central authentification storage. Another thing to digg into is the need for plugins for the already available packages (e.g. the sonar-plugin for Hudson). 
+
+There is a lot more to come, stay tuned and provide feedback 🙂

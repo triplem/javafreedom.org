@@ -3,6 +3,6 @@ triplem
 2006-10-25
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux und Laptop, WLan
+:jbake-tags: Linux, Linux and Laptop, WLan
 
 Today I found a rather nice description from a guy having a similar Laptop then myself. He describes, what is working and what not, so, if you have a Sony VAIO GRX616MP/SP, take a look at http://www.se.eecs.uni-kassel.de/~thm/Linux/linux-on-sony-vaio-grx616.html[this link].

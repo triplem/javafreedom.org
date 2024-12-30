@@ -3,6 +3,6 @@ triplem
 2005-03-11
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux und Laptop
+:jbake-tags: Linux, Linux and Laptop
 
 Yesterday I wrote about my problems using a Logitech Trackball on Windows with Firefox. Fortunately the problem occured also with IE, so therefor it is not an Firefox issue. I solved this today by using the Trackball directly on my machine on the USB ports. Up until then, I used the Trackball on the PS/2 port of a KVM-switch. It seems like the connection with the KVM-Switch or the PS/2-Port was the problem. So, this issue is resolved, and I can surf happily now at work (because at home I use only Mac OS X and Linux, and therefore don't have this issue anyway :-)).

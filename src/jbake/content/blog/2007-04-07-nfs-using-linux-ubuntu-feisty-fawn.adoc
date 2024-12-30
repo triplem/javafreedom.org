@@ -3,7 +3,7 @@ triplem
 2007-04-07
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux und Laptop
+:jbake-tags: Linux, Linux and Laptop
 
 Hello,
 

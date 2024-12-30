@@ -1,3 +1,4 @@
+= Getting to know Cocoa
 triplem
 2005-02-22
 :jbake-type: post

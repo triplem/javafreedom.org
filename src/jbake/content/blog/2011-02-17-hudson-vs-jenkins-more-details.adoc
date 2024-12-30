@@ -3,7 +3,7 @@ triplem
 2011-02-17
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Java, Build Management
+:jbake-tags: Linux, Java, ContinuousIntegration
 
 After having released the last post about Hudson vs. Jenkins, I have read quite a lot about this issue. http://sonatype.com/[Sonatype] seems to have started a new "campaign" on their relationship to and investments into http://www.hudson-ci.org[hudson] (see their latest banner on their homepage, where they state: "Maven + Hudson = a heart is shown here"). 
 

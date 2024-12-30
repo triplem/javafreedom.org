@@ -3,7 +3,7 @@ triplem
 2011-01-01
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Please take a closer look onto the newest addition of the ArchServer distribution. I have just published a ALM (Application Lifecycle Management) Stack for this distro with all ALM related tools already installed. 
 

@@ -3,7 +3,7 @@ triplem
 2009-08-12
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 Hello, I do have quite some experiences with Linux Distros (in the last couple of years mainly Ubuntu). Now I have shifted to ARCH. I am going to write more about this choice in the future. Right now I would like to explain, how to get packages (in my case networkmanager-plasmoid-svn) from the AUR to my machine:
 

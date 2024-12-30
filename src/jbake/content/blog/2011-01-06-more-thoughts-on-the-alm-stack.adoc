@@ -3,7 +3,7 @@ triplem
 2011-01-06
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 I am just thinking, that just providing some Toolset, like the ALM Stack is not enough. There is some documentation needed, not only for configuration, maintance and usage of the ALM Stack, but also some hints and best practices for the handling of projects.
 

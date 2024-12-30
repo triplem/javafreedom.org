@@ -3,7 +3,7 @@ triplem
 2011-03-08
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Java, Build Management
+:jbake-tags: Java, ContinuousIntegration
 
 Yesterday Sonatype announced a http://www.sonatype.com/people/[free webinar] about the future of Hudson. I am very interested in the presentation from Jason van Zyl and the outcome therefor. So, I guess up until then, there will be no real news about this topic. 
 

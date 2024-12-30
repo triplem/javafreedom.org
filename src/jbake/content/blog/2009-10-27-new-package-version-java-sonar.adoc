@@ -3,7 +3,7 @@ triplem
 2009-10-27
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 I have now finally published the newest version of the ArchLinux DevStack package Sonar. This contains now some major improvements in the Linux-ification. Meaning that now all configuration files are stored in /etc/sonar and the PID file is stored in /var/run. The logs are also stored in /var/log/sonar.
 

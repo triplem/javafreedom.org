@@ -3,7 +3,7 @@ triplem
 2005-03-02
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: LInux
+:jbake-tags: Linux
 
 Well, a couple of days ago, I ruined my Linux installation on my Laptop (still a Vaio GRX-616MP). This was due to the fact, that I recompiled a kernel to get access to a network card, but I compiled it with the configuration file from one of my servers 🙁 How bad. Because the installation of Debian always takes some time, and I wanted to get something different on my Laptop, I had the decision between Ubuntu and Gentoo. Well, at work a colleague of mine just installed Gentoo on his working machine, and I think that this takes a little bit too much time, to get a Desktop machine up and running. Therefor I downloaded Ubuntu and installed it on my Laptop.
 

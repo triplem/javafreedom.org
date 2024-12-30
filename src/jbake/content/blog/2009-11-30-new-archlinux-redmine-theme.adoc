@@ -3,6 +3,6 @@ triplem
 2009-11-30
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Yesterday, I have published, finally, the ArchLinux Redmine Theme. For additional Infos, please browse to the http://www.redmine.org/wiki/redmine/ThemeArchLinux[Theme Page] on the Redmine page. Furhtermore you can find additional Information on the Source in the http://openpario.mime.oregonstate.edu:3000/projects/archdevstack/repository/browse/redmine-theme[Source Repository].

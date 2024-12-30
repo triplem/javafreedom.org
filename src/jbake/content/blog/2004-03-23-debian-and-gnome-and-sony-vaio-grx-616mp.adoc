@@ -3,6 +3,6 @@ triplem
 2004-03-23
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 I installed debian on my laptop (a nice Sony Vaio GRX-616MP). It is running smoothly now. I have had a couple of prolems with the X-Server (Gnome). These are now fixed, and I can now use X with the highest possible solution on this laptop (1600*1200). Tomorrow I am going to install Eclipse and will see, how it runs. Currently there is still Windoze on this machine installed, but up until now, there is not really any reason why. Debian is pretty stable, and Gnome offers all the tools I need (like OpenOffice.org for letters, GOffice, Evolution and/or Mozilla firefox and thunderbird). The only problem I still have is that the wi-fi card I have (a D-Link DWL-650G PCMCIA card) does not run out of the box. There are a couple of drivers offered on the internet, so I have to try them. Anybody any hints on this one? When this is running then there is a last nice to have, an external soundcard for the DVD-Player (offering 5.1 Dolby Digital). I also figured out, that it is really possible to sync the iPod with Linux. Great, therefor I don't need to run Windoze anymore 🙂 More news later ….

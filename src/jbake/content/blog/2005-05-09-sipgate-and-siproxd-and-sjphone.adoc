@@ -3,7 +3,7 @@ triplem
 2005-05-09
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Home Entertainment
+:jbake-tags: Linux, Hifi
 
 Hello again. Today I am on the move to my new flat. But before I am moving, I have to write my experiences in configuring my small firewall with Siproxd and SJPhone for the usage of Sipgate.de (a german VoIP Provider). The configuration I took was pretty much the same like the one, which can be found http://www.ip-phone-forum.de/forum/viewtopic.php?t=1158[here]. My only Problem was the usage of SJPhone (a VoIP application, which can be run on nearly all OSes).
 

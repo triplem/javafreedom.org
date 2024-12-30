@@ -3,6 +3,6 @@ triplem
 2005-04-14
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, XBox, Home Entertainment
+:jbake-tags: Linux, XBox, Hifi
 
 Hello again, once again I have done some work on my XBox. I installed Xebian on it, and I have to admit, that it runs pretty smoothly. I chose the installation into an disk image on the e: drive of the xbox with 2GB of space. It turns out, that this is not really enough 🙂 After the installation I put the linux configuration into the dashboard of the box and now I can even start linux out of my evox. but it turned out, that linux cannot boot smoothly, until … I removed the joypad from the box 🙂 So after this hassle, I installed freevo on the box. Then I updated the debian system beneath the xebian distro. Freevo is a pretty neat tool, but I am still missing some things from e.g. the XBMC. Anyway, I will dig deeper and report back.

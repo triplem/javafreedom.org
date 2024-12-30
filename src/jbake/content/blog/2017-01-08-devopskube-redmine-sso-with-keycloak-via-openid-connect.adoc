@@ -3,7 +3,7 @@ triplem
 2017-01-08
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Because we could not make the logout functionality work using the SAML Plugin of Redmine (see last post), we decided to use the https://bitbucket.org/intelimina/redmine_openid_connect[OpenId Connect Plugin]. Due to the fact, that some functionality (eg. SSL Validation was always enabled, which is not wanted in Development Environments) we have forked this plugin and implemented some fixtures (see https://bitbucket.org/triplem74/redmine_openid_connect[here]). Those fixtures are already commited to the original project as Pull Requests. As soon as those are merged, we are going to use the original version instead of our fork.
 

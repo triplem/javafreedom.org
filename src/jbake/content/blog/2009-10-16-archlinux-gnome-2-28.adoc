@@ -3,7 +3,7 @@ triplem
 2009-10-16
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 Yesterday I upgraded Gnome on my ArchLinux Laptop to the version 2.28. There are quite some changes in this new version of Gnome. The first I recognized, was the different Background-Picture of the Login Screen. To change this Background just type in the following into the Terminal:
 

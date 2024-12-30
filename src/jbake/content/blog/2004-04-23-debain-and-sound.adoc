@@ -3,6 +3,6 @@ triplem
 2004-04-23
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 Ha, today I got the sound card of my laptop (an AC97 kind of thing) up and running. 🙂 On the other hand I have the WLAN still not running. It worked, but after I reinstalled the whole machine, it does not work anymore 🙁 Never change a running system. Anyway, I already ordered an orinoco card, in the hope that this is working better then 🙂 Greetz to everybody coming by this page.

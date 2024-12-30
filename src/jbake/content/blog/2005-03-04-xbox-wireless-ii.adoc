@@ -3,7 +3,7 @@ triplem
 2005-03-04
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Home Entertainment, XBox, WLan
+:jbake-tags: Hifi, XBox, WLan
 
 Hmm, yesterday I posted already about my problems with the XBox and the usage of my wireless network. Somebody asked in the comments for a little more information. Okay now, here it comes: 
 

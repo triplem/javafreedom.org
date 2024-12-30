@@ -3,7 +3,7 @@ triplem
 2016-10-09
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 == What is DevOpsKube?
 

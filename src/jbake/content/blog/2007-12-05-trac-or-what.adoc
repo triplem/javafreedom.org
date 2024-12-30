@@ -3,7 +3,7 @@ triplem
 2007-12-05
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 I was just out of curiosity browsing for different alternatives for http://trac.edgewall.org[Trac] and found the following alternatives:
 

@@ -3,6 +3,6 @@ triplem
 2004-03-24
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 To use this real nice card (it uses an Atheros chipset) you should download the madwifi driver from sourceforge (http://www.sourceforge.net/projects/madwifi[MadWifi]) You should compile a new kernel and also this driver and then you can use this driver. At the moment I still have to load the driver manually, and also link the driver to the network with ifconfig. But I think that this can be done automatically as well.

@@ -3,6 +3,6 @@ triplem
 2009-12-14
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Today, I have written quite a lenghty text about competition and new thoughts of the ArchLinux Development Stack and the relation to the Application Lifecycle Management (ALM). You can find this text on the project News page http://openpario.mime.oregonstate.edu:3000/news/37[here].

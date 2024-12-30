@@ -3,7 +3,7 @@ triplem
 2009-11-03
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 I started the development of the http://hudson-ci.org[Hudson] package, an integral part of the ArchLinux Development Stack. This package will use the http://wrapper.tanukisoftware.org/[Java Service Wrapper], like the Sonar and Nexus packages. The only difference to these is, that I have to pack this one here totally on my own, because no pre-packed version exists. 
 

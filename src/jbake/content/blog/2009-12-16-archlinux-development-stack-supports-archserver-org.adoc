@@ -3,7 +3,7 @@ triplem
 2009-12-16
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Yesterday, we build our first package exclusivly for http://www.archserver.org[ArchServer.org]. It is the gitweb ArchServer Theme and can be found on our http://repo.or.cz/w/archlinuxdevstack.git/tree/HEAD:/gitweb-theme[Git Repository]. This is just a rough first draft, but it is already running on http://git.archserver.org[git.archserver.org].
 

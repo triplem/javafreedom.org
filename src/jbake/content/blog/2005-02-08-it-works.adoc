@@ -3,6 +3,6 @@ triplem
 2005-02-08
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Apple, Common, Home Entertainment
+:jbake-tags: Apple, Common, Hifi
 
 Hello, yesterday I reported that my eMac produces power outages. This was, as I figured out today, totally wrong. It was not the Mac, but the tv cable. When I disconnect the tv cable from the television and the radio cable from the receiver, I can connect from the eMac to the hifi. Thank god, it works….

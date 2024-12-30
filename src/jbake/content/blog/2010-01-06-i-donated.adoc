@@ -3,7 +3,7 @@ triplem
 2010-01-06
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Hello,
 

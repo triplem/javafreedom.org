@@ -3,7 +3,7 @@ triplem
 2009-08-15
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 To make a nice boot-process, I have had to install http://wiki.archlinux.org/index.php/Fbsplash[fbsplash]. The install is pretty seemless and easy. To make the whole process really nice, my menu.lst is configured as follows:
 

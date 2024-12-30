@@ -3,7 +3,7 @@ triplem
 2009-10-18
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Yesterday I have published my first package (redmine-mysql-svn) into the AUR (ArchLinux User Repository). This package installs my favourite Project Management System (guess which one?, Redmine of course) using an existing MySQL DB onto ArchLinux. I hope that you will find it useful. 
 

@@ -3,7 +3,7 @@ triplem
 2006-03-20
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 Today I got the network sync via the wifi adapter of the Palm TX device working. There is no way to configure this via the GUI of the Evolution Synch mechanism (gpilotd). Therefor I have had to modify the gpilotd-configuration file via an editor. This file can be found (on Ubuntu Dapper Drake) in the directory ~/.gnome2/gnome-pilot.d. On some websites there is a short explanation, that you should enter an IP and a hostname for the palm device. Well, for me it just works without. So in the following there is my gpilotd-file: 
 

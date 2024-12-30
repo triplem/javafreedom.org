@@ -3,6 +3,6 @@ triplem
 2009-11-01
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Today I updated the http://aur.archlinux.org/packages.php?ID=31321[java-sonar] package to the latest release of Sonar. Furthermore I updated the PKGBUILD-file, so that now the sonar.properties file in /etc/sonar is automatically backuped, if it is changed by the user.

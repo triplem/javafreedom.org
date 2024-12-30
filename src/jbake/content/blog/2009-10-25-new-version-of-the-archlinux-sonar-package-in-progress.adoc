@@ -3,7 +3,7 @@ triplem
 2009-10-25
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 I started with a new version of the http://sonar.codehaus.org[Sonar] package for ArchLinux. The major improvement will be the separation of configuration files into /etc/sonar and log files into /var/log/sonar. This separation is done via some hard coding of pathes in the sonar.sh and the wrapper.conf. 
 

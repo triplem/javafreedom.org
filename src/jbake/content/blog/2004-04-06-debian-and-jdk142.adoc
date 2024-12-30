@@ -3,6 +3,6 @@ triplem
 2004-04-06
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Java, Linux, Linux and Laptop
+:jbake-tags: Java, Linux, Laptop
 
 Well, I searched quite some time to get a good .deb-package of the J2SDK 1.4.2 in the internet. There are a couple of "download it for yourself and create your own package"-kind of packages, like http://wiki.osuosl.org/pages/viewpage.action?pageId=22[this] one. But after looking you will probably also find http://debian.innovationsw.com/[a nicer] one. Obviously the only thing missing now is a good IDE. Well, I decided to use Eclipse. Although right now, there is not really a .deb-package available. I just unpacked this IDE on my harddrive (using /opt) and created the following startup script: `/opt/eclipse/eclipse -data $HOME/.eclipse -vmargs -ms128m -mx768m`, which I named eclipse_startup.sh. This script uses obviously quite a lot of memory for Eclipse, but I have 1GB of RAM available, so no problem there :-). I just made this script runable from everybody and now Eclipse runs fine. Also Debian already offers (in Testing) an ANT 1.6 install package, so no problem with this also. The only other thing I needed was subversion and this is also available as a package in testing. This means basically that now my machine is not on stable anymore, it is on testing, but I have not experienced any problems up until now 🙂 See you soon…

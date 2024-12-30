@@ -3,7 +3,7 @@ triplem
 2011-02-10
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Java, Build Management
+:jbake-tags: Linux, Java, ContinuousIntegration
 
 In my last blog post, I mentioned, that we are still using http://hudson-ci.org/[Hudson] instead of the new community fork http://jenkins-ci.org/[Jenkins]. You can ask now why we are doing this. This is mainly a personal decision, and it is not about Oracle and their "relationship" to open source communities, but more about Sonatype and their involvement in the future of Hudson (see blog post http://www.sonatype.com/people/2011/02/our-focus-on-advancing-hudson-and-making-great-software/[here], http://www.sonatype.com/people/2011/02/hudsons-bright-future/[here] and http://www.sonatype.com/people/2011/02/take-the-hudson-survey/[here]). I think that if the leader of Maven (Jason van Zyl) is investing time and resources into the hudson project, it is definitly worthwhile to stay there. Lets see if this is going to work out.
 

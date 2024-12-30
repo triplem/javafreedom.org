@@ -3,7 +3,7 @@ triplem
 2011-02-18
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Java, Build Management
+:jbake-tags: Linux, Java, ContinuousIntegration
 
 Today I found a nice article about the split of Hudson and Jenking. It has a nice title and is really well written. Furthermore it shows some of the possible implications of this "war". 
 

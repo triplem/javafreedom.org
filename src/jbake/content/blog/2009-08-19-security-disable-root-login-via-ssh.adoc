@@ -3,7 +3,7 @@ triplem
 2009-08-19
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 To make my system more secure (well, it is a client only and is probably insecure anyway, but…) I wanted to disable the root login via ssh on my machine. To do this, just change the line 
 

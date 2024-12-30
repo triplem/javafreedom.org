@@ -3,7 +3,7 @@ triplem
 2008-04-25
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Just found another alternative for the Trac framework:
 

@@ -3,7 +3,7 @@ triplem
 2016-11-06
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 For some of our charts in https://github.com/devopskube/devopskube/tree/master/charts[DevOpsKube] we wanted to use static files as a template, obviously still be able to use Variables from helm (eg. .Release.Name). This seems to be rather easy, looking at the "https://github.com/kubernetes/helm/blob/master/docs/charts_tips_and_tricks.md#using-the-include-function[include]" statement of helm. Unfortunately this is not really well documented and/or not working as expected. Some projects (eg. https://github.com/sapcc/openstack-helm/blob/master/keystone/templates/etc-configmap.yaml[SAP CC-OpenStack] do use this feature as well. I did try to use the same logic, but unfortunately this was not working (with helm 2.0.0-rc1 at least). 
 

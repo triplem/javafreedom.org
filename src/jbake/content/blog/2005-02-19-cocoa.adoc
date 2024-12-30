@@ -3,7 +3,7 @@ triplem
 2005-02-19
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Apple, Cocoa, Mac OS X
+:jbake-tags: Apple, Cocoa, OS-X
 
 I am a java programmer for the last 6 years. In this time, I programmed EJBs, Servlets a couple of specialized eCommerce frameworks like ATG and Intershop. In the current company I moved on to Swing and now I am in the position of a release-/build-engineer. Before my work with Java I was involved in some small projects using PERL and during my university time I had to do some basic programming in C++. Well I don't want to talk too much about my working life, if you are interested in this, please read my http://private.javafreedom.org/resume.pdf[resume]. I was also involved in some open source projects, like Depot at apache.org, and also wrote a couple of articles about Java and projects I did with Java (see the list of publications).
 

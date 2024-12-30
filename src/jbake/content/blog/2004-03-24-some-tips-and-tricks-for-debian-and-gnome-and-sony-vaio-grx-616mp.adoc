@@ -3,7 +3,7 @@ triplem
 2004-03-24
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 Here is the configuration file (XF86Config) I use with the above configuration: 
 

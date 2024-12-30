@@ -3,7 +3,7 @@ triplem
 2011-02-10
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Java, Build Management
+:jbake-tags: Java, ContinuousIntegration
 
 Yesterday our Admin came to me and told me, that the Harddrive on our CI Server is nearly full. This is due to the fact that our http://nexus.sonatype.org/[Nexus Repository] as well as our http://hudson-ci.org/[Hudson CI Server] are installed on the same machine. Hudson is using it's own locale repository and therefor all Snapshots are filling up the diskspace. 
 

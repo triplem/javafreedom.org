@@ -3,7 +3,7 @@ triplem
 2009-11-04
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 I made it a little early and in a very simple version. The hudson package can now be found in the http://aur.archlinux.org/packages.php?ID=31726[AUR]. This version still is running totally contained in the /opt/hudson-directory, all logs and configuration are stored in there. This will be changed in the next version of this package. 
 

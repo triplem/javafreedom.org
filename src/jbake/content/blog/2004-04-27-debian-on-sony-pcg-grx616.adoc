@@ -3,7 +3,7 @@ triplem
 2004-04-27
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 Now finally I have reached my goal. Everything is working (well, nearly everything). I got the WLAN card (DLink DWL-G650) up and running on the 2.4.25 as well as the 2.6.5 kernel. Quite good. The http://www.sourceforge.net/projects/madwifi[MadWifi] driver is really working. I have had a couple of probs with this, but this was due to the other network card (ee100pro) in the laptop. Also sound is working on the 2.4.25 kernel, up until now I have not tried to run this on the 2.6.5 kernel, but this is one of the next steps.
 

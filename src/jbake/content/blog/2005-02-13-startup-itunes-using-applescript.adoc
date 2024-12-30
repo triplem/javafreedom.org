@@ -3,7 +3,7 @@ triplem
 2005-02-13
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Apple, Cocoa, Mac OS X
+:jbake-tags: Apple, Cocoa, OS-X
 
 Finally I have created an "alarm clock" out of my eMac. In the following you will find the script and some short notes about it. Hope you will find it useful. There are actually a lot of other scripts out there, which are mostly Shareware. I just wanted to creat my own little script. It is pretty easy, and I used it to get used to the AppleScript grammar, so don't expect too much. 
 

@@ -3,7 +3,7 @@ triplem
 2007-01-03
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Java, Build Management
+:jbake-tags: Linux, Java, ContinuousIntegration
 
 In the last post, I have written about the installation of the Ubuntu Continuous Integration/Development Stack. I have installed all of the applications and now I have some more notes on this. There are quite some additions to the originally installed stack, as well as some further descriptions, on how to install the whole stack: +
 I added ANT-Contrib as well as JUnit to the ANT installation:

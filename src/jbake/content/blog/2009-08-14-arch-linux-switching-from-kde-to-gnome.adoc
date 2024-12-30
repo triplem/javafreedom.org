@@ -3,7 +3,7 @@ triplem
 2009-08-14
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 Since I am a long time Gnome user (well, I have used Ubuntu for almost 5 years), I thought, if I am going to install a new distro (Arch Linux in this case) I switch my Desktop Environment as well. Therefor I installed KDE. 
 

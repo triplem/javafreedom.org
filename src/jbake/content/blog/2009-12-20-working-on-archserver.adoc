@@ -3,7 +3,7 @@ triplem
 2009-12-20
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Today I published the fluxbb Theme for the ArchServer.org website. 
 

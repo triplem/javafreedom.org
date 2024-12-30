@@ -3,7 +3,7 @@ triplem
 2011-02-18
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Java, Build Management
+:jbake-tags: Linux, Java, ContinuousIntegration
 
 I think, the whole fork stuff with Hudson and Jenkins gets even more hilarious. In a http://java.net/projects/hudson/lists/dev/archive/2011-02/message/148[vote], the Hudson community decided to move (take your breath) to github.com.
 

@@ -3,7 +3,7 @@ triplem
 2016-11-19
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 We updated the docker Image of https://github.com/devopskube/docker-jenkins[jenkins] to reflect the latest changes on the https://github.com/devopskube/docker-mysql[MySQL Docker Image] (eg. we added the Makefile, a jenkinsfile and use the latest Version Bump Stuff. These new versions of the Image are now also reflected in the main https://github.com/devopskube/devopskube[DevOpsKube] charts. 
 

@@ -3,7 +3,7 @@ triplem
 2016-10-16
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Java, Build Management
+:jbake-tags: Java, ContinuousIntegration
 
 At the company where I work at currently we do have several, around 70 to be precise, inter-related Components. Some of those Components are multi-modules, which makes a fully Automatic release-build even harder. The used SCM is git, awnd we do use Nexus as a Central artifact repository.
 

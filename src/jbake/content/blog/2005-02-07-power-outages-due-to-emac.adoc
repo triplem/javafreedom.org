@@ -3,7 +3,7 @@ triplem
 2005-02-07
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Apple, Home Entertainment, Common
+:jbake-tags: Apple, Hifi, Common
 
 In my last blog, I wrote about the problems I have with the power outages, as soon as I connect my nice little eMac with my Hifi. I tried to get rid of all un needed equipment on my power lines. So only the hifi and the mac, but still I have a power outage. It looks like the mac is not really protected against such stuff 🙁 What to do now? I am very very very upset about this.
 

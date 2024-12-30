@@ -3,7 +3,7 @@ triplem
 2005-03-06
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Home Entertainment, XBox, WLan
+:jbake-tags: Hifi, XBox, WLan
 
 Hmm, in the last entry, I wrote, that the XBox is running wireless. Well, it was. But now, it isn't once again. Now I have to find out, where the problem is. Very very strange. 
 

@@ -3,7 +3,7 @@ triplem
 2009-12-02
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Yesterday I received a message, that the Sonar Package (an integral part of the http://openpario.net/projects/archlinuxdevstack[ArchLinux Development Stack]) is not working correctly on i686-Architectures. This package is now updated and can be installed from the http://aur.archlinux.org/packages.php?ID=32024[AUR].
 

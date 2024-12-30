@@ -3,7 +3,7 @@ triplem
 2016-10-09
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 We just published a documentation on how to install a single-node "cluster" at my preferred http://www.netcup.de[Hoster]. This documentation describes, on how to install [coreOS](https://coreos.com/) and initialize the single-node cluster on this node.
 

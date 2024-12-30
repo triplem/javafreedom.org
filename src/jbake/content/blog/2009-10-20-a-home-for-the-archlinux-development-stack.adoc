@@ -3,7 +3,7 @@ triplem
 2009-10-20
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Java, Build Management
+:jbake-tags: Linux, Java, ContinuousIntegration
 
 The ArchLinux Development Stack found a Home. I received some very friendly, personel and quick support from the guys at http://openpario.net[Open+Pario] and that was the main reason I chose this one. They are hosting a http://www.redmine.org[Redmine] instance and http://www.git-scm.org[GIT], so this is a perfect fit for the stack. 
 

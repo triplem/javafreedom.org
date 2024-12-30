@@ -3,7 +3,7 @@ triplem
 2009-10-22
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Since the Development Stack contains the package Git, we thought, that it is a good idea to use Git as our main repository. Therefor we have now a Git Repository hosted at http://repo.or.cz/w/archlinuxdevstack.git. 
 

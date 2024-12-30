@@ -3,7 +3,7 @@ triplem
 2009-08-13
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 I have now successfully installed Arch Linux on my Thinkpad W500. Sound was a problem. I do have the following Soundcard in the Laptop:
 

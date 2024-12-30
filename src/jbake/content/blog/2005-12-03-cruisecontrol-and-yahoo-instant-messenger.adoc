@@ -3,6 +3,6 @@ triplem
 2005-12-03
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Java, Build Management
+:jbake-tags: Java, ContinuousIntegration
 
 Yesterday I finished a first draft of a Publisher for CruiseControl, which publishes the current BuildResult to the Yahoo IM. This plugin is pretty easy. The Sourcecode is attached can be found link:/projects/cruisecontrol/YahooPublisher.java[here] and the Test for this is found link:/cruisecontrol/YahooPublisherTest.java[here]. This plugin can be used and compiled, when the libs from http://jymsg9.sourceforge.net/[jYMSG] are in the lib directory. Hope, that somebody can use it.

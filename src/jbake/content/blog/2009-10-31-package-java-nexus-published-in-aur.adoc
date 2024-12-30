@@ -3,7 +3,7 @@ triplem
 2009-10-31
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Today I published another part of the ArchLinux Development Stack, the http://aur.archlinux.org/packages.php?ID=31630[java-nexus] package. This package contains the http://nexus.sonatype.org/[Nexus] program, a Maven Repository Manager. 
 

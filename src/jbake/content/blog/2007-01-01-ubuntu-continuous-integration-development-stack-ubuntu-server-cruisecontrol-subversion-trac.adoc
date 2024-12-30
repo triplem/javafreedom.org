@@ -3,7 +3,7 @@ triplem
 2007-01-01
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Java, Linux, Build Management
+:jbake-tags: Java, Linux, ContinuousIntegration
 
 I already told you in my last post, that I am currently looking at Buildix, a continuous integration/development stack build ontop of Knoppix. This is a pretty nice distro derivate. The thing is, that I have already a couple of other applications running on my Ubuntu Server and wanted to have something similar on this machine. +
 After a couple of hours, I figured out, that most of the components in Buildix are already available as Ubuntu Packages, therefore I went ahead and installed all these tools on my server. +

@@ -3,7 +3,7 @@ triplem
 2005-02-26
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Apple, Cocoa, Diabetes, Mac OS X
+:jbake-tags: Apple, Cocoa, Diabetes, OS-X
 
 I already told you, that I am going to program a little application for the management diabetes blood glucose and insuline injections. Today I finised my first draft of this application. It is pretty basic and does not contain much functionality except entering new entries , deletion of them and also loading and saving of this data. Basically it is a copy of one of the examples found in the "Learning Cocoa with Objective-C" book. This book is really helpful and should be in the shelf of every Cocoa beginner 🙂
 

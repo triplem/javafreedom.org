@@ -3,7 +3,7 @@ triplem
 2005-03-03
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Home Entertainment, XBox, WLan
+:jbake-tags: Hifi, XBox, WLan
 
 At the beginning of this week, I picked up my XBox. This is a patched box, where XBox MediaCenter is running. I already have an Access Point on my TV, which is in Client Mode. Therefore I tried to connect the box to this AP. It is, for some reason, not working. I tried to use my Laptop with Ubuntu on the same AP and this is running perfectly.
 

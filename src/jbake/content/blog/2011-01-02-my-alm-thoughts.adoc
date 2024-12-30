@@ -3,7 +3,7 @@ triplem
 2011-01-02
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Yesterday we released a new ALM Stack based on http://www.archserver.org[ArchServer], which replaces the beforehand already known "http://freshmeat.net/projects/archlinux-development-stack[Arch Linux Development Stack]". I guess the name change was needed due to the fact that the underlying architecture changed from Arch Linux to ArchServer and furthermore the ALM in the name shows more appropriate what the purpose of this stack really is.
 

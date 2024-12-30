@@ -3,7 +3,7 @@ triplem
 2016-10-19
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 It was decided to use the following Roadmap to be able to provide some useful Components already and to have something to extend on.
 

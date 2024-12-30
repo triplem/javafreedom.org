@@ -3,7 +3,7 @@ triplem
 2009-08-14
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Linux and Laptop
+:jbake-tags: Linux, Laptop
 
 I wanted to make my laptop truely archified. Therefor I installed first of all the murrine engine for GTK and, to have some themes available the corresponding theme collection:
 

@@ -2,7 +2,7 @@ triplem
 2005-02-22
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Apple, Cocoa, Mac OS X
+:jbake-tags: Apple, Cocoa, OS-X
 
 Well, after some long hours in front of my Mac I got to know Objective-C and Cocoa a little better. I am still in the beginning of this for me "new" language (objective-c) and the framework (Cocoa). I build my first real world window using the Interface Builder delivered by Apple with the XCode toolset.
 

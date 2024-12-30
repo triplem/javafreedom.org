@@ -3,7 +3,7 @@ triplem
 2013-07-22
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Common, Build Management
+:jbake-tags: Linux, Common, ContinuousIntegration
 
 In this post I would like to gather some personal requirements for a NAS System I am going to build.
 

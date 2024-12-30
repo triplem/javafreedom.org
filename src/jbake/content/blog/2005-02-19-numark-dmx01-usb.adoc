@@ -3,7 +3,7 @@ triplem
 2005-02-19
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Home Entertainment, Musik
+:jbake-tags: Hifi, Musik
 
 Today I received my new Numark DMX01 USB mixer. This is a nice mixer with two USB interfaces. With these interfaces you can use the mixer also as two dedicated sound cards. If you are using a program like Traktor you can use your computer (Traktor runs on Macs as well) as turntables. Therefor I can now play my mp3s and mix them with this nice little tool. I was really excited today and because the problem with the power outages I wrote earlier about, are solved, I can fully use it.
 

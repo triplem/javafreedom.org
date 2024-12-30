@@ -3,7 +3,7 @@ triplem
 2009-11-24
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Linux, Build Management
+:jbake-tags: Linux, ContinuousIntegration
 
 Today, I released the latest version (0.3) of the ArchLinux Development Stack. This version contains a lot of changes to nearly all packages. Most of the packages got renamed and also cleaned up. Another interesting addition to the stack is the http://aur.archlinux.org/packages.php?ID=14624[Rails] package. On this page, I added the Ruby on Rails https://rails.lighthouseapp.com/projects/8994/tickets/3144/[1.9 friendly secure compare patch], because without it, Redmine is not running correctly under Ruby 1.9.1v243, which is the default under ArchLinux right now.
 

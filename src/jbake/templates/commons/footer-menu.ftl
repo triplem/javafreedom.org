@@ -3,12 +3,10 @@
     <ul class="list-inline links">
        <#list config.site_menus_footer as menuItem1>
 		<li>
-	        <a href="<#if (config['site_menus_footer_' + menuItem1 + '_url'] != "/")> ${content.rootpath}${config['site_menus_footer_' + menuItem1 + '_url']}<#else> ${config.site_host}</#if>">
-	           
-	                <i class="${config['site_menus_footer_' + menuItem1 + '_icon']}">&nbsp;</i>${config['site_menus_footer_' + menuItem1 + '_label']}
-	            
+	        <a href="${config['site_menus_footer_' + menuItem1 + '_url']}">
+	           <i class="${config['site_menus_footer_' + menuItem1 + '_icon']}">&nbsp;</i>${config['site_menus_footer_' + menuItem1 + '_label']}
 	        </a>
-		</li>
-	</#list>
+		 </li>
+	  </#list>
     </ul>
 </div>
